@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students</title>
+</head>
+<body>
+    {% for student in students %}
+        {{ student.name }}<br>
+        {{ student.class }}<br>
+        {{ student.sen }}<br>
+        {{ student.startdate }}<br>
+        {{ student.enddate }}<br>
+        {{ student.intervention }}<br>
+    {% endfor %}
+</body>
+</html>
