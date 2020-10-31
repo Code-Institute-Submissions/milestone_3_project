@@ -1,18 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Students</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+
+    <h2> Testing header </h2>
+
     {% for student in students %}
         {{ student.name }}<br>
         {{ student.class }}<br>
         {{ student.sen }}<br>
-        {{ student.startdate }}<br>
-        {{ student.enddate }}<br>
+        {{ student.start_date }}<br>
+        {{ student.end_date }}<br>
         {{ student.intervention }}<br>
     {% endfor %}
-</body>
-</html>
+
+{% endblock %}
