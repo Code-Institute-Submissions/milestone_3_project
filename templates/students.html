@@ -1,7 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h2> Testing header </h2>
+    <h2> Your Students </h2>
+
+ <div class="container row card-panel grey-lighten-5">
+        <form class="col s12" method="POST" action="{{ url_for('show_students') }}">
+            <div class="row">
+                <div class="input-field col s4">
+                    <select id="student_name" name="student_name" class="validate" required>
+                        <option value="" disabled selected>Choose Students</option>
+                        {% for student in studentss %}
+                            <option value ="{{ students.name }}">{{ student.name }}</option>
+                        {% endfor %}
+                    </select>
+                    <label>Students</label>
+                </div>
+
+    
+               
+
+
+            </div>
+
+
+
 
     {% for student in students %}
         {{ student.name }}<br>

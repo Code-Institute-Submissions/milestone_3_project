@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h2> Your Interventions </h2>
+
+ <div class="container row card-panel grey-lighten-5">
+        <form class="col s12" method="POST" action="{{ url_for('show_students') }}">
+            <div class="row">
+                <div class="input-field col s4">
+                    <select id="student_name" name="student_name" class="validate" required>
+                        <option value="" disabled selected>Choose Interventions</option>
+                        {% for intervention in interventions %}
+                            <option value ="{{ intervention.name }}">{{ intervention.name }}</option>
+                        {% endfor %}
+                    </select>
+                    <label>Interventions</label>
+                </div>
+
+    
+               
+
+
+            </div>
+
+
+    {% for intervention in interventions %}
+        {{ intervention.name }}<br>
+        {{ intervention.sen }}<br>
+        {{ intervention.rating }}<br>
+        {{ intervention.resources }}<br>
+        {{ intervention.free }}<br>
+    {% endfor %}
+
+{% endblock %}
