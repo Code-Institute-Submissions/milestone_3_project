@@ -50,6 +50,12 @@ def add_students():
     students = list(mongo.db.students.find())
     return render_template("add.html", students=students)
 
+@app.route("/")
+@app.route("/add_interventions")
+def add_interventions():
+    interventions = list(mongo.db.interventions.find())
+    return render_template("add_interventions.html", interventions=interventions)
+
 if __name__ == "__main__":
     app.run(host = os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

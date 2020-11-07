@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h2> Add Interventions </h2>
+
+
+<div class="container">
+
+<div class="row card-panel grey-lighten-5">
+        <form class="col s12" method="POST" action="{{ url_for('add_interventions') }}">
+           
+
+<div class="row">
+                <div class="input-field col s12 m6 l12">
+                    <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
+                    <input id="intervention_name" name="intervention_name" minlength="5" maxlength="50" 
+                        type="text" class="validate" required>
+                    <label for="intervention_name">Intervention Name</label>
+                </div>
+</div>
+
+<div class="row">
+                <div class="input-field col s12 m6 l6">
+                    <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
+                    <textarea id="intervention_sen" name="intervention_sen" minlength="5"
+                    maxlength="50" class="materialize-textarea validate" required></textarea>
+                    <label for="intervention_sen">SEN Area</label>
+                </div>
+
+                <div class="input-field col s12 m6 l6">
+                    <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
+                    <input id="rating" name="rating" 
+                        type="text" class="datepicker validate" required>
+                    <label for="rating">Rating</label>
+                </div>
+</div>
+
+
+<div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
+                    <input id="intervention_duration" name="intervention_duration" 
+                        type="text" class="datepicker validate" required>
+                    <label for="intervention_duration">Duration</label>
+                </div>
+</div>
+
+
+<div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
+                    <input id="intervention_resources" name="intervention_resources" 
+                        type="text" class="datepicker validate" required>
+                    <label for="intervention_resources">Resources Required</label>
+                </div>
+</div>
+
+
+<div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
+                    <input id="intervention_cost" name="intervention_cost" 
+                        type="text" class="datepicker validate" required>
+                    <label for="intervention_cost">Cost</label>
+                </div>
+</div>
+
+</form>
+</div>
+
+{% endblock %}
