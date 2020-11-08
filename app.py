@@ -4,6 +4,7 @@ from flask import (
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
@@ -32,12 +33,6 @@ def show_interventions():
 
 
 @app.route("/")
-@app.route("/home_page")
-def home_page():
-    return render_template("home.html")
-
-
-@app.route("/")
 @app.route("/sample_page")
 def sample_page():
     return render_template("sample.html")
@@ -56,27 +51,27 @@ def add_students():
     return render_template("add.html", students=students)
 
 
-
 @app.route("/add_interventions", methods=["GET", "POST"])
 def add_interventions():
-   return render_template("add_interventions.html")
-   
-"""
     if request.method == "POST":
-        intervention = {
-            "name": request.form.get("intervention_name"),
-            "sen": request.form.get("intervention_sen"),
-            "rating": request.form.get("intervention_rating"),
-            "duration": request.form.get("intervention_duration"),
-            "resources": request.form.get("intervention_resources"),
-            "Cost": request.form.get("intervention_cost")
+        interventions = {
+            "name": request.form.get("name"),
+            "sen": request.form.get("sen"),
+            "rating": request.form.get("rating"),
+            "duration": request.form.get("duration"),
+            "resources": request.form.get("resources"),
+            "cost": request.form.get("Cost")
         }
-        mongo.db.interventions.insert_one(intervention)
+        mongo.db.interventions.insert_one(interventions)
         flash("Task Successfully Added")
-        return redirect(url_for("add_interventions.html"))
+        return redirect(url_for("add_interventions"))
     else:
-        return("Oops!, something has gone wrong!")
-"""
+        return render_template("add_interventions.html")
+
+    interventions = mongo.db.interventions.find().sort("name", 1)
+    return render_template("add_interventions", interventions=interventions)
+
+
 if __name__ == "__main__":
     app.run(host = os.environ.get("IP"), port=int(os.environ.get("PORT")),
             debug=True)
