@@ -23,26 +23,31 @@ def show_students():
     students = list(mongo.db.students.find())
     return render_template("students.html", students=students)
 
+
 @app.route("/")
 @app.route("/show_interventions")
 def show_interventions():
     interventions = list(mongo.db.interventions.find())
     return render_template("interventions.html", interventions=interventions)
 
+
 @app.route("/")
 @app.route("/home_page")
 def home_page():
     return render_template("home.html")
+
 
 @app.route("/")
 @app.route("/sample_page")
 def sample_page():
     return render_template("sample.html")
 
+
 @app.route("/")
 @app.route("/about_page")
 def about_page():
     return render_template("about.html")
+
 
 @app.route("/")
 @app.route("/add_students")
@@ -50,13 +55,14 @@ def add_students():
     students = list(mongo.db.students.find())
     return render_template("add.html", students=students)
 
+
 @app.route("/")
 @app.route("/add_interventions")
 def add_interventions():
     interventions = list(mongo.db.interventions.find())
     return render_template("add_interventions.html", interventions=interventions)
 
+
 if __name__ == "__main__":
-    app.run(host = os.environ.get("IP"),
-            port=int(os.environ.get("PORT")),
+    app.run(host = os.environ.get("IP"), port=int(os.environ.get("PORT")),
             debug=True)
