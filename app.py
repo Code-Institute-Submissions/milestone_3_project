@@ -56,13 +56,27 @@ def add_students():
     return render_template("add.html", students=students)
 
 
-@app.route("/")
-@app.route("/add_interventions")
+
+@app.route("/add_interventions", methods=["GET", "POST"])
 def add_interventions():
-    interventions = list(mongo.db.interventions.find())
-    return render_template("add_interventions.html", interventions=interventions)
-
-
+   return render_template("add_interventions.html")
+   
+"""
+    if request.method == "POST":
+        intervention = {
+            "name": request.form.get("intervention_name"),
+            "sen": request.form.get("intervention_sen"),
+            "rating": request.form.get("intervention_rating"),
+            "duration": request.form.get("intervention_duration"),
+            "resources": request.form.get("intervention_resources"),
+            "Cost": request.form.get("intervention_cost")
+        }
+        mongo.db.interventions.insert_one(intervention)
+        flash("Task Successfully Added")
+        return redirect(url_for("add_interventions.html"))
+    else:
+        return("Oops!, something has gone wrong!")
+"""
 if __name__ == "__main__":
     app.run(host = os.environ.get("IP"), port=int(os.environ.get("PORT")),
             debug=True)

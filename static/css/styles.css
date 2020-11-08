@@ -3,3 +3,8 @@
 .left-align {
     padding-left: 9px;
 }
+
+.cards {
+    background-color: lightblue;
+    border: 12pt;
+}
