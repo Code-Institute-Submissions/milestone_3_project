@@ -72,6 +72,13 @@ def add_interventions():
     return render_template("add_interventions", interventions=interventions)
 
 
+
+@app.route("/add_need", methods=["GET", "POST"])
+def add_need():
+    need = mongo.db.need.find().sort("area_of_need", 1)
+    return render_template("add_interventions", need=need)
+
+
 if __name__ == "__main__":
     app.run(host = os.environ.get("IP"), port=int(os.environ.get("PORT")),
             debug=True)
