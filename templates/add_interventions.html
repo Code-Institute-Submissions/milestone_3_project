@@ -5,26 +5,8 @@
 
 <h2> Add Interventions </h2>
 
-
- <div class="row card-panel grey-lighten-5">
-        <form class="col s12" method="POST" action="{{ url_for('add_need') }}">
-            <div class="row">
-                <div class="input-field col s12">
-                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
-                    <select id="area_of_need" name="area_of_need" class="validate" required>
-                        <option value="" disabled selected>Choose Category</option>
-                        {% for need in need %}
-                            <option value ="{{ need.area_of_need }}">{{ need.area_of_need }}</option>
-                        {% endfor %}
-                    </select>
-                    <label for ="area_of_need">Task Category</label>
-                </div>
-            </div>
-        </form>
- </div>
-
-
-
+<div class="row card-panel grey-lighten-5">
+<form class="col s12" method="POST" action="{{ url_for('add_interventions') }}">
 
 <!-- Name --> 
 <div class="row">
@@ -100,6 +82,5 @@
 </form>
 </div>
 </div>
-</div>
-</div>
+
 {% endblock %}
