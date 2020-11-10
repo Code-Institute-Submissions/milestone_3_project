@@ -32,19 +32,16 @@ def show_interventions():
     return render_template("interventions.html", interventions=interventions)
 
 
-@app.route("/")
 @app.route("/sample_page")
 def sample_page():
     return render_template("sample.html")
 
 
-@app.route("/")
 @app.route("/about_page")
 def about_page():
     return render_template("about.html")
 
 
-@app.route("/")
 @app.route("/add_students")
 def add_students():
     students = list(mongo.db.students.find())
@@ -71,6 +68,29 @@ def add_interventions():
     interventions = mongo.db.interventions.find().sort("name", 1)
     return render_template("add_interventions", interventions=interventions)
 
+
+@app.route("/edit_interventions/<interventions_id>", methods=["GET", "POST"])
+def edit_interventions(interventions_id):
+    if request.method == "POST":
+        submit = {
+            "name": request.form.get("name"),
+            "sen": request.form.get("sen"),
+            "rating": request.form.get("rating"),
+            "duration": request.form.get("duration"),
+            "resources": request.form.get("resources"),
+            "cost": request.form.get("cost")
+        }
+        mongo.db.interventions.update({"_id": ObjectId(interventions_id)}, submit)
+        flash("Task Successfully Updated")
+    interventions = mongo.db.interventions.find_one({"_id": ObjectId(interventions_id)})
+    return render_template("edit_interventions.html", interventions=interventions)
+
+
+@app.route("/delete_interventions/<interventions_id>")
+def delete_interventions(interventions_id):
+    mongo.db.interventions.remove({"_id": ObjectId(interventions_id)})
+    flash("Intervention successfully deleted")
+    return redirect(url_for("show_interventions"))
 
 if __name__ == "__main__":
     app.run(host = os.environ.get("IP"), port=int(os.environ.get("PORT")),
