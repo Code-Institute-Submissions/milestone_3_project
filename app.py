@@ -90,7 +90,7 @@ def edit_interventions(interventions_id):
 def delete_interventions(interventions_id):
     mongo.db.interventions.remove({"_id": ObjectId(interventions_id)})
     flash("Intervention successfully deleted")
-    return redirect(url_for("show_interventions"))
+    return render_template("delete_interventions.html")
 
 if __name__ == "__main__":
     app.run(host = os.environ.get("IP"), port=int(os.environ.get("PORT")),
