@@ -12,7 +12,11 @@
             <!-- category selection -->
 			<div class="row">
 			
-                       
+                 {% for interventions in interventions %}
+                           
+                                <option value="{{ interventions.interventions_name }}" selected>{{ interventions.interventions_name }}</option>
+                      
+                        {% endfor %}
                   
 				
 				</div>

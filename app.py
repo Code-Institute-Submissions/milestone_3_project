@@ -57,7 +57,7 @@ def add_interventions():
             "rating": request.form.get("rating"),
             "duration": request.form.get("duration"),
             "resources": request.form.get("resources"),
-            "cost": request.form.get("Cost")
+            "cost": request.form.get("cost")
         }
         mongo.db.interventions.insert_one(interventions)
         flash("Task Successfully Added")

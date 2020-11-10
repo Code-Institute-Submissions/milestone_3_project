@@ -13,11 +13,13 @@
    {% for interventions in interventions %}
 
     <div class="row">
-        <div class="col s12 m12 l12 cards"><h6> {{ interventions.name }} </h6><br>
-        <h7> Intervention name: </h7>{{ interventions.sen }}<br>
-        {{ interventions.rating }}<br>
-        {{ interventions.resources }}<br>
-        {{ interventions.cost }}<br>
+        <div class="col s12 m12 l12 cards"><br>
+        <h7> Intervention name: </h7> {{ interventions.name}} <br>
+        <h7> Intervention sen: </h7> {{ interventions.sen }}<br>
+        <h7> Intervention rating: </h7> {{ interventions.rating }}<br>
+        <h7> Intervention duration: </h7> {{ interventions.duration }}<br>
+        <h7> Intervention resources: </h7> {{ interventions.resources }}<br>
+        <h7> Intervention cost: </h7> {{ interventions.cost }}<br>
         </div>
 
     <div class="card-action">
