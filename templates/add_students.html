@@ -1,10 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h2> Add Students </h2>
-
-
 <div class="container">
+
+<h2> Add Students </h2>
 
 <div class="row card-panel grey-lighten-5">
         <form class="col s12" method="POST" action="{{ url_for('add_students') }}">
@@ -13,16 +12,16 @@
 <div class="row">
                 <div class="input-field col s12 m6 l6">
                     <i class="fas fa-graduation-cap prefix light-blue-text text-darken-4"></i>
-                    <input id="students_name" name="students_name" minlength="5" maxlength="50" 
+                    <input id="name" name="name" minlength="5" maxlength="50" 
                         type="text" class="validate" required>
-                    <label for="students_name">Student Name</label>
+                    <label for="name">Student Name</label>
                 </div>
 
                 <div class="input-field col s12 m6 l6">
                     <i class="fas fa-users prefix light-blue-text text-darken-4"></i>
-                    <textarea id="student_class" name="student_class" minlength="5"
+                    <textarea id="class" name="class" minlength="5"
                     maxlength="50" class="materialize-textarea validate" required></textarea>
-                    <label for="student_class">Student Class</label>
+                    <label for="class">Student Class</label>
                 </div>
 
 </div>
@@ -64,6 +63,16 @@
                 </div>
 </div>
 
+
+<!-- Submit button -->
+<div class="row">
+                <div class="col s12 center-align">
+                    <button type="submit" class="btn-large light-blue darken-1 text-shadow">
+                        Add Student <i class="fas fa-plus-square right"></i>
+                    </button>
+                </div>
+            
+</div>
 
 
 </form>

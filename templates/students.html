@@ -1,38 +1,39 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h2> Your Students </h2>
+   
 
- <div class="container row card-panel grey-lighten-5">
-        <form class="col s12" method="POST" action="{{ url_for('show_students') }}">
-            <div class="row">
-                <div class="input-field col s4">
-                    <select id="student_name" name="student_name" class="validate" required>
-                        <option value="" disabled selected>Choose Students</option>
-                        {% for student in studentss %}
-                            <option value ="{{ students.name }}">{{ student.name }}</option>
-                        {% endfor %}
-                    </select>
-                    <label>Students</label>
+ <div class="container">
+
+             <h2> Your Students </h2>
+       
+    {% for students in students %}
+                            
+    <div class="row">
+        <div class="col s12 m12 l12 cards"><br>
+        <h7> name: </h7> {{ students.name }} <br>
+        <h7> class: </h7> {{ students.class }}<br>
+        <h7> sen: </h7> {{ students.sen }}<br>
+        <h7> start date: </h7> {{ students.start_date }}<br>
+        <h7> end date: </h7> {{ students.end_date }}<br>
+        <h7> Intervention: </h7> {{ students.intervention }}<br>
+        </div>
+                        
+                        
+    {% endfor %}
+                
+                   
                 </div>
             </div>
-        </form>
+      
     
                
 
 
- </div>
 
 
 
 
-    {% for student in students %}
-        {{ student.name }}<br>
-        {{ student.class }}<br>
-        {{ student.sen }}<br>
-        {{ student.start_date }}<br>
-        {{ student.end_date }}<br>
-        {{ student.intervention }}<br>
-    {% endfor %}
+  
 
 {% endblock %}

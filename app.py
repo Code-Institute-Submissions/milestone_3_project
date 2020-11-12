@@ -42,10 +42,25 @@ def about_page():
     return render_template("about.html")
 
 
-@app.route("/add_students")
+@app.route("/add_students", methods=["GET", "POST"])
 def add_students():
-    students = list(mongo.db.students.find())
-    return render_template("add.html", students=students)
+    if request.method == "POST":
+        students = {
+            "name": request.form.get("name"),
+            "class": request.form.get("class"),
+            "sen": request.form.get("sen"),
+            "start_date": request.form.get("start_date"),
+            "end_date": request.form.get("end_date"),
+            "intervention": request.form.get("intervention")
+        }
+        mongo.db.students.insert_one(students)
+        flash("Student succesfully added!")
+        return redirect(url_for("add_students"))
+    else:
+        return render_template("add_students.html")
+    
+    students = mongo.db.students.find().sort("name", 1)
+    return render_template("add_students", students=students)
 
 
 @app.route("/add_interventions", methods=["GET", "POST"])
