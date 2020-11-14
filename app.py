@@ -66,16 +66,17 @@ def add_students():
 @app.route("/edit_students/<students_id>", methods=["GET", "POST"])
 def edit_students(students_id):
     if request.method == "POST":
-        submit = {
+        update = {
             "name": request.form.get("name"),
             "class": request.form.get("class"),
-            "rsen": request.form.get("sen"),
+            "sen": request.form.get("sen"),
             "start_date": request.form.get("start_date"),
             "end_date": request.form.get("end_date"),
             "intervention": request.form.get("intervention")
         }
-        mongo.db.students.update({"_id": ObjectId(students_id)}, submit)
+        mongo.db.students.update({"_id": ObjectId(students_id)}, update)
         flash("Students Successfully Updated")
+
     students = mongo.db.students.find_one({"_id": ObjectId(students_id)})
     return render_template("edit_students.html", students=students)
 
