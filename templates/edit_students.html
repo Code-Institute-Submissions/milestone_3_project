@@ -3,7 +3,7 @@
 
 
 
-<h1> Edit Success </h1>
+<h1> Edit</h1>
 
  <h3 class="light-blue-text text-darken-4 center-align">Edit Task</h3>
 
@@ -51,33 +51,41 @@
                     <label for="sen">Student Need</label>
                 </div>
             </div>
-            <!-- due date picker -->
+            <!-- Interventions -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
-                    <input id="start_date" name="start_date" type="text"
-                        value="{{ students.start_date }}" class="datepicker validate" required>
-                    <label for="start_date">Start Date</label>
+                    <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
+                    <input id="intervention" name="intervention" minlength="5" maxlength="50"
+                        value="{{ students.intervention }}" type="text" class="validate" required>
+                    <label for="class">Intervention</label>
                 </div>
             </div>
            
-            <div class="row">
-                <div class="input-field col s12">
+           <div class="row">
+                <div class="input-field col s12 m6 l6">
                     <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
-                    <input id="end_date" name="end_date" type="text"
-                        value="{{ students.end_date }}" class="datepicker validate" required>
-                    <label for="end_date">End Date</label>
+                    <input id="start_date" name="start_date" 
+                        type="text" class="datepicker validate" required>
+                    <label for="start_date">Start Date</label>
                 </div>
-            </div>
 
-            <div class="row">
-                <div class="input-field col s12">
+                <div class="input-field col s12 m6 l6">
+                <div class="switch">
                     <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
-                    <input id="intervention" name="intervention" type="text"
-                        value="{{ students.intervention }}" class="datepicker validate" required>
-                    <label for="intervention">Due Date</label>
+                    <input type="checkbox" id="review_due" name="review_due"> 
+                    <div class="switch">
+                    </div>
+                    <label> Review due </label>
+                    
+                <label>
+                Off
+                <input type="checkbox">
+                <span class="lever"></span>
+                On
+                </label>
                 </div>
-            </div>
+                </div>
+</div>
 
 
             <!-- submit button -->

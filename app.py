@@ -45,37 +45,37 @@ def about_page():
 @app.route("/add_students", methods=["GET", "POST"])
 def add_students():
     if request.method == "POST":
+        review_due = "on" if request.form.get("review_due") else "off"
         students = {
             "name": request.form.get("name"),
             "class": request.form.get("class"),
             "sen": request.form.get("sen"),
             "start_date": request.form.get("start_date"),
-            "end_date": request.form.get("end_date"),
+            "review_due": review_due,
             "intervention": request.form.get("intervention")
         }
         mongo.db.students.insert_one(students)
         flash("Student succesfully added!")
-        return redirect(url_for("add_students"))
+        return redirect(url_for("show_students"))
     else:
         return render_template("add_students.html")
-        
-    students = mongo.db.students.find().sort("name", 1)
-    return render_template("add_students", students=students)
 
 
 @app.route("/edit_students/<students_id>", methods=["GET", "POST"])
 def edit_students(students_id):
     if request.method == "POST":
+        review_due = "on" if request.form.get("review_due") else "off"
         update = {
             "name": request.form.get("name"),
             "class": request.form.get("class"),
             "sen": request.form.get("sen"),
             "start_date": request.form.get("start_date"),
-            "end_date": request.form.get("end_date"),
+            "review_due": review_due,
             "intervention": request.form.get("intervention")
         }
         mongo.db.students.update({"_id": ObjectId(students_id)}, update)
         flash("Students Successfully Updated")
+        return redirect(url_for("show_students"))
 
     students = mongo.db.students.find_one({"_id": ObjectId(students_id)})
     return render_template("edit_students.html", students=students)

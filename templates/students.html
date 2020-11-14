@@ -7,6 +7,9 @@
 
              <h2> Your Students </h2>
        
+    
+
+
     {% for students in students %}
                             
     <div class="row">
@@ -14,10 +17,16 @@
         <h7> name: </h7> {{ students.name }} <br>
         <h7> class: </h7> {{ students.class }}<br>
         <h7> sen: </h7> {{ students.sen }}<br>
-        <h7> start date: </h7> {{ students.start_date }}<br>
-        <h7> end date: </h7> {{ students.end_date }}<br>
         <h7> Intervention: </h7> {{ students.intervention }}<br>
+        <h7> start date: </h7> {{ students.start_date }}<br>
+        <h7> Review due: </h7>{{ students.review_due }}
+         <i class="fas fa-exclamation-circle light-blue-text text-lighten-2 tooltipped"
+                            data-position="right" data-tooltip="URGENT!"></i>
+        
+        
         </div>
+
+     
 
     <div class="card-action">
                         <a href="{{ url_for('edit_students', students_id=students._id) }}" class="btn green accent-4">Edit</a>

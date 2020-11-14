@@ -26,22 +26,29 @@
 
 </div>
 
-<div class="row">
 
-                <div class="input-field col s12 m12 l12">
-                    <i class="fas fa-clipboard prefix light-blue-text text-darken-4"></i>
-                    <input id="sen" name="sen" 
-                        type="text" class="datepicker validate" required>
-                    <label for="sen">SEN</label>
-                </div>
-</div>
+
+                
+    <div class="input-field col s12">
+    <i class="fas fa-clipboard prefix light-blue-text text-darken-4"></i>
+    <select id ="sen" name="sen" class="validate" required>
+      <option value="" disabled selected>Choose your option</option>
+      <option value="Attention">Attention</option>
+      <option value="Understanding">Understanding</option>
+      <option value="Expression">Expression</option>
+      <option value="Speech">Speech</option>
+    </select>
+    <label>Area of Need for Communication</label>
+  </div>
+			
+
 
 
 <div class="row">
                 <div class="input-field col s12 m12 l12">
                     <i class="fas fa-tasks prefix light-blue-text text-darken-4"></i>
                     <input id="intervention" name="intervention" 
-                        type="text" class="datepicker validate" required>
+                        type="text" class="validate" required>
                     <label for="intervention">Intervention</label>
                 </div>
 </div>
@@ -56,12 +63,23 @@
                 </div>
 
                 <div class="input-field col s12 m6 l6">
+                <div class="switch">
                     <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
-                    <input id="end_date" name="end_Date" 
-                        type="text" class="datepicker validate" required>
-                    <label for="end_date">End Date</label>
+                    <input type="checkbox" id="review_due" name="review_due"> 
+                    <div class="switch">
+                    </div>
+                    <label> Review due </label>
+                    
+                <label>
+                Off
+                <input type="checkbox">
+                <span class="lever"></span>
+                On
+                </label>
+                </div>
                 </div>
 </div>
+
 
 
 <!-- Submit button -->
@@ -76,5 +94,6 @@
 
 
 </form>
+</div>
 </div>
 {% endblock %}
