@@ -58,9 +58,33 @@ def add_students():
         return redirect(url_for("add_students"))
     else:
         return render_template("add_students.html")
-    
+        
     students = mongo.db.students.find().sort("name", 1)
     return render_template("add_students", students=students)
+
+
+@app.route("/edit_students/<students_id>", methods=["GET", "POST"])
+def edit_students(students_id):
+    if request.method == "POST":
+        submit = {
+            "name": request.form.get("name"),
+            "class": request.form.get("class"),
+            "rsen": request.form.get("sen"),
+            "start_date": request.form.get("start_date"),
+            "end_date": request.form.get("end_date"),
+            "intervention": request.form.get("intervention")
+        }
+        mongo.db.students.update({"_id": ObjectId(students_id)}, submit)
+        flash("Students Successfully Updated")
+    students = mongo.db.students.find_one({"_id": ObjectId(students_id)})
+    return render_template("edit_students.html", students=students)
+
+
+@app.route("/delete_students/<students_id>")
+def delete_students(students_id):
+    mongo.db.students.remove({"_id": ObjectId(students_id)})
+    flash("student successfully deleted")
+    return render_template("delete_students.html")
 
 
 @app.route("/add_interventions", methods=["GET", "POST"])

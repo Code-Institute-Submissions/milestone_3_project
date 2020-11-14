@@ -8,13 +8,13 @@
  <h3 class="light-blue-text text-darken-4 center-align">Edit Task</h3>
 
     <div class="row card-panel grey lighten-5">
-        <form class="col s12" method="POST" action="{{ url_for('edit_interventions', interventions_id=interventions._id) }}">
+        <form class="col s12" method="POST" action="{{ url_for('edit_students', students_id=students._id) }}">
             <!-- category selection -->
 			<div class="row">
 			
-                 {% for interventions in interventions %}
+                 {% for students in students %}
                            
-                                <option value="{{ interventions.interventions_name }}" selected>{{ interventions.interventions_name }}</option>
+                                <option value="{{ students.students_name }}" selected>{{ students.students_name }}</option>
                       
                         {% endfor %}
                   
@@ -25,47 +25,47 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
-                    <input id="sen" name="sen" minlength="5" maxlength="50"
-                        value="{{ interventions.sen }}" type="text" class="validate" required>
-                    <label for="sen">Task Name</label>
+                    <input id="class" name="class" minlength="5" maxlength="50"
+                        value="{{ students.class }}" type="text" class="validate" required>
+                    <label for="class">Student Class</label>
                 </div>
             </div>
             <!-- task description -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
-                    <textarea id="rating" name="rating" minlength="5"
+                    <textarea id="sen" name="sen" minlength="5"
                         maxlength="200" class="materialize-textarea validate" required>
-                        {{- interventions.rating -}}
+                        {{- students.sen -}}
                     </textarea>
-                    <label for="rating">Task Description</label>
+                    <label for="sen">Student Need</label>
                 </div>
             </div>
             <!-- due date picker -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
-                    <input id="duration" name="duration" type="text"
-                        value="{{ interventions.duration }}" class="datepicker validate" required>
-                    <label for="duration">Due Date</label>
+                    <input id="start_date" name="start_date" type="text"
+                        value="{{ students.start_date }}" class="datepicker validate" required>
+                    <label for="start_date">Start Date</label>
                 </div>
             </div>
            
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
-                    <input id="resources" name="resources" type="text"
-                        value="{{ interventions.resources }}" class="datepicker validate" required>
-                    <label for="resources">Due Date</label>
+                    <input id="end_date" name="end_date" type="text"
+                        value="{{ students.end_date }}" class="datepicker validate" required>
+                    <label for="end_date">End Date</label>
                 </div>
             </div>
 
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
-                    <input id="cost" name="cost" type="text"
-                        value="{{ interventions.cost }}" class="datepicker validate" required>
-                    <label for="cost">Due Date</label>
+                    <input id="intervention" name="intervention" type="text"
+                        value="{{ students.intervention }}" class="datepicker validate" required>
+                    <label for="intervention">Due Date</label>
                 </div>
             </div>
 
@@ -74,11 +74,11 @@
             <div class="row">
                 <div class="col s12 center-align">
                     <!-- cancel button -->
-                    <a href="{{ url_for('show_interventions') }}" class="btn-large red text-shadow">
+                    <a href="{{ url_for('edit_students') }}" class="btn-large red text-shadow">
                         Cancel <i class="fas fa-times-circle right"></i>
                     </a>
                     <button type="submit" class="btn-large light-blue darken-1 text-shadow">
-                        Edit Task <i class="fas fa-edit right"></i>
+                        Edit Students <i class="fas fa-edit right"></i>
                     </button>
                 </div>
             </div>
@@ -86,7 +86,3 @@
     </div>
 
 {% endblock %}
-
-
-
-
