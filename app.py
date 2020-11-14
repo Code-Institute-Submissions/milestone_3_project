@@ -45,13 +45,11 @@ def about_page():
 @app.route("/add_students", methods=["GET", "POST"])
 def add_students():
     if request.method == "POST":
-        review_due = "on" if request.form.get("review_due") else "off"
         students = {
             "name": request.form.get("name"),
             "class": request.form.get("class"),
             "sen": request.form.get("sen"),
-            "start_date": request.form.get("start_date"),
-            "review_due": review_due,
+            "review_date": request.form.get("review_date"),
             "intervention": request.form.get("intervention")
         }
         mongo.db.students.insert_one(students)
@@ -64,13 +62,11 @@ def add_students():
 @app.route("/edit_students/<students_id>", methods=["GET", "POST"])
 def edit_students(students_id):
     if request.method == "POST":
-        review_due = "on" if request.form.get("review_due") else "off"
         update = {
             "name": request.form.get("name"),
             "class": request.form.get("class"),
             "sen": request.form.get("sen"),
-            "start_date": request.form.get("start_date"),
-            "review_due": review_due,
+            "review_date": request.form.get("review_date"),
             "intervention": request.form.get("intervention")
         }
         mongo.db.students.update({"_id": ObjectId(students_id)}, update)
@@ -93,7 +89,6 @@ def add_interventions():
     if request.method == "POST":
         interventions = {
             "name": request.form.get("name"),
-            "sen": request.form.get("sen"),
             "rating": request.form.get("rating"),
             "duration": request.form.get("duration"),
             "resources": request.form.get("resources"),
@@ -114,7 +109,6 @@ def edit_interventions(interventions_id):
     if request.method == "POST":
         submit = {
             "name": request.form.get("name"),
-            "sen": request.form.get("sen"),
             "rating": request.form.get("rating"),
             "duration": request.form.get("duration"),
             "resources": request.form.get("resources"),
@@ -122,6 +116,8 @@ def edit_interventions(interventions_id):
         }
         mongo.db.interventions.update({"_id": ObjectId(interventions_id)}, submit)
         flash("Task Successfully Updated")
+        return redirect(url_for("show_interventions"))
+        
     interventions = mongo.db.interventions.find_one({"_id": ObjectId(interventions_id)})
     return render_template("edit_interventions.html", interventions=interventions)
 

@@ -3,7 +3,7 @@
 
 
 
-<h1> Edit Success </h1>
+<h1> Edit </h1>
 
  <h3 class="light-blue-text text-darken-4 center-align">Edit Task</h3>
 
@@ -13,21 +13,19 @@
 			<div class="row">
 			
                  {% for interventions in interventions %}
-                           
-                                <option value="{{ interventions.interventions_name }}" selected>{{ interventions.name }}</option>
-                      
-                        {% endfor %}
+
+                    <option value="{{ interventions.name }}" selected>{{ interventions.name }}</option>
                   
-				
+				{% endfor %}
 				</div>
 		
             <!-- task name -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
-                    <input id="sen" name="sen" minlength="5" maxlength="50"
-                        value="{{ interventions.sen }}" type="text" class="validate" required>
-                    <label for="sen">Task Name</label>
+                    <input id="name" name="name" minlength="5" maxlength="50"
+                        value="{{ interventions.name }}" type="text" class="materialize-textarea validate" required>
+                    <label for="name">Intervention Name</label>
                 </div>
             </div>
             <!-- task description -->
@@ -38,7 +36,7 @@
                         maxlength="200" class="materialize-textarea validate" required>
                         {{- interventions.rating -}}
                     </textarea>
-                    <label for="rating">Task Description</label>
+                    <label for="rating">Rating</label>
                 </div>
             </div>
             <!-- due date picker -->
@@ -46,8 +44,8 @@
                 <div class="input-field col s12">
                     <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
                     <input id="duration" name="duration" type="text"
-                        value="{{ interventions.duration }}" class="datepicker validate" required>
-                    <label for="duration">Due Date</label>
+                        value="{{ interventions.duration }}" class="materialize-textarea validate" required>
+                    <label for="duration">Duration</label>
                 </div>
             </div>
            
@@ -55,19 +53,25 @@
                 <div class="input-field col s12">
                     <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
                     <input id="resources" name="resources" type="text"
-                        value="{{ interventions.resources }}" class="datepicker validate" required>
-                    <label for="resources">Due Date</label>
+                        value="{{ interventions.resources }}" class="materialize-textarea validate" required>
+                    <label for="resources">Resources</label>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
-                    <input id="cost" name="cost" type="text"
-                        value="{{ interventions.cost }}" class="datepicker validate" required>
-                    <label for="cost">Due Date</label>
-                </div>
-            </div>
+            <!-- Cost -->
+<div class = "row"> 
+    <div class="input-field col s12 m6 l6">
+    <i class="fas fa-clipboard prefix light-blue-text text-darken-4"></i>
+    <select id ="cost" name="cost" class="validate" required>
+      <option value="" disabled selected>Choose One</option>
+      <option value="Free">Free</option>
+      <option value="Registration Required £">Registration Required £</option>
+      <option value="Subscription Required ££">Subscription Required ££</option>
+      <option value="Training Required £££">Training Required £££</option>
+    </select>
+    <label>Cost of intervention</label>
+  </div>
+</div>
 
 
             <!-- submit button -->
@@ -78,7 +82,7 @@
                         Cancel <i class="fas fa-times-circle right"></i>
                     </a>
                     <button type="submit" class="btn-large light-blue darken-1 text-shadow">
-                        Edit Task <i class="fas fa-edit right"></i>
+                        Edit Interventions <i class="fas fa-edit right"></i>
                     </button>
                 </div>
             </div>

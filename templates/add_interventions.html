@@ -22,16 +22,9 @@
 <!-- SEN Area and Rating -->
 <div class="row">
                 <div class="input-field col s12 m6 l6">
-                    <i class="fas fa-clipboard-list prefix light-blue-text text-darken-4"></i>
-                    <textarea id="sen" name="sen" minlength="5"
-                    maxlength="50" class="materialize-textarea validate" required></textarea>
-                    <label for="sen">SEN Area</label>
-                </div>
-
-                <div class="input-field col s12 m6 l6">
                     <i class="fas fa-smile prefix light-blue-text text-darken-4"></i>
                     <input id="rating" name="rating" 
-                        type="text" class="datepicker validate" required>
+                        type="text" class="materialize-textarea validate" required>
                     <label for="rating">Rating</label>
                 </div>
 </div>
@@ -41,7 +34,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-clock prefix light-blue-text text-darken-4"></i>
                     <input id="duration" name="duration" 
-                        type="text" class="datepicker validate" required>
+                        type="text" class="materialize-textarea validate" required>
                     <label for="duration">Duration</label>
                 </div>
 </div>
@@ -51,20 +44,26 @@
                 <div class="input-field col s12">
                     <i class="fas fa-suitcase prefix light-blue-text text-darken-4"></i>
                     <input id="resources" name="resources" 
-                        type="text" class="datepicker validate" required>
+                        type="text" class="materialize-textarea validate" required>
                     <label for="resources">Resources Required</label>
                 </div>
 </div>
 
 <!-- Cost -->
-<div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-pound-sign prefix light-blue-text text-darken-4"></i>
-                    <input id="cost" name="cost" 
-                        type="text" class="datepicker validate" required>
-                    <label for="cost">Cost</label>
-                </div>
+<div class = "row"> 
+    <div class="input-field col s12 m6 l6">
+    <i class="fas fa-clipboard prefix light-blue-text text-darken-4"></i>
+    <select id ="cost" name="cost" class="validate" required>
+      <option value="" disabled selected>Cost</option>
+      <option value="Free">Free</option>
+      <option value="Registration Required £">Registration Required £</option>
+      <option value="Subscription Required ££">Subscription Required ££</option>
+      <option value="Training Required £££">Training Required £££</option>
+    </select>
+    <label>Cost of intervention</label>
+  </div>
 </div>
+
 
 
 <!-- Submit button -->
