@@ -1,10 +1,26 @@
 
-
 .left-align {
     padding-left: 9px;
 }
 
-.cards {
+.align-center {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.interventions {
     background-color: lightblue;
-    border: 12pt;
+    padding: 9px;
+    font-size: 18px;
+    border: 2pt solid white;
+}
+
+.white {
+    
+    margin: 12px;
+    border: 2pt solid white;
+}
+
+.info-cards {
+    border: 1pt solid black;
 }

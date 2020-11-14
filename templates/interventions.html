@@ -10,29 +10,44 @@
        
  </div>
 
-   {% for interventions in interventions %}
+ <div class="row align-center info-cards">
+    <div class="col s12 m4 l2"><p>s12 m4</p></div>
+    <div class="col s12 m4 l8"><p>s12 m4</p></div>
+    <div class="col s12 m4 l2"><p>s12 m4</p></div>
+  </div>
 
-    <div class="row">
-        <div class="col s12 m12 l12 cards"><br>
-        <h7> Name: </h7> {{ interventions.name}} <br>
-        <h7> Rating: </h7> {{ interventions.rating }}<br>
-        <h7> Duration: </h7> {{ interventions.duration }}<br>
-        <h7> Resources: </h7> {{ interventions.resources }}<br>
-        <h7> Cost: </h7> {{ interventions.cost }}<br>
+
+
+<div class="row align-center interventions">
+
+    {% for interventions in interventions %}
+
+    <!-- row add class for card borders -->
+        <div class ="row">
+            <div class="col s12 m12 l12">
+                <h5> <i class="fas fa-list light-blue-text text-darken-4"></i> Name: {{ interventions.name}} </h5>  <br>
+            </div>
+
+            <div class="col s12 m12 l12">
+                <h7> <i class="fas fa-smile light-blue-text text-darken-4"></i> Rating: </h7> {{ interventions.rating }}<br>
+                <h7> <i class="fas fa-clock light-blue-text text-darken-4"></i> Duration: </h7> {{ interventions.duration }}<br>
+                <h7> <i class="fas fa-suitcase light-blue-text text-darken-4"></i> Resources: </h7> {{ interventions.resources }}<br>
+                <h7> <i class="fas fa-pound-sign light-blue-text text-darken-4"></i> Cost: </h7> {{ interventions.cost }}<br>
+            </div>
+          
+            <div class="col s12 m12 l12">
+                    <a href="{{ url_for('edit_interventions', interventions_id=interventions._id) }}" class="btn green accent-4">Edit</a>
+                    <a href="{{ url_for('delete_interventions', interventions_id=interventions._id) }}" class="btn light-blue lighten-1">Delete</a>
+            </div>
+
+            <div class="col s12 m12 l12 white"></div>
         </div>
+           
 
-    <div class="card-action">
-                        <a href="{{ url_for('edit_interventions', interventions_id=interventions._id) }}" class="btn green accent-4">Edit</a>
-                        <a href="{{ url_for('delete_interventions', interventions_id=interventions._id) }}" class="btn light-blue lighten-1">Delete</a>
-    </div>
-
-    {% endfor %}
-
+     {% endfor %}    
+           
+</div>
    
- </div>
-
-  
-        
-    
+</div>
 
 {% endblock %}
