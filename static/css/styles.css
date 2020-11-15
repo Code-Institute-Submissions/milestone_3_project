@@ -34,10 +34,55 @@
     width: 95%;
 }
 
-.fa-smile {
+.collapsible-body {
+    font-size: 14pt;
+}
+
+
+
+
+
+/*  Font awesome. */
+
+.fa-smile, .fa-pound-sign {
     color: green;
 }
 
-.collapsible-body {
-    font-size: 14pt;
+.fa-laptop-house {
+    color: darkslateblue;
+}
+
+.fa-clock, .fa-hourglass-half {
+    color: brown;
+}
+
+.fa-suitcase {
+    color: darkgoldenrod;
+}
+
+.fa-award, .fa-wifi {
+    color: blue;
+}
+
+.fa-chalkboard-teacher {
+    color: slategrey;
+}
+
+.fa-calendar-alt {
+    color: seagreen;
+}
+
+.fa-list {
+    color: cadetblue;
+}
+
+
+
+
+.gradient-banner {
+    background-image: linear-gradient(#2980B9, #6DD5FA, #ffffff);
+}
+
+.gradient-banner-2 {
+    background-image: linear-gradient(#EF3B36,#ff9068,  #ffffff)
 }

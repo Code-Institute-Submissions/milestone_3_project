@@ -5,7 +5,7 @@
 
 
 
- <h3 class="light-blue-text text-darken-4 center-align">Edit Interventions</h3>
+ <h3 class="center-align">Edit Interventions</h3>
 
 <div class = "container">
     <div class="row card-panel grey lighten-5">
@@ -15,7 +15,7 @@
             <!-- task name -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-list prefix light-blue-text text-darken-4"></i>
+                    <i class="fas fa-list prefix"></i>
                     <input id="name" name="name" minlength="5" maxlength="50"
                         value="{{ interventions.name }}" type="text" class="materialize-textarea validate" required>
                     <label for="name">Intervention Name</label>
@@ -24,7 +24,7 @@
             <!-- task description -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-smile prefix light-blue-text text-darken-4"></i>
+                    <i class="fas fa-smile prefix"></i>
                     <textarea id="rating" name="rating" minlength="5"
                         maxlength="200" class="materialize-textarea validate" required>
                         {{- interventions.rating -}}
@@ -35,7 +35,7 @@
             <!-- due date picker -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-clock prefix light-blue-text text-darken-4"></i> 
+                    <i class="fas fa-clock prefix"></i> 
                     <input id="duration" name="duration" type="text"
                         value="{{ interventions.duration }}" class="materialize-textarea validate" required>
                     <label for="duration">Duration</label>
@@ -44,7 +44,7 @@
            
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-suitcase prefix light-blue-text text-darken-4"></i>
+                    <i class="fas fa-suitcase prefix"></i>
                     <input id="resources" name="resources" type="text"
                         value="{{ interventions.resources }}" class="materialize-textarea validate" required>
                     <label for="resources">Resources</label>
@@ -54,7 +54,7 @@
             <!-- Cost -->
 <div class = "row"> 
     <div class="input-field col s12 m6 l6">
-    <i class="fas fa-pound-sign prefix light-blue-text text-darken-4"></i>
+    <i class="fas fa-pound-sign prefix"></i>
     <select id ="cost" name="cost" class="validate" required>
       <option value="" disabled selected>Choose One</option>
       <option value="Free">Free</option>

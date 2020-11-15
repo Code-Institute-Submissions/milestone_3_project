@@ -32,14 +32,14 @@ def show_interventions():
     return render_template("interventions.html", interventions=interventions)
 
 
-@app.route("/sample_page")
-def sample_page():
-    return render_template("sample.html")
-
-
 @app.route("/about_page")
 def about_page():
     return render_template("about.html")
+
+
+@app.route("/help_page")
+def help_page():
+    return render_template("help.html")
 
 
 @app.route("/add_training", methods=["GET", "POST"])
