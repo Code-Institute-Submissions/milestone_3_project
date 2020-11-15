@@ -33,3 +33,11 @@
     margin: 0 auto;
     width: 95%;
 }
+
+.fa-smile {
+    color: green;
+}
+
+.collapsible-body {
+    font-size: 14pt;
+}
