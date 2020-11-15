@@ -9,10 +9,10 @@
 }
 
 .interventions {
-    background-color: lightblue;
+    margin: 0 auto;
     padding: 9px;
-    font-size: 18px;
-    border: 2pt solid white;
+    text-align: center;
+    font-size: 18pt;
 }
 
 .white {
@@ -23,4 +23,13 @@
 
 .info-cards {
     border: 1pt solid black;
+}
+
+.attention, .understanding, .expression, .speech {
+    border: 1pt solid black;
+}
+
+.collapsible {
+    margin: 0 auto;
+    width: 95%;
 }

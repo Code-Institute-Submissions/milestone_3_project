@@ -1,53 +1,90 @@
 {% extends "base.html" %}
 {% block content %}
 
-    
+  
 
 <div class= "container">
- <div class="row card-panel grey-lighten-5">
-        
-            <h2> Your Interventions </h2>
-       
- </div>
+<br>
+
+<h2 class = " card-panel align-center"> Your Interventions </h2>
+
+<br>
 
  <div class="row align-center info-cards">
-    <div class="col s12 m4 l2"><p>s12 m4</p></div>
-    <div class="col s12 m4 l8"><p>s12 m4</p></div>
-    <div class="col s12 m4 l2"><p>s12 m4</p></div>
+    <div class="col s12 m3 l3 attention"><h5>Attention</h5><br>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at aliquam elit. Pellentesque ut mi mi. 
+    </p>
+    </div>
+    <div class="col s12 m3 l3 understanding"><h5>Understanding</h5><br>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at aliquam elit. Pellentesque ut mi mi. 
+    </p>
+    </div>
+    <div class="col s12 m3 l3 expression"><h5>Expression</h5><br>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at aliquam elit. Pellentesque ut mi mi. 
+    </p>
+    </div>
+    <div class="col s12 m3 l3 speech"><h5>Speech</h5><br>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at aliquam elit. Pellentesque ut mi mi. 
+    </p>
+    </div>
   </div>
 
+<br>
 
+{% for interventions in interventions %}
 
-<div class="row align-center interventions">
+ <ul class="collapsible">
+    <li>
+      <div class="collapsible-header orange darken-2"><i class="material-icons"></i>
+            <div class = "row">
+                <div class = "col s12 m6 l6">
+                    <h5> <i class="fas fa-list light-blue-text text-darken-4"></i> Name: {{ interventions.name}} </h5>  <br>
+                </div>
 
-    {% for interventions in interventions %}
-
-    <!-- row add class for card borders -->
-        <div class ="row">
-            <div class="col s12 m12 l12">
-                <h5> <i class="fas fa-list light-blue-text text-darken-4"></i> Name: {{ interventions.name}} </h5>  <br>
+                <div class = "col s12 m6 l6">
+                    <h5> <i class="fas fa-list light-blue-text text-darken-4"></i> Website: Enter data link </h5>  <br>
+                </div>
             </div>
+      </div>
 
-            <div class="col s12 m12 l12">
-                <h7> <i class="fas fa-smile light-blue-text text-darken-4"></i> Rating: </h7> {{ interventions.rating }}<br>
+         
+
+
+      <div class="collapsible-body orange lighten-5">
+        <div class = "row">
+            <div class="col s12 m6 l6 align-center">
+                <h7><i class="fas fa-smile light-blue-text text-darken-4"></i> Rating: </h7> {{ interventions.rating }}<br>
                 <h7> <i class="fas fa-clock light-blue-text text-darken-4"></i> Duration: </h7> {{ interventions.duration }}<br>
+                
                 <h7> <i class="fas fa-suitcase light-blue-text text-darken-4"></i> Resources: </h7> {{ interventions.resources }}<br>
                 <h7> <i class="fas fa-pound-sign light-blue-text text-darken-4"></i> Cost: </h7> {{ interventions.cost }}<br>
-            </div>
-          
-            <div class="col s12 m12 l12">
-                    <a href="{{ url_for('edit_interventions', interventions_id=interventions._id) }}" class="btn green accent-4">Edit</a>
-                    <a href="{{ url_for('delete_interventions', interventions_id=interventions._id) }}" class="btn light-blue lighten-1">Delete</a>
+                <br>
+
             </div>
 
-            <div class="col s12 m12 l12 white"></div>
+             <div class="col s12 m6 l6 align-center">
+                 <a href="{{ url_for('edit_interventions', interventions_id=interventions._id) }}" class="btn green accent-4 align-center">Edit</a>
+                 <a href="{{ url_for('delete_interventions', interventions_id=interventions._id) }}" class="btn light-blue lighten-1 align-center">Delete</a>
+            </div>
+        </div>  
+
         </div>
+       
+
+     
+  
+      
+    </li>
+    </ul>
+
+    <br>
+
            
 
      {% endfor %}    
            
 </div>
    
-</div>
+
 
 {% endblock %}
