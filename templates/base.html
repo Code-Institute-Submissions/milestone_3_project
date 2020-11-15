@@ -13,9 +13,9 @@
 <body>
     <header>
     <nav class="nav-extended">
-        <div class="nav-wrapper teal darken-4 left-align">
-            <a href="#" class="brand-logo">SLCN Tracker</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger left"><i class="fas fa-bars"></i></a>
+        <div class="nav-wrapper blue darken-5 left-align">
+            <a href="{{ url_for('home_page') }}" class="brand-logo">SLCN Tracker</a>
+            <a href="..." data-target="mobile-demo" class="sidenav-trigger left"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
 <!-- Home page merge with about, delete home file and app.py functions. -->  
 
@@ -24,14 +24,14 @@
                     <li><a href="{{ url_for('about_page') }}">About</a></li>
                     <li><a href="{{ url_for('help_page') }}">Help</a></li>
             </ul>
-        <li><a class="dropdown-trigger" href="#!" data-target="dropdown5"><i class="fas fa-info-circle"></i></a></li>
+        <li><a class="dropdown-trigger" href="..." data-target="dropdown5"><i class="fas fa-info-circle"></i></a></li>
 
 <!-- Dropdown Structure Students -->
 <ul id="dropdown1" class="dropdown-content">
       <li><a href="{{ url_for('show_training') }}">Training</a></li>
                     <li><a href="{{ url_for('add_training') }}">Add Training</a></li>
 </ul>
-<li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><i class="fas fa-user-graduate"></i></a></li>
+<li><a class="dropdown-trigger" href="..." data-target="dropdown1"><i class="fas fa-user-graduate"></i></a></li>
 
 
 <!-- Dropdown Structure Interventions -->
@@ -39,7 +39,7 @@
                     <li><a href="{{ url_for('show_interventions') }}">Interventions</a></li>
                     <li><a href="{{ url_for('add_interventions') }}">Add Interventions</a></li>
 </ul>
-<li><a class="dropdown-trigger" href="#!" data-target="dropdown2"><i class="fas fa-hands-helping"></i></a></li>
+<li><a class="dropdown-trigger" href="..." data-target="dropdown2"><i class="fas fa-hands-helping"></i></a></li>
 
 <!-- End dropdowns. -->
 
@@ -51,12 +51,13 @@
     <ul class="sidenav" id="mobile-demo">
 <!-- Dropdown Help section -->
         <ul id ="dropdown6" class="dropdown-content">
-
+        
             <li><a href="{{ url_for('about_page') }}">About</a></li>
             <li><a href="{{ url_for('help_page') }}">Help</a></li>
 
         </ul>
-         <li><a class="dropdown-trigger" href="#!" data-target="dropdown6"><i class="fas fa-info-circle"></i></a></li>
+        <br />
+         <li><a class="dropdown-trigger" href="..." data-target="dropdown6"><i class="fas fa-info-circle"></i>Info</a></li>
 
 
 <!-- Dropdown Structure Intervnetions -->
@@ -64,7 +65,8 @@
                     <li><a href="{{ url_for('show_training') }}">Training</a></li>
                     <li><a href="{{ url_for('add_training') }}">Add Training</a></li>
 </ul>
-<li><a class="dropdown-trigger" href="#!" data-target="dropdown3"><i class="fas fa-user-graduate"></i></a></li>
+<br />
+<li><a class="dropdown-trigger" href="..." data-target="dropdown3"><i class="fas fa-user-graduate"></i>Training</a></li>
 <!-- End dropdown. -->
 
 
@@ -73,7 +75,8 @@
                     <li><a href="{{ url_for('show_interventions') }}">Interventions</a></li>
                     <li><a href="{{ url_for('add_interventions') }}">Add Interventions</a></li>
 </ul>
-<li><a class="dropdown-trigger" href="#!" data-target="dropdown4"><i class="fas fa-chalkboard-teacher"></i></a></li>
+<br />
+<li><a class="dropdown-trigger" href="..." data-target="dropdown4"><i class="fas fa-chalkboard-teacher"></i>Interventions</a></li>
 <!-- End dropdown. -->
 
        

@@ -37,6 +37,11 @@ def about_page():
     return render_template("about.html")
 
 
+@app.route("/home_page")
+def home_page():
+    return render_template("home.html")
+
+
 @app.route("/help_page")
 def help_page():
     return render_template("help.html")

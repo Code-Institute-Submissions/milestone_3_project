@@ -86,3 +86,11 @@
 .gradient-banner-2 {
     background-image: linear-gradient(#EF3B36,#ff9068,  #ffffff)
 }
+
+
+
+.sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
