@@ -19,10 +19,10 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/show_students")
-def show_students():
-    students = list(mongo.db.students.find())
-    return render_template("students.html", students=students)
+@app.route("/show_training")
+def show_training():
+    training = list(mongo.db.training.find())
+    return render_template("training.html", training=training)
 
 
 @app.route("/")
@@ -42,46 +42,52 @@ def about_page():
     return render_template("about.html")
 
 
-@app.route("/add_students", methods=["GET", "POST"])
-def add_students():
+@app.route("/add_training", methods=["GET", "POST"])
+def add_training():
     if request.method == "POST":
-        students = {
+        training = {
             "name": request.form.get("name"),
-            "class": request.form.get("class"),
-            "sen": request.form.get("sen"),
-            "review_date": request.form.get("review_date"),
-            "intervention": request.form.get("intervention")
+            "type": request.form.get("type"),
+            "delivery": request.form.get("delivery"),
+            "start_date": request.form.get("start_date"),
+            "duration": request.form.get("duration"),
+            "area": request.form.get("area"),
+            "qualification": request.form.get("qualification"),
+            "cost": request.form.get("cost")
         }
-        mongo.db.students.insert_one(students)
-        flash("Student succesfully added!")
-        return redirect(url_for("show_students"))
+        mongo.db.training.insert_one(training)
+        flash("Training succesfully added!")
+        return redirect(url_for("show_training"))
     else:
-        return render_template("add_students.html")
+        return render_template("add_training.html")
 
 
-@app.route("/edit_students/<students_id>", methods=["GET", "POST"])
-def edit_students(students_id):
+@app.route("/edit_training/<training_id>", methods=["GET", "POST"])
+def edit_training(training_id):
     if request.method == "POST":
         update = {
             "name": request.form.get("name"),
-            "class": request.form.get("class"),
-            "sen": request.form.get("sen"),
-            "review_date": request.form.get("review_date"),
-            "intervention": request.form.get("intervention")
+            "type": request.form.get("type"),
+            "delivery": request.form.get("delivery"),
+            "start_date": request.form.get("start_date"),
+            "duration": request.form.get("duration"),
+            "area": request.form.get("area"),
+            "qualification": request.form.get("qualification"),
+            "cost": request.form.get("cost")
         }
-        mongo.db.students.update({"_id": ObjectId(students_id)}, update)
-        flash("Students Successfully Updated")
-        return redirect(url_for("show_students"))
+        mongo.db.training.update({"_id": ObjectId(training_id)}, update)
+        flash("Training Successfully Updated")
+        return redirect(url_for("show_training"))
 
-    students = mongo.db.students.find_one({"_id": ObjectId(students_id)})
-    return render_template("edit_students.html", students=students)
+    training = mongo.db.training.find_one({"_id": ObjectId(training_id)})
+    return render_template("edit_training.html", training=training)
 
 
-@app.route("/delete_students/<students_id>")
-def delete_students(students_id):
-    mongo.db.students.remove({"_id": ObjectId(students_id)})
-    flash("student successfully deleted")
-    return render_template("delete_students.html")
+@app.route("/delete_training/<training_id>")
+def delete_training(training_id):
+    mongo.db.training.remove({"_id": ObjectId(training_id)})
+    flash("training successfully deleted")
+    return render_template("delete_training.html")
 
 
 @app.route("/add_interventions", methods=["GET", "POST"])
