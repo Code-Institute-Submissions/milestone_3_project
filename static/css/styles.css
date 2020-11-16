@@ -87,10 +87,24 @@
     background-image: linear-gradient(#EF3B36,#ff9068,  #ffffff)
 }
 
+.card-gradient-1 {
+    margin: 9px;
+    background-image: linear-gradient(#AAFFA9, #11FFBD)
+}
 
+.card-gradient-2 {
+    margin: 9px;
+    background-image: linear-gradient(#FBD786, #f7797d)
+}
 
-.sticky {
-  position: sticky;
-  top: 0;
-  width: 100%;
+.card-content {
+    font-size: 26px;
+}
+
+.padding {
+    margin: 50px;
+}
+
+.opacity {
+    opacity: 0.9;
 }
