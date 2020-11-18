@@ -19,10 +19,23 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+@app.route("/home_page")
+def home_page():
+    return render_template("home.html")
+
+
 @app.route("/show_training")
 def show_training():
     training = list(mongo.db.training.find())
     return render_template("training.html", training=training)
+
+
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    interventions = list(mongo.db.interventions.find({"$text": {"$search": query}}))
+    return render_template("interventions.html", interventions=interventions)
+
 
 
 @app.route("/")
@@ -35,11 +48,6 @@ def show_interventions():
 @app.route("/about_page")
 def about_page():
     return render_template("about.html")
-
-
-@app.route("/home_page")
-def home_page():
-    return render_template("home.html")
 
 
 @app.route("/help_page")
@@ -58,7 +66,8 @@ def add_training():
             "duration": request.form.get("duration"),
             "area": request.form.get("area"),
             "qualification": request.form.get("qualification"),
-            "cost": request.form.get("cost")
+            "cost": request.form.get("cost"),
+            "provider": request.form.get("provider")
         }
         mongo.db.training.insert_one(training)
         flash("Training succesfully added!")
@@ -78,7 +87,8 @@ def edit_training(training_id):
             "duration": request.form.get("duration"),
             "area": request.form.get("area"),
             "qualification": request.form.get("qualification"),
-            "cost": request.form.get("cost")
+            "cost": request.form.get("cost"),
+            "provider": request.form.get("provider")
         }
         mongo.db.training.update({"_id": ObjectId(training_id)}, update)
         flash("Training Successfully Updated")
@@ -100,6 +110,7 @@ def add_interventions():
     if request.method == "POST":
         interventions = {
             "name": request.form.get("name"),
+            "website": request.form.get("website"),
             "rating": request.form.get("rating"),
             "duration": request.form.get("duration"),
             "resources": request.form.get("resources"),
@@ -120,6 +131,7 @@ def edit_interventions(interventions_id):
     if request.method == "POST":
         submit = {
             "name": request.form.get("name"),
+            "website": request.form.get("website"),
             "rating": request.form.get("rating"),
             "duration": request.form.get("duration"),
             "resources": request.form.get("resources"),
