@@ -5,7 +5,7 @@ $(document).ready(function(){
     $('.tooltipped').tooltip();
     $('select').formSelect();
     $('.datepicker').datepicker()
-    
+    $('input#input_text, textarea#textarea2').characterCounter();
   });
 
 
