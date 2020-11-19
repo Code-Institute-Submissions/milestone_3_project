@@ -21,9 +21,7 @@
     border: 2pt solid white;
 }
 
-.info-cards {
-    border: 1pt solid black;
-}
+
 
 .attention, .understanding, .expression, .speech {
     border: 1pt solid black;
@@ -121,3 +119,8 @@
     flex: 1 0 auto;
   }
       
+
+
+.btn {
+    margin-bottom: 9px;
+}

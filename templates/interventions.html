@@ -11,12 +11,12 @@
     <form action="{{ url_for('search') }}" method="POST"
  class= "col s12">
     <div class="row align-wrapper center-align">
-                <div class="input-field col s12 m8">
+                <div class="input-field col s12 m6">
                     <i class="fas fa-search prefix light-blue-text text-darken-4"></i>
                     <input type="text" name="query" id="query" minlength="3" class="validate" required>
-                    <label for="query">Search Tasks</label>
+                    <label for="query">Search Interventions</label>
                 </div>
-                <div class="col s12 m4">
+                <div class="col s12 m6">
                     <a href="{{ url_for('show_interventions') }}" class="red btn text-shadow">Reset</a>
                     <button type="submit" class="light-blue darken-1 btn text-shadow">
                         <i class="fas fa-search left"></i> Search
@@ -66,29 +66,27 @@
     <ul class="collapsible">
         <li>
             <div class="collapsible-header row  gradient-banner">
-                    <div class="col s12 m6 l6">
-                        <h5><i class="fas fa-list"></i></h5><p> Name: "{{ interventions.name }}></p>
+                    <div class="col s12 m12 l12">
+                        <h5><i class="fas fa-list"></i> Name: {{ interventions.name }}</h5>
                      
                     </div>
            
     
-                    <div class="col s12 m6 l6">
-                        <h5><i class="fas fa-wifi"></i> Website: </h5><p>{{ interventions.website }}</p>
-                        <br />
-                    </div>
+                   
             </div>
 
             <div class="collapsible-body">
                 <div class="row">
-                    <div class="col s12 m6 l6 align-center">
+                    <div class="col s12 m9 l9 left">
                         <h7><i class="fas fa-smile"></i> Rating: </h7> {{ interventions.rating }}<br />
                         <h7> <i class="fas fa-clock"></i> Duration: </h7> {{ interventions.duration }}<br />
                         <h7> <i class="fas fa-suitcase"></i> Resources: </h7> {{ interventions.resources }}<br />
                         <h7> <i class="fas fa-pound-sign"></i> Cost: </h7> {{ interventions.cost }}<br />
+                        <h7><i class="fas fa-wifi"></i> Website: </h7><p>{{ interventions.website }}</p>
                         <br />
                     </div>
 
-                    <div class="col s12 m6 l6 align-center">
+                    <div class="col s12 m3 l3 align-center">
                     <br />
                         <a href="{{ url_for('edit_interventions', interventions_id=interventions._id) }}" class="btn green accent-4 align-center">Edit</a>
                         <a href="{{ url_for('delete_interventions', interventions_id=interventions._id) }}" class="btn red lighten-1 align-center">Delete</a>
