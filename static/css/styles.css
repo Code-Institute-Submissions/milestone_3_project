@@ -124,3 +124,8 @@
 .btn, .btn-large {
     margin-bottom: 12px;
 }
+
+
+.collapsible-body {
+    overflow-wrap: break-word;
+}
