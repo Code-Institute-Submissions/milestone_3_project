@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,100&display=swap" rel="stylesheet">
     {% block styles %}
     {% endblock %}
     <title>Communication Tracker</title>
@@ -13,7 +15,7 @@
 <body>
     <header>
     <div class="navbar-fixed">
-    <nav class="nav-extended blue opacity">
+    <nav class="nav-extended grey darken-3 opacity">
         <div class="nav-wrapper left-align">
             <a href="{{ url_for('home_page') }}" class="brand-logo">SLCN Tracker</a>
             <a href="..." data-target="mobile-demo" class="sidenav-trigger left"><i class="fas fa-bars"></i></a>
@@ -93,7 +95,7 @@
 </main>
 
     
-    <footer class="page-footer blue">
+    <footer class="page-footer grey darken-4">
           <div class="container footer">
           
               <div class="row">

@@ -4,11 +4,50 @@
 <div class="container">
     <br />
 
-    <h2 class="card-panel align-center">Your Interventions</h2>
+    <h2 class="card-panel align-center deep-orange lighten-2">Your Interventions</h2>
 
     <br />
 
-<div class="row card-panel grey-lighten-5">
+ <div class="white">
+        </div>
+
+    
+
+        <div class="white">
+        </div>
+
+
+    <div class="row align-center search">
+        <div class="col s12 m12 l12 attention grey-gradient">
+            <h5 class="deep-orange-text">Attention</h5>
+            <p>Search for 'Attention' if you need support with developing focus, 
+            concentration and stamina.</p>
+        </div>
+        <div class="col s12 m12 l12 understanding grey-gradient">
+            <h5 class="deep-orange-text">Understanding</h5>
+            <p>Search for 'Attention' if you need support with developing focus, 
+            concentration and stamina.</p>
+        </div>
+    </div>
+
+    <div class="row align-center search">    
+        <div class="col s12 m12 l12 expression grey-gradient">
+            <h5 class="deep-orange-text">Expression</h5>
+            <p>Search for 'Attention' if you need support with developing focus, 
+            concentration and stamina.</p>
+        </div>
+        <div class="col s12 m12 l12 speech grey-gradient">
+            <h5 class="deep-orange-text">Speech</h5>
+            <p>Search for 'Attention' if you need support with developing focus, 
+            concentration and stamina.</p>
+        </div>
+    </div>
+         
+
+ <div class="white">
+        </div>
+
+    <div class="row card-panel grey-lighten-5">
     <form action="{{ url_for('search') }}" method="POST"
  class= "col s12">
     <div class="row align-wrapper center-align">
@@ -32,57 +71,14 @@
 
 {% if interventions|length > 0 %}
 
-
- <div class="white">
+     <div class="white">
         </div>
-
-    <div class="row search">
-        <div class = "align-center col s12 m6 l6">
-            <h5>Not sure what you are looking for?  Read below to help you search</h5>
-        </div>
-        <div class = "align-center col s12 m6 l6">
-            <i class="fas fa-search fa-4x"></i>
-        </div>
-    </div>
-
-        <div class="white">
-        </div>
-
-    <div class="row align-center search">
-        <div class="col s12 m12 l12 attention blue lighten-4">
-            <h5>Attention</h5>
-            <p>Search for 'Attention' if you need support with developing focus, 
-            concentration and stamina.</p>
-        </div>
-        <div class="col s12 m12 l12 understanding yellow lighten-4">
-            <h5>Understanding</h5>
-            <p>Search for 'Attention' if you need support with developing focus, 
-            concentration and stamina.</p>
-        </div>
-    </div>
-
-    <div class="row align-center search">    
-        <div class="col s12 m12 l12 expression orange lighten-4">
-            <h5>Expression</h5>
-            <p>Search for 'Attention' if you need support with developing focus, 
-            concentration and stamina.</p>
-        </div>
-        <div class="col s12 m12 l12 speech green lighten-4">
-            <h5>Speech</h5>
-            <p>Search for 'Attention' if you need support with developing focus, 
-            concentration and stamina.</p>
-        </div>
-    </div>
-         
-    
-
-    <br />
 
     {% for interventions in interventions %}
 
     <ul class="collapsible">
         <li>
-            <div class="collapsible-header row  gradient-banner">
+            <div class="collapsible-header row orange-gradient">
                     <div class="col s12 m12 l12">
                         <h5><i class="fas fa-list"></i> Name: {{ interventions.name }}</h5>
                      

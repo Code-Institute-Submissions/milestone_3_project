@@ -1,4 +1,9 @@
 
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+
 .left-align {
     padding-left: 9px;
 }
@@ -21,13 +26,11 @@
     border: 2pt solid white;
 }
 
-
-
-.attention, .understanding, .expression, .speech {
-    border: 1pt solid black;
-    margin: 3px;
-    width: 90%;
+.deep-orange-text {
+    color: #ff8a65;
 }
+
+
 
 .collapsible {
     margin: 0 auto;
@@ -73,28 +76,16 @@
 }
 
 .fa-list {
-    color: cadetblue;
+    color: black;
 }
 
 
-
-
-.gradient-banner {
-    background-image: linear-gradient(#2980B9, #6DD5FA, #ffffff);
+.blue-gradient {
+     background-image: linear-gradient(#90caf9 , #e3f2fd );
 }
 
-.gradient-banner-2 {
-    background-image: linear-gradient(#EF3B36,#ff9068,  #ffffff)
-}
-
-.card-gradient-1 {
-    margin: 9px;
-    background-image: linear-gradient(#AAFFA9, #11FFBD)
-}
-
-.card-gradient-2 {
-    margin: 9px;
-    background-image: linear-gradient(#FBD786, #f7797d)
+.orange-gradient {
+     background-image: linear-gradient(#ff8a65, #ffccbc );
 }
 
 .card-content {
@@ -122,8 +113,6 @@
     flex: 1 0 auto;
   }
       
-
-
 .btn, .btn-large {
     margin-bottom: 12px;
 }
@@ -146,3 +135,10 @@
 .search {
     width: 90%;
 }
+
+.grey-gradient {
+    background-image: linear-gradient(to right, white, #bdc3c7);
+}
+
+
+
