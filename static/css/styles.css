@@ -6,6 +6,7 @@
 .align-center {
     text-align: center;
     margin: 0 auto;
+    width: 100%;
 }
 
 .interventions {
@@ -16,7 +17,6 @@
 }
 
 .white {
-    
     margin: 12px;
     border: 2pt solid white;
 }
@@ -25,6 +25,8 @@
 
 .attention, .understanding, .expression, .speech {
     border: 1pt solid black;
+    margin: 3px;
+    width: 90%;
 }
 
 .collapsible {
@@ -113,6 +115,7 @@
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    overflow-wrap: break-word;
   }
 
   main {
@@ -133,4 +136,13 @@
 .card {
     margin: 3px;
     padding: 6px;
+}
+
+
+.info-cards {
+    overflow-wrap: break-word;
+}
+
+.search {
+    width: 90%;
 }
