@@ -129,3 +129,8 @@
 .collapsible-body {
     overflow-wrap: break-word;
 }
+
+.card {
+    margin: 3px;
+    padding: 6px;
+}
