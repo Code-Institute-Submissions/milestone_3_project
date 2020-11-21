@@ -17,14 +17,14 @@
                 <div class="input-field col s12 m6 l6">
                     <i class="fas fa-university prefix"></i>
                     <input id="name" name="name" minlength="5" maxlength="50" 
-                        type="text" class="validate" required>
+                        value="{{ training.name }}" type="text" class="validate" required>
                     <label for="name">Training Name</label>
                 </div>
 
                 <div class="input-field col s12 m6 l6">
                     <i class="fas fa-users prefix"></i>
                     <select id="type" name="type" class="validate" required>
-                    <option value="" disabled selected>Choose your option</option>
+                    <option value="{{ training.type }}" disabled selected>Choose your option</option>
                         <option value="Management">Management</option>
                         <option value="In Class">In Class</option>
                         <option value="Whole School">Whole School</option>
@@ -39,7 +39,7 @@
     <div class="input-field col s12 m6 l6">
     <i class="fas fa-chalkboard-teacher prefix"></i>
     <select id ="area" name="area" class="validate" required>
-      <option value="" disabled selected>Choose your option</option>
+      <option value="{{ training.area }}" disabled selected>Choose your option</option>
       <option value="Attention">Attention</option>
       <option value="Understanding">Understanding</option>
       <option value="Expression">Expression</option>
@@ -54,7 +54,7 @@
                 <div class="input-field col s12 m12 l12">
                     <i class="fas fa-laptop-house prefix"></i>
                     <select id="delivery" name="delivery" class="validate" required>
-                        <option value="" disabled selected>Choose your option</option>
+                        <option value="{{ training.delivery }}" disabled selected>Choose your option</option>
                         <option value="Online">Online</option>
                         <option value="On site">On site</option>
                         <option value="Off site">Off site</option>
@@ -69,7 +69,7 @@
                 <div class="input-field col s12 m6 l6">
                     <i class="fas fa-calendar-alt prefix"></i>
                     <input id="start_date" name="start_date" 
-                        type="text" class="datepicker validate">
+                        value="{{ training.start_date }}" type="text" class="datepicker validate">
                     <label for="start_date">Start Date</label>
                 </div> 
 </div>
@@ -78,7 +78,7 @@
                 <div class="input-field col s12 m12 l12">
                     <i class="fas fa-award prefix"></i>
                     <input id="qualification" name="qualification" 
-                        type="text" class="validate">
+                        value="{{ training.qualification }}" type="text" class="validate">
                     <label for="qualification">Qualification</label>
                 </div> 
 </div>
@@ -89,7 +89,7 @@
                     <i class="fas fa-pound-sign prefix"></i>
                     <select id="cost" name="cost"> 
 
-                    <option value="" disabled selected>Choose your option</option>
+                    <option value="{ training.cost }}" disabled selected>Choose your option</option>
                         <option value="£0-200">£0-200</option>
                         <option value="££ 200-500">££ 200-500</option>
                         <option value="£££ 500-800">£££ 500-800</option>
@@ -103,7 +103,7 @@
                 <div class="input-field col s12 m12 l12">
                     <i class="fas fa-award prefix"></i>
                     <input id="provider" name="provider" 
-                        type="text" class="validate">
+                        value="{{ training.provider }}" type="text" class="validate">
                     <label for="provider">Provider</label>
                 </div> 
 </div>
@@ -117,7 +117,7 @@
                         Cancel <i class="fas fa-times-circle right"></i>
                     </a>
                     <button type="submit" class="btn-large green darken-1 text-shadow">
-                        Edit Students <i class="fas fa-edit right"></i>
+                        Update Training <i class="fas fa-edit right"></i>
                     </button>
                 </div>
             </div>

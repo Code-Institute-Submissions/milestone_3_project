@@ -24,17 +24,18 @@ def home_page():
     return render_template("home.html")
 
 
-@app.route("/show_training")
-def show_training():
-    training = list(mongo.db.training.find())
-    return render_template("training.html", training=training)
-
-
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
     interventions = list(mongo.db.interventions.find({"$text": {"$search": query}}))
     return render_template("interventions.html", interventions=interventions)
+
+
+@app.route("/")
+@app.route("/show_training")
+def show_training():
+    training = list(mongo.db.training.find())
+    return render_template("training.html", training=training)
 
 
 @app.route("/")
@@ -101,8 +102,7 @@ def edit_training(training_id):
         }
         mongo.db.training.update({"_id": ObjectId(training_id)}, update)
         flash("Training Successfully Updated")
-        return render_template("show_training.html")
-
+        return redirect(url_for("success_training"))
     training = mongo.db.training.find_one({"_id": ObjectId(training_id)})
     return render_template("edit_training.html", training=training)
 

@@ -121,6 +121,6 @@
       
 
 
-.btn {
-    margin-bottom: 9px;
+.btn, .btn-large {
+    margin-bottom: 12px;
 }
