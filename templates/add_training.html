@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="container">
 
-<h2> Add Training </h2>
+
+<h2 class="card-panel align-center red lighten-1">Add Training</h2>
+
+<div class="container">
 
 <div class="row card-panel grey-lighten-5">
         <form class="col s12" method="POST" action="{{ url_for('add_training') }}">
@@ -75,7 +77,7 @@
                 <div class="input-field col s12 m12 l12">
                     <i class="fas fa-award prefix"></i>
                     <input id="qualification" name="qualification" 
-                        type="text" class="datepicker validate">
+                        type="text" class="validate">
                     <label for="qualification">Qualification</label>
                 </div> 
 </div>
