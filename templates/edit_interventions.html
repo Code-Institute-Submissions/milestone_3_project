@@ -1,32 +1,23 @@
-{% extends "base.html" %}
-{% block content %}
-
-
-
-
+{% extends "base.html" %} {% block content %}
 
 <h2 class="card-panel align-center deep-orange lighten-2">Edit Interventions</h2>
 
-<div class = "container">
+<div class="container">
     <div class="row card-panel grey lighten-5">
         <form class="col s12" method="POST" action="{{ url_for('edit_interventions', interventions_id=interventions._id) }}">
-        
-		
             <!-- task name -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-list prefix"></i>
-                    <input id="name" name="name" minlength="5" maxlength="50"
-                        value="{{ interventions.name }}" type="text" class="materialize-textarea validate" required>
+                    <input id="name" name="name" minlength="5" maxlength="50" value="{{ interventions.name }}" type="text" class="materialize-textarea validate" required />
                     <label for="name">Intervention Name</label>
                 </div>
             </div>
-             <!-- website -->
+            <!-- website -->
             <div class="row overflow">
                 <div class="input-field col s12">
                     <i class="fas fa-link prefix"></i>
-                    <input id="website" name="website" minlength="5" maxlength="100"
-                        value="{{ interventions.website }}" type="text" class="materialize-textarea validate" required>
+                    <input id="website" name="website" minlength="5" maxlength="100" value="{{ interventions.website }}" type="text" class="materialize-textarea validate" required />
                     <label for="name">Intervention Website</label>
                 </div>
             </div>
@@ -34,8 +25,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-smile prefix"></i>
-                    <textarea id="rating" name="rating" minlength="5"
-                        maxlength="200" class="materialize-textarea validate" required>
+                    <textarea id="rating" name="rating" minlength="5" maxlength="200" class="materialize-textarea validate" required>
                         {{- interventions.rating -}}
                     </textarea>
                     <label for="rating">Rating</label>
@@ -44,56 +34,48 @@
             <!-- due date picker -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-clock prefix"></i> 
-                    <input id="duration" name="duration" type="text"
-                        value="{{ interventions.duration }}" class="materialize-textarea validate" required>
+                    <i class="fas fa-clock prefix"></i>
+                    <input id="duration" name="duration" type="text" value="{{ interventions.duration }}" class="materialize-textarea validate" required />
                     <label for="duration">Duration</label>
                 </div>
             </div>
-           
+
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-suitcase prefix"></i>
-                    <input id="resources" name="resources" type="text"
-                        value="{{ interventions.resources }}" class="materialize-textarea validate" required>
+                    <input id="resources" name="resources" type="text" value="{{ interventions.resources }}" class="materialize-textarea validate" required />
                     <label for="resources">Resources</label>
                 </div>
             </div>
 
             <!-- Cost -->
-<div class = "row"> 
-    <div class="input-field col s12 m6 l6">
-    <i class="fas fa-pound-sign prefix"></i>
-    <select id ="cost" name="cost" class="validate" required>
-      <option value="{{ interventions.cost }}" disabled selected>Choose One</option>
-      <option value="Free">Free</option>
-      <option value="Registration Required £">Registration Required £</option>
-      <option value="Subscription Required ££">Subscription Required ££</option>
-      <option value="Training Required £££">Training Required £££</option>
-    </select>
-    <label>Cost of intervention</label>
-  </div>
-</div>
-
+            <div class="row">
+                <div class="input-field col s12 m6 l6">
+                    <i class="fas fa-pound-sign prefix"></i>
+                    <select id="cost" name="cost" class="validate" required>
+                        <option value="{{ interventions.cost }}" disabled selected>Choose One</option>
+                        <option value="Free">Free</option>
+                        <option value="Registration Required £">Registration Required £</option>
+                        <option value="Subscription Required ££">Subscription Required ££</option>
+                        <option value="Training Required £££">Training Required £££</option>
+                    </select>
+                    <label>Cost of intervention</label>
+                </div>
+            </div>
 
             <!-- submit button -->
             <div class="row">
                 <div class="col s12 center-align">
                     <!-- cancel button -->
-                    <a href="{{ url_for('show_interventions') }}" class="btn-large red text-shadow">
-                        Cancel <i class="fas fa-times-circle right"></i>
-                    </a>
+                    <a href="{{ url_for('show_interventions') }}" class="btn-large red text-shadow"> Cancel <i class="fas fa-times-circle right"></i> </a>
                     <br />
-                    <button type="submit" class="btn-large green darken-1 text-shadow">
-                        Update Intervention <i class="fas fa-edit right"></i>
-                    </button>
+                    <button type="submit" class="btn-large green darken-1 text-shadow">Update Intervention <i class="fas fa-edit right"></i></button>
                 </div>
             </div>
         </form>
     </div>
+</div>
 
-</div>
-</div>
 {% endblock %}
 
 

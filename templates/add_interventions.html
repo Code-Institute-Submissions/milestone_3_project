@@ -1,101 +1,87 @@
-{% extends "base.html" %}
-{% block content %}
-
-
-
+{% extends "base.html" %} {% block content %}
 
 <h2 class="card-panel align-center deep-orange lighten-2">Add Interventions</h2>
-<div class="container">
-<div class="row card-panel grey-lighten-5">
-<form class="col s12" method="POST" action="{{ url_for('add_interventions') }}">
 
-<!-- Name --> 
-<div class="row">
+<div class="white"></div>
+
+<div class="container">
+    <div class="row card-panel grey-lighten-5">
+        <form class="col s12" method="POST" action="{{ url_for('add_interventions') }}">
+            <!-- Name -->
+            <div class="row">
                 <div class="input-field col s12 m6 l12">
                     <i class="fas fa-list prefix"></i>
-                    <input id="name" name="name" minlength="5" maxlength="100" 
-                        type="text" class="validate" required>
+                    <input id="name" name="name" minlength="5" maxlength="100" type="text" class="validate" required />
                     <label for="name">Intervention Name</label>
                 </div>
-</div>
+            </div>
 
-<!-- website --> 
-<div class="row">
+            <!-- website -->
+            <div class="row">
                 <div class="input-field col s12 m6 l12">
                     <i class="fas fa-link prefix"></i>
-                    <input id="website" name="website" minlength="5" maxlength="50" 
-                        type="text" class="validate" required>
+                    <input id="website" name="website" minlength="5" maxlength="50" type="text" class="validate" required />
                     <label for="website">Website</label>
                 </div>
-</div>
+            </div>
 
-<!-- SEN Area and Rating -->
-<div class = "row"> 
-    <div class="input-field col s12 m6 l6">
-    <i class="fas fa-smile prefix "></i> 
-    <select id ="rating" name="rating" class="validate" required>
-      <option value="" disabled selected>Intervention Rating</option>
-      <option value="1">1 - Poor</option>
-      <option value="2">2 - Some useful features</option>
-      <option value="3">3 - Average</option>
-      <option value="4">4 - Good</option>
-      <option value="5">5 - Great</option>
-    </select>
-    <label></label>
-  </div>
-</div>
+            <!-- SEN Area and Rating -->
+            <div class="row">
+                <div class="input-field col s12 m6 l6">
+                    <i class="fas fa-smile prefix"></i>
+                    <select id="rating" name="rating" class="validate" required>
+                        <option value="" disabled selected>Intervention Rating</option>
+                        <option value="1">1 - Poor</option>
+                        <option value="2">2 - Some useful features</option>
+                        <option value="3">3 - Average</option>
+                        <option value="4">4 - Good</option>
+                        <option value="5">5 - Great</option>
+                    </select>
+                    <label></label>
+                </div>
+            </div>
 
-<!-- Duration of intervention -->
-<div class="row">
+            <!-- Duration of intervention -->
+            <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-clock prefix"></i>
-                    <input id="duration" name="duration" 
-                        type="text" class="materialize-textarea validate" required>
+                    <input id="duration" name="duration" type="text" class="materialize-textarea validate" required />
                     <label for="duration">Duration</label>
                 </div>
-</div>
+            </div>
 
-<!-- Resources required -->
-<div class="row">
+            <!-- Resources required -->
+            <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-suitcase prefix"></i>
-                    <input id="resources" name="resources" 
-                        type="text" class="materialize-textarea validate" required>
+                    <input id="resources" name="resources" type="text" class="materialize-textarea validate" required />
                     <label for="resources">Resources Required</label>
                 </div>
-</div>
+            </div>
 
-<!-- Cost -->
-<div class = "row"> 
-    <div class="input-field col s12 m6 l6">
-    <i class="fas fa-pound-sign prefix"></i>
-    <select id ="cost" name="cost" class="validate" required>
-      <option value="" disabled selected>Cost</option>
-      <option value="Free">Free</option>
-      <option value="Registration Required £">Registration Required £</option>
-      <option value="Subscription Required ££">Subscription Required ££</option>
-      <option value="Training Required £££">Training Required £££</option>
-    </select>
-    <label>Cost of intervention</label>
-  </div>
-</div>
-
-
-
-<!-- Submit button -->
-<div class="row">
-                <div class="col s12 center-align">
-                    <button type="submit" class="btn-large light-blue darken-1 text-shadow">
-                        Add Intervention <i class="fas fa-plus-square right"></i>
-                    </button>
+            <!-- Cost -->
+            <div class="row">
+                <div class="input-field col s12 m6 l6">
+                    <i class="fas fa-pound-sign prefix"></i>
+                    <select id="cost" name="cost" class="validate" required>
+                        <option value="" disabled selected>Cost</option>
+                        <option value="Free">Free</option>
+                        <option value="Registration Required £">Registration Required £</option>
+                        <option value="Subscription Required ££">Subscription Required ££</option>
+                        <option value="Training Required £££">Training Required £££</option>
+                    </select>
+                    <label>Cost of intervention</label>
                 </div>
-            
-</div>
+            </div>
 
-
-
-</form>
-</div>
+            <!-- Submit button -->
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button type="submit" class="btn-large light-blue darken-1 text-shadow">Add Intervention <i class="fas fa-plus-square right"></i></button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
 
 {% endblock %}

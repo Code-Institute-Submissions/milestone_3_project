@@ -1,91 +1,64 @@
-{% extends "base.html" %} 
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
+<h2 class="card-panel align-center deep-orange lighten-2">Your Interventions</h2>
 
-    
+<div class="container">
+    <div class="white"></div>
 
-    <h2 class="card-panel align-center deep-orange lighten-2">Your Interventions</h2>
-
-    <div class="container">
-
- <div class="white">
-        </div>
-
-    
-
-        <div class="white">
-        </div>
-
+    <div class="white"></div>
 
     <div class="row align-center search">
         <div class="col s12 m12 l12 attention grey-gradient">
             <h5 class="deep-orange-text">Attention</h5>
-            <p>Search for 'Attention' if you need support with developing focus, 
-            concentration and stamina.</p>
+            <p>Search for 'Attention' if you need support with developing focus, concentration and stamina.</p>
         </div>
         <div class="col s12 m12 l12 understanding grey-gradient">
             <h5 class="deep-orange-text">Understanding</h5>
-            <p>Search for 'Attention' if you need support with developing focus, 
-            concentration and stamina.</p>
+            <p>Search for 'Attention' if you need support with developing focus, concentration and stamina.</p>
         </div>
     </div>
 
-    <div class="row align-center search">    
+    <div class="row align-center search">
         <div class="col s12 m12 l12 expression grey-gradient">
             <h5 class="deep-orange-text">Expression</h5>
-            <p>Search for 'Attention' if you need support with developing focus, 
-            concentration and stamina.</p>
+            <p>Search for 'Attention' if you need support with developing focus, concentration and stamina.</p>
         </div>
         <div class="col s12 m12 l12 speech grey-gradient">
             <h5 class="deep-orange-text">Speech</h5>
-            <p>Search for 'Attention' if you need support with developing focus, 
-            concentration and stamina.</p>
+            <p>Search for 'Attention' if you need support with developing focus, concentration and stamina.</p>
         </div>
     </div>
-         
 
- <div class="white">
-        </div>
+    <div class="white"></div>
 
     <div class="row card-panel grey-lighten-5">
-    <form action="{{ url_for('search') }}" method="POST"
- class= "col s12">
-    <div class="row align-wrapper center-align">
+        <form action="{{ url_for('search') }}" method="POST" class="col s12">
+            <div class="row align-wrapper center-align">
                 <div class="input-field col s12 m6">
                     <i class="fas fa-search prefix light-blue-text text-darken-4"></i>
-                    <input type="text" name="query" id="query" minlength="3" class="validate" required>
+                    <input type="text" name="query" id="query" minlength="3" class="validate" required />
                     <label for="query">Search Interventions</label>
                 </div>
                 <div class="col s12 m6">
                     <a href="{{ url_for('show_interventions') }}" class="red btn text-shadow">Reset</a>
-                    <button type="submit" class="light-blue darken-1 btn text-shadow">
-                        <i class="fas fa-search left"></i> Search
-                    </button>
+                    <button type="submit" class="light-blue darken-1 btn text-shadow"><i class="fas fa-search left"></i> Search</button>
                 </div>
             </div>
-    
-    </form>
-    
+        </form>
     </div>
 
+    {% if interventions|length > 0 %}
 
-{% if interventions|length > 0 %}
-
-     <div class="white">
-        </div>
+    <div class="white"></div>
 
     {% for interventions in interventions %}
 
     <ul class="collapsible">
         <li>
             <div class="collapsible-header row orange-gradient">
-                    <div class="col s12 m12 l12">
-                        <h5><i class="fas fa-list"></i> Name: {{ interventions.name }}</h5>
-                     
-                    </div>
-           
-    
-                   
+                <div class="col s12 m12 l12">
+                    <h5><i class="fas fa-list"></i> Name: {{ interventions.name }}</h5>
+                </div>
             </div>
 
             <div class="collapsible-body">
@@ -95,12 +68,13 @@
                         <h7> <i class="fas fa-clock"></i> Duration: </h7> {{ interventions.duration }}<br />
                         <h7> <i class="fas fa-suitcase"></i> Resources: </h7> {{ interventions.resources }}<br />
                         <h7> <i class="fas fa-pound-sign"></i> Cost: </h7> {{ interventions.cost }}<br />
-                        <h7><i class="fas fa-wifi"></i> Website: </h7><p>{{ interventions.website }}</p>
+                        <h7><i class="fas fa-wifi"></i> Website: </h7>
+                        <p>{{ interventions.website }}</p>
                         <br />
                     </div>
 
                     <div class="col s12 m3 l3 align-center">
-                    <br />
+                        <br />
                         <a href="{{ url_for('edit_interventions', interventions_id=interventions._id) }}" class="btn green accent-4 align-center">Edit</a>
                         <a href="{{ url_for('delete_interventions', interventions_id=interventions._id) }}" class="btn red lighten-1 align-center">Delete</a>
                     </div>
@@ -113,7 +87,6 @@
 
     {% endfor %}
 </div>
-    {% else %}
-        <h5 class = "red-text">No results</h5>
-    {% endif %}
-{% endblock %}
+{% else %}
+<h5 class="red-text">No results</h5>
+{% endif %} {% endblock %}

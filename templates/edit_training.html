@@ -1,30 +1,23 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
+<h2 class="card-panel align-center indigo lighten-1">Edit Training</h2>
 
-
-
-
- <h2 class="card-panel align-center indigo lighten-1">Edit Training</h2>
-
-<div class= "container">
+<div class="container">
     <div class="row card-panel grey lighten-5">
         <form class="col s12" method="POST" action="{{ url_for('edit_training', training_id=training._id) }}">
             <!-- category selection -->
-		
 
             <div class="row">
                 <div class="input-field col s12 m6 l6">
                     <i class="fas fa-university prefix"></i>
-                    <input id="name" name="name" minlength="5" maxlength="50" 
-                        value="{{ training.name }}" type="text" class="validate" required>
+                    <input id="name" name="name" minlength="5" maxlength="50" value="{{ training.name }}" type="text" class="validate" required />
                     <label for="name">Training Name</label>
                 </div>
 
                 <div class="input-field col s12 m6 l6">
                     <i class="fas fa-users prefix"></i>
                     <select id="type" name="type" class="validate" required>
-                    <option value="{{ training.type }}" disabled selected>Choose your option</option>
+                        <option value="{{ training.type }}" disabled selected>Choose your option</option>
                         <option value="Management">Management</option>
                         <option value="In Class">In Class</option>
                         <option value="Whole School">Whole School</option>
@@ -32,25 +25,24 @@
                     </select>
                     <label>Type of training</label>
                 </div>
+            </div>
 
-</div>
+            <div class="row">
+                <div class="input-field col s12 m6 l6">
+                    <i class="fas fa-chalkboard-teacher prefix"></i>
+                    <select id="area" name="area" class="validate" required>
+                        <option value="{{ training.area }}" disabled selected>Choose your option</option>
+                        <option value="Attention">Attention</option>
+                        <option value="Understanding">Understanding</option>
+                        <option value="Expression">Expression</option>
+                        <option value="Speech">Speech</option>
+                        <option value="General">General</option>
+                    </select>
+                    <label>Area of Need for Communication</label>
+                </div>
+            </div>
 
-<div class = "row"> 
-    <div class="input-field col s12 m6 l6">
-    <i class="fas fa-chalkboard-teacher prefix"></i>
-    <select id ="area" name="area" class="validate" required>
-      <option value="{{ training.area }}" disabled selected>Choose your option</option>
-      <option value="Attention">Attention</option>
-      <option value="Understanding">Understanding</option>
-      <option value="Expression">Expression</option>
-      <option value="Speech">Speech</option>
-      <option value="General">General</option>
-    </select>
-    <label>Area of Need for Communication</label>
-  </div>
-</div>	
-
-<div class="row">
+            <div class="row">
                 <div class="input-field col s12 m12 l12">
                     <i class="fas fa-laptop-house prefix"></i>
                     <select id="delivery" name="delivery" class="validate" required>
@@ -62,34 +54,29 @@
                     </select>
                     <label for="delivery">Delivery</label>
                 </div>
-</div>
+            </div>
 
-
-<div class="row">
+            <div class="row">
                 <div class="input-field col s12 m6 l6">
                     <i class="fas fa-calendar-alt prefix"></i>
-                    <input id="start_date" name="start_date" 
-                        value="{{ training.start_date }}" type="text" class="datepicker validate">
+                    <input id="start_date" name="start_date" value="{{ training.start_date }}" type="text" class="datepicker validate" />
                     <label for="start_date">Start Date</label>
-                </div> 
-</div>
+                </div>
+            </div>
 
-<div class="row">
+            <div class="row">
                 <div class="input-field col s12 m12 l12">
                     <i class="fas fa-award prefix"></i>
-                    <input id="qualification" name="qualification" 
-                        value="{{ training.qualification }}" type="text" class="validate">
+                    <input id="qualification" name="qualification" value="{{ training.qualification }}" type="text" class="validate" />
                     <label for="qualification">Qualification</label>
-                </div> 
-</div>
+                </div>
+            </div>
 
-
-<div class="row">
+            <div class="row">
                 <div class="input-field col s12 m12 l12">
                     <i class="fas fa-pound-sign prefix"></i>
-                    <select id="cost" name="cost"> 
-
-                    <option value="{ training.cost }}" disabled selected>Choose your option</option>
+                    <select id="cost" name="cost">
+                        <option value="{ training.cost }}" disabled selected>Choose your option</option>
                         <option value="£0-200">£0-200</option>
                         <option value="££ 200-500">££ 200-500</option>
                         <option value="£££ 500-800">£££ 500-800</option>
@@ -97,28 +84,22 @@
                     </select>
                     <label for="cost">Cost</label>
                 </div>
-</div>
+            </div>
 
-<div class="row">
+            <div class="row">
                 <div class="input-field col s12 m12 l12">
                     <i class="fas fa-school prefix"></i>
-                    <input id="provider" name="provider" 
-                        value="{{ training.provider }}" type="text" class="validate">
+                    <input id="provider" name="provider" value="{{ training.provider }}" type="text" class="validate" />
                     <label for="provider">Provider</label>
-                </div> 
-</div>
-
+                </div>
+            </div>
 
             <!-- submit button -->
             <div class="row">
                 <div class="col s12 center-align">
                     <!-- cancel button -->
-                    <a href="{{ url_for('show_training') }}" class="btn-large red text-shadow">
-                        Cancel <i class="fas fa-times-circle right"></i>
-                    </a>
-                    <button type="submit" class="btn-large green darken-1 text-shadow">
-                        Update Training <i class="fas fa-edit right"></i>
-                    </button>
+                    <a href="{{ url_for('show_training') }}" class="btn-large red text-shadow"> Cancel <i class="fas fa-times-circle right"></i> </a>
+                    <button type="submit" class="btn-large green darken-1 text-shadow">Update Training <i class="fas fa-edit right"></i></button>
                 </div>
             </div>
         </form>
@@ -126,4 +107,3 @@
 </div>
 
 {% endblock %}
-
