@@ -77,6 +77,9 @@ body {
     color: black;
 }
 
+.fa-phone {
+    color: green;
+}
 
 .icon-comment {
     padding-left: 9px;
@@ -171,4 +174,9 @@ body {
 
 .about, .help {
     padding: 12px;
+}
+
+
+.logo-placement {
+    padding-left: 18px;
 }
