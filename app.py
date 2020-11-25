@@ -28,21 +28,21 @@ def home_page():
 def search():
     query = request.form.get("query")
     interventions = list(mongo.db.interventions.find({"$text": {"$search": query}}))
-    return render_template("interventions.html", interventions=interventions)
+    return render_template("intervention_pages/interventions.html", interventions=interventions)
 
 
 @app.route("/")
 @app.route("/show_training")
 def show_training():
     training = list(mongo.db.training.find())
-    return render_template("training.html", training=training)
+    return render_template("training_pages/training.html", training=training)
 
 
 @app.route("/")
 @app.route("/show_interventions")
 def show_interventions():
     interventions = list(mongo.db.interventions.find())
-    return render_template("interventions.html", interventions=interventions)
+    return render_template("intervention_pages/interventions.html", interventions=interventions)
 
 
 @app.route("/about_page")
@@ -57,12 +57,12 @@ def help_page():
 
 @app.route("/success_intervention")
 def success_intervention():
-    return render_template("success_intervention.html")
+    return render_template("intervention_pages/success_intervention.html")
 
 
 @app.route("/success_training")
 def success_training():
-    return render_template("success_training.html")
+    return render_template("training_pages/success_training.html")
 
 
 @app.route("/add_training", methods=["GET", "POST"])
@@ -83,7 +83,7 @@ def add_training():
         flash("Training succesfully added!")
         return redirect(url_for("success_training"))
     else:
-        return render_template("add_training.html")
+        return render_template("training_pages/add_training.html")
 
 
 @app.route("/edit_training/<training_id>", methods=["GET", "POST"])
@@ -104,14 +104,14 @@ def edit_training(training_id):
         flash("Training Successfully Updated")
         return redirect(url_for("success_training"))
     training = mongo.db.training.find_one({"_id": ObjectId(training_id)})
-    return render_template("edit_training.html", training=training)
+    return render_template("training_pages/edit_training.html", training=training)
 
 
 @app.route("/delete_training/<training_id>")
 def delete_training(training_id):
     mongo.db.training.remove({"_id": ObjectId(training_id)})
     flash("training successfully deleted")
-    return render_template("delete_training.html")
+    return render_template("training_pages/delete_training.html")
 
 
 @app.route("/add_interventions", methods=["GET", "POST"])
@@ -129,10 +129,10 @@ def add_interventions():
         flash("Task Successfully Added")
         return redirect(url_for("success_intervention"))
     else:
-        return render_template("add_interventions.html")
+        return render_template("intervention_pages/add_interventions.html")
 
     interventions = mongo.db.interventions.find().sort("name", 1)
-    return render_template("add_interventions", interventions=interventions)
+    return render_template("intervention_pages/add_interventions", interventions=interventions)
 
 
 @app.route("/edit_interventions/<interventions_id>", methods=["GET", "POST"])
@@ -150,14 +150,14 @@ def edit_interventions(interventions_id):
         flash("Task Successfully Updated")
         return redirect(url_for("show_interventions"))
     interventions = mongo.db.interventions.find_one({"_id": ObjectId(interventions_id)})
-    return render_template("edit_interventions.html", interventions=interventions)
+    return render_template("intervention_pages/edit_interventions.html", interventions=interventions)
 
 
 @app.route("/delete_interventions/<interventions_id>")
 def delete_interventions(interventions_id):
     mongo.db.interventions.remove({"_id": ObjectId(interventions_id)})
     flash("Intervention successfully deleted")
-    return render_template("delete_interventions.html")
+    return render_template("intervention_pages/delete_interventions.html")
 
 
 if __name__ == "__main__":
