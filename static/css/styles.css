@@ -1,6 +1,11 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    font-size: 16pt;
+}
+
+.bold {
+    font-weight: 900;
 }
 
 
@@ -180,3 +185,9 @@ body {
 .logo-placement {
     padding-left: 18px;
 }
+
+
+.dropdown-trigger {
+    padding-right: 52px;
+}
+
