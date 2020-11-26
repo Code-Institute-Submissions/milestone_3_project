@@ -21,7 +21,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home_page")
 def home_page():
-    return render_template("home.html")
+    return render_template("information_pages/home.html")
 
 
 @app.route("/search", methods=["GET", "POST"])
@@ -47,12 +47,12 @@ def show_interventions():
 
 @app.route("/about_page")
 def about_page():
-    return render_template("about.html")
+    return render_template("information_pages/about.html")
 
 
 @app.route("/help_page")
 def help_page():
-    return render_template("help.html")
+    return render_template("information_pages/help.html")
 
 
 @app.route("/success_intervention")
@@ -158,6 +158,18 @@ def delete_interventions(interventions_id):
     mongo.db.interventions.remove({"_id": ObjectId(interventions_id)})
     flash("Intervention successfully deleted")
     return render_template("intervention_pages/delete_interventions.html")
+
+
+@app.errorhandler(404)
+def page_not_found(error):
+    # note that we set the 404 status explicitly
+    return render_template("error_pages/404.html"), 404
+
+
+@app.errorhandler(500)
+def internal_server_error(error):
+    # note that we set the 404 status explicitly
+    return render_template("error_pages/500.html"), 500
 
 
 if __name__ == "__main__":

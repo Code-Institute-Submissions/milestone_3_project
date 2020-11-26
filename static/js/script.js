@@ -11,11 +11,11 @@ $(document).ready(function(){
 
   function sendMail(contactForm) {
     emailjs
-        .send("outlook", "milestone2", {
+        .send("outlook", "Milestone_3", {
             from_name: contactForm.name.value,
-            from_email: contactForm.emailaddress.value,
-            package_type: contactForm.packagetype.value,
-            package_request: contactForm.packagerequest.value,
+            role: contactForm.role.value,
+            from_email: contactForm.from_email.value,
+            help_request: contactForm.help_request.value
         })
         .then(
             function (response) {
