@@ -118,12 +118,12 @@ def delete_training(training_id):
 def add_interventions():
     if request.method == "POST":
         interventions = {
-            "name": request.form.get("name"),
-            "website": request.form.get("website"),
-            "rating": request.form.get("rating"),
-            "duration": request.form.get("duration"),
-            "resources": request.form.get("resources"),
-            "cost": request.form.get("cost")
+            "intervention_name": request.form.get("intervention_name"),
+            "intervention_website": request.form.get("intervention_website"),
+            "intervention_rating": request.form.get("intervention_rating"),
+            "intervention_duration": request.form.get("intervention_duration"),
+            "intervention_resources": request.form.get("intervention_resources"),
+            "intervention_cost": request.form.get("intervention_cost")
         }
         mongo.db.interventions.insert_one(interventions)
         flash("Task Successfully Added")
@@ -139,12 +139,12 @@ def add_interventions():
 def edit_interventions(interventions_id):
     if request.method == "POST":
         submit = {
-            "name": request.form.get("name"),
-            "website": request.form.get("website"),
-            "rating": request.form.get("rating"),
-            "duration": request.form.get("duration"),
-            "resources": request.form.get("resources"),
-            "cost": request.form.get("cost")
+            "intervention_name": request.form.get("intervention_name"),
+            "intervention_website": request.form.get("intervention_website"),
+            "intervention_rating": request.form.get("intervention_rating"),
+            "intervention_duration": request.form.get("intervention_duration"),
+            "intervention_resources": request.form.get("intervention_resources"),
+            "intervention_cost": request.form.get("intervention_cost")
         }
         mongo.db.interventions.update({"_id": ObjectId(interventions_id)}, submit)
         flash("Task Successfully Updated")
