@@ -43,8 +43,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-suitcase prefix"></i>
-                    <input id="training_resources" name="training_resources" type="text" value="{{ interventions.training_resources }}" class="materialize-textarea validate" required />
-                    <label for="training_resources">Resources</label>
+                    <input id="intervention_resources" name="intervention_resources" type="text" value="{{ interventions.training_resources }}" class="materialize-textarea validate" required />
+                    <label for="intervention_resources">Resources</label>
                 </div>
             </div>
 
@@ -52,7 +52,7 @@
             <div class="row">
                 <div class="input-field col s12 m6 l6">
                     <i class="fas fa-pound-sign prefix"></i>
-                    <select id="training_cost" name="training_cost" class="validate" required>
+                    <select id="intervention_cost" name="intervention_cost" class="validate" required>
                         <option value="{{ interventions.intervention_cost }}" disabled selected>Choose One</option>
                         <option value="Free">Free</option>
                         <option value="Registration Required £">Registration Required £</option>
