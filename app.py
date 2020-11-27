@@ -42,7 +42,8 @@ def show_training():
 @app.route("/show_interventions")
 def show_interventions():
     interventions = list(mongo.db.interventions.find())
-    return render_template("intervention_pages/interventions.html", interventions=interventions)
+    return render_template("intervention_pages/interventions.html", 
+    interventions=interventions)
 
 
 @app.route("/about_page")
@@ -105,6 +106,11 @@ def edit_training(training_id):
         return redirect(url_for("success_training"))
     training = mongo.db.training.find_one({"_id": ObjectId(training_id)})
     return render_template("training_pages/edit_training.html", training=training)
+
+
+"""
+check for update_one and delete_one for functions
+"""
 
 
 @app.route("/delete_training/<training_id>")

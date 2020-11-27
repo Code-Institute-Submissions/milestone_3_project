@@ -196,3 +196,9 @@ body {
 .contact {
     margin: 0 auto;
 }
+
+
+.black-font {
+    color: black;
+    text-decoration: none;
+}
