@@ -10,14 +10,14 @@
             <div class="row">
                 <div class="input-field col s12 m6 l6">
                     <i class="fas fa-university prefix"></i>
-                    <input id="name" name="name" minlength="5" maxlength="50" value="{{ training.name }}" type="text" class="validate" required />
-                    <label for="name">Training Name</label>
+                    <input id="training_name" name="training_name" minlength="5" maxlength="50" value="{{ training.training_name }}" type="text" class="validate" required />
+                    <label for="training_name">Training Name</label>
                 </div>
 
                 <div class="input-field col s12 m6 l6">
                     <i class="fas fa-users prefix"></i>
-                    <select id="type" name="type" class="validate" required>
-                        <option value="{{ training.type }}" disabled selected>Choose your option</option>
+                    <select id="training_type" name="type" class="validate" required>
+                        <option value="{{ training.training_type }}" disabled selected>Choose your option</option>
                         <option value="Management">Management</option>
                         <option value="In Class">In Class</option>
                         <option value="Whole School">Whole School</option>
@@ -30,8 +30,8 @@
             <div class="row">
                 <div class="input-field col s12 m6 l6">
                     <i class="fas fa-chalkboard-teacher prefix"></i>
-                    <select id="area" name="area" class="validate" required>
-                        <option value="{{ training.area }}" disabled selected>Choose your option</option>
+                    <select id="training_area" name="training_area" class="validate" required>
+                        <option value="{{ training.training_area }}" disabled selected>Choose your option</option>
                         <option value="Attention">Attention</option>
                         <option value="Understanding">Understanding</option>
                         <option value="Expression">Expression</option>
@@ -45,14 +45,14 @@
             <div class="row">
                 <div class="input-field col s12 m12 l12">
                     <i class="fas fa-laptop-house prefix"></i>
-                    <select id="delivery" name="delivery" class="validate" required>
-                        <option value="{{ training.delivery }}" disabled selected>Choose your option</option>
+                    <select id="delivery_method" name="delivery_method" class="validate" required>
+                        <option value="{{ training.delivery_method }}" disabled selected>Choose your option</option>
                         <option value="Online">Online</option>
                         <option value="On site">On site</option>
                         <option value="Off site">Off site</option>
                         <option value="Mix">Mix</option>
                     </select>
-                    <label for="delivery">Delivery</label>
+                    <label for="delivery_method">Delivery</label>
                 </div>
             </div>
 
@@ -75,22 +75,22 @@
             <div class="row">
                 <div class="input-field col s12 m12 l12">
                     <i class="fas fa-pound-sign prefix"></i>
-                    <select id="cost" name="cost">
-                        <option value="{ training.cost }}" disabled selected>Choose your option</option>
+                    <select id="training_cost" name="training_cost">
+                        <option value="{ training.traingin_cost }}" disabled selected>Choose your option</option>
                         <option value="£0-200">£0-200</option>
                         <option value="££ 200-500">££ 200-500</option>
                         <option value="£££ 500-800">£££ 500-800</option>
                         <option value="££££ 900 +">££££ 900 +</option>
                     </select>
-                    <label for="cost">Cost</label>
+                    <label for="training_cost">Cost</label>
                 </div>
             </div>
 
             <div class="row">
                 <div class="input-field col s12 m12 l12">
                     <i class="fas fa-school prefix"></i>
-                    <input id="provider" name="provider" value="{{ training.provider }}" type="text" class="validate" />
-                    <label for="provider">Provider</label>
+                    <input id="training_provider" name="training_provider" value="{{ training.training_provider }}" type="text" class="validate" />
+                    <label for="training_provider">Provider</label>
                 </div>
             </div>
 

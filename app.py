@@ -69,15 +69,15 @@ def success_training():
 def add_training():
     if request.method == "POST":
         training = {
-            "name": request.form.get("name"),
-            "type": request.form.get("type"),
-            "delivery": request.form.get("delivery"),
+            "training_name": request.form.get("training_name"),
+            "training_type": request.form.get("training_type"),
+            "delivery_method": request.form.get("training_delivery"),
             "start_date": request.form.get("start_date"),
-            "duration": request.form.get("duration"),
-            "area": request.form.get("area"),
+            "training_duration": request.form.get("training_duration"),
+            "training_area": request.form.get("training_area"),
             "qualification": request.form.get("qualification"),
-            "cost": request.form.get("cost"),
-            "provider": request.form.get("provider")
+            "training_cost": request.form.get("training_cost"),
+            "training_provider": request.form.get("training_provider")
         }
         mongo.db.training.insert_one(training)
         flash("Training succesfully added!")
@@ -90,15 +90,15 @@ def add_training():
 def edit_training(training_id):
     if request.method == "POST":
         update = {
-            "name": request.form.get("name"),
-            "type": request.form.get("type"),
-            "delivery": request.form.get("delivery"),
+            "training_name": request.form.get("training_name"),
+            "training_type": request.form.get("training_type"),
+            "delivery_method": request.form.get("delivery_method"),
             "start_date": request.form.get("start_date"),
-            "duration": request.form.get("duration"),
-            "area": request.form.get("area"),
+            "training_duration": request.form.get("training_duration"),
+            "training_area": request.form.get("training_area"),
             "qualification": request.form.get("qualification"),
-            "cost": request.form.get("cost"),
-            "provider": request.form.get("provider")
+            "training_cost": request.form.get("training_cost"),
+            "training_provider": request.form.get("training_provider")
         }
         mongo.db.training.update({"_id": ObjectId(training_id)}, update)
         flash("Training Successfully Updated")

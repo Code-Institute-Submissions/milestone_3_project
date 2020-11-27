@@ -43,23 +43,23 @@
         <li>
             <div class="collapsible-header blue-gradient row">
                 <div class="col s12 m12 l6">
-                    <h6><i class="fas fa-university"></i> Course name: {{ training.name }}</h6>
+                    <h6><i class="fas fa-university"></i> Course name: {{ training.training_name }}</h6>
                 </div>
                 <div class="col s12 m12 l6 right">
-                    <h6><i class="fas fa-users"></i>Type: {{ training.type }}</h6>
+                    <h6><i class="fas fa-users"></i>Type: {{ training.training_type }}</h6>
                 </div>
             </div>
 
             <div class="collapsible-body lighten-5">
                 <div class="row">
                     <div class="col s12 m6 l6 left">
-                        <h7> <i class="fas fa-laptop-house prefix"></i> Delivery </h7> {{ training.delivery }}<br />
-                        <h7> <i class="fas fa-hourglass-half prefix"></i> </h7> Duration: {{ training.duration }}<br />
+                        <h7> <i class="fas fa-laptop-house prefix"></i> Delivery </h7> {{ training.delivery_method }}<br />
+                        <h7> <i class="fas fa-hourglass-half prefix"></i> </h7> Duration: {{ training.training_duration }}<br />
                         <h7> <i class="fas fa-calendar-alt prefix"></i> Start Date </h7> {{ training.start_date }}<br />
-                        <h7> <i class="fas fa-chalkboard-teacher prefix"></i> </h7> Area: {{ training.area }}<br />
+                        <h7> <i class="fas fa-chalkboard-teacher prefix"></i> </h7> Area: {{ training.training_area }}<br />
                         <h7> <i class="fas fa-award prefix"></i> </h7> Qualification: {{ training.qualification }}<br />
-                        <h7> <i class="fas fa-pound-sign prefix"></i> </h7> Cost: {{ training.cost }}<br />
-                        <h7> <i class="fas fa-pound-sign prefix"></i> </h7> Provider: {{ training.provider }}<br />
+                        <h7> <i class="fas fa-pound-sign prefix"></i> </h7> Cost: {{ training.training_cost }}<br />
+                        <h7> <i class="fas fa-pound-sign prefix"></i> </h7> Provider: {{ training.training_provider }}<br />
                     </div>
 
                     <div class="col s12 m6 l6 align-center">
