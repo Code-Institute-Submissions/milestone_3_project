@@ -3,66 +3,191 @@
 ![responsive image]()
 
 # SLCN Library
-This website is for a travel company based in the Lake District, UK.  
-Run by locals, its owners wanted to provide holidayers with the best possible experience within 
-the Lake District, based on their own preference.
+This website is a resource for a teachers and education staff to use to best support students with Speech, Language and Communication Needs.  By providing
+two libraries one for Training Courses and one for suitable Interventions, this resource will help education staff be better prepared and more informed
+with their training needs and provision choices.  
 
 
 ### Company mission statement:
 
+The SLCN library seeks to provide a one stop resource for education staff that supports the training and intervention needs to best meet the needs of their students.
 
 
 # User Experience (UX)
 
-
-
-## design
-
-Description of pages
-
-Style and minimalist for ease of use
+The webpage is designed to be simple, efficient and easy to use.  Their is a purposeful lack of pictures or resource heavy content.  The site is designed to be as 
+efficient and easy to use on a range of devices that would be prevalent in schools, including ipads, desktops and phones, so that users can access the site from 
+anywhere.   
 
 
 
-## User Stories
+# Design
 
-* 
+### Description of pages
 
+Home Page, About Page and Help Page
+
+The above three pages represent the static part of the website.  These are pure information pages designed to inform the user on the purpose, content and how to use the webpage.  
+They are broken down as follows:
+
+Home Page
+* About the page with information about Speech and Language Needs in the UK
+
+About Page
+* About the company and its intended missions statement.  What the website aims to provide for users.
+
+Help Page
+* How to use the webpage and a contact form in which further support can be added.
+
+
+# User Stories
+
+* As a user, I wish to be able to find information about the app purpose.
+* As a user, I wish to be able to use the site without too many instructions or technical expertise.
+* As a user, I wish to be able to search for relevant interventions to meet the needs of my students.
+* As a user, I wish to be able to view a range of training courses for myself and my staff
+* As a user, I wish to be able to edit what both I have, and others have added to ensure consistency and reliability.
+* As a user, I wish to be able to delete what I or others have added, to ensure appropriateness.
+* As a user, I wish to be able to add or edit interventions and training with ease, through simple to use Formatters
+* As a user, I wish to have access to other information sources to inform my choices.
+
+
+ 
 # Wireframes
-
-![responsive image]()
-
-
 
 Wireframes are generally true to the webpage. 
 
+---------  COMPLETE -------
+
 # Features
 
-Used for sections
+The following features are present on the webpage:
+
+## Navbar
+* Easy to follow links for navigation.
+* Navbar collapses to side-bar for mobile design in order to aid ease of use on smaller devices.
+
+## Add Content
+* Users are able to add their own interventions and training to the respective pages, using the categorized form.
+
+## Edit Content
+* Users are able to edit both theirs and others content.
+
+## Delete Content
+* Users are able to delete both theirs and others input.
+
+## Contact Form
+* Users are able to request help using a contact form
+
+## links
+* Users can follow links to other Speech and Language Resources.
+
+# Features Left to Implement
+
+As this is designed for schools, safeguarding of student details is paramount.  An additional
+feature of adding student profiles and linking to interventions undertaken can be implemented
+once security of data is properly implemented.
 
 
-## Features Left to Implement
-Once up and running, website can implement a booking system for customers.  A live 
-chat feature to help a user decide or ask questions is also considered a key piece of UX to add.
+# Database
+
+The Database used is the nonSQL MongoDb.  Database consisted of 2 collections, being
+
+* Interventions
+* Training 
+
+These were designed as follows:
 
 
 
-## Database
+## Interventions   
+
+| Title     | Key in collection      | Data Type   |
+| -------   | -------------------    | ----------- |
+| Id        | _id                    | ObjectId    | 
+| Name      | intervention_name      | string      |
+| Website   | intervention_website   | string      |
+| Rating    | interention_rating     | string      |
+| Duration  | intervention_duration  | string      |
+| Resources | intervention_resources | string      |
+| Cost      | intervention_cost      | string      |
 
 
 
-## Technologies Used
+## Training
 
-1. 
+| Title          | Key in collection      | Data Type   |
+| -------        | -------------------    | ----------- |
+| Id             | _id                    | ObjectId    | 
+| Name           | training_name          | string      |
+| Type           | training_type          | string      |
+| Delivery       | delivery_method        | string      |        
+| Start          | start_date             | string      |
+| Duration       | training_duration      | string      |
+| Area           | training_area          | string      |
+| Qualification  | qualification          | string      |
+| Cost           | training_cost          | string      |
+| Provider       | training_provider      | string      |
+
+
+
+# Technologies Used
+
+## Languages
+
+1. Html5
+2. CSS
+3. Javascript
+4. Python 
+
+## Libraries and Tools 
+
+1. JQuery
+2. Materialize
+3. EmailJS (API)
+4. Flask
+5. Jinja 
+6. Mongo DB
+7. Google Fonts
+8. GitHub
+9. GitPod
+10. Heroku
+11. Font Awesome
+
+
 
 # Testing
 
 
+### Manual testing
 
-## Internal Testing 
+Features that were manually tested:
 
-**GitHub live preview port**
-This was used through `python3 -m http.server` provided by Code Institute. 
+* Add Interventions/Training
+1. Navigate to either the Add Training/Intervention page
+2. Fill out all fields in the form
+3. Click Submit
+4. Navigate to Training/Intervention Page to check addition has been added
+
+* Edit Interventions/Training
+1. Navigate to Training/Interventions page
+2. Scroll down to collections 
+3. Click on desired collection for collapsible to show
+4. Click on Edit button
+5. Amend appropriate fields as desired
+6. Click on 'submit'
+7. Navigate to Training/Intervention Page to check amendments have been added
+
+
+
+### GitHub
+
+Running 'python3 app.py' from the command line, live previews were used to manually test
+different features and functions within Git.   
+
+### Heroku
+
+Running the app through Heroku, 
 
 **Google Developer Tools**
 This was used to view the responsiveness of the webpage through the following:
@@ -73,10 +198,6 @@ Pixel 2, Pixel XL, iphone 5, SE, 6/7/8 and plus versions, X and ipad and ipad pr
 No errors are reported when running the page.  
 
 ## Warnings
-
-
-* Developer Tools Emulator
-The Google Developer Tools Emulator was also used across mobile and tablet devices with no bugs or unexpected discrepencies between devices.
 
 ## User testing of User Experiences (UX) 
 
@@ -96,17 +217,14 @@ The website was checked through the following Validation service tools:
 
 ### Esprima (for Javascript)
 
-### BrowserStack (for Responsiveness)
 
+### Responsive design Mobile friendly test Google
 
+https://search.google.com/test/mobile-friendly?id=zeK6WGGEddR6Yj4lSUtuXw
 
-https://www.browserstack.com/test-on-the-right-mobile-devices
-
-https://www.browserstack.com
 
 
 ## User Testing
-
 
 
 ## Speed
@@ -120,14 +238,16 @@ No user bugs reported.
  
 # Deployment
 
-
 ## GitHub Pages
+
+## Herokue 
+
+
+
+
 
 ### Repository
 All code was written on Github using a newly created repository.
-
-
-
 
 
 ### Updates
