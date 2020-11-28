@@ -1,6 +1,6 @@
 import os
 from flask import (
-    Flask, flash, render_template, 
+    Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -27,8 +27,10 @@ def home_page():
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
-    interventions = list(mongo.db.interventions.find({"$text": {"$search": query}}))
-    return render_template("intervention_pages/interventions.html", interventions=interventions)
+    interventions = list(mongo.db.interventions.find
+                         ({"$text": {"$search": query}}))
+    return render_template("intervention_pages/interventions.html",
+                           interventions=interventions)
 
 
 @app.route("/")
@@ -42,8 +44,8 @@ def show_training():
 @app.route("/show_interventions")
 def show_interventions():
     interventions = list(mongo.db.interventions.find())
-    return render_template("intervention_pages/interventions.html", 
-    interventions=interventions)
+    return render_template("intervention_pages/interventions.html",
+                           interventions=interventions)
 
 
 @app.route("/about_page")
@@ -105,7 +107,8 @@ def edit_training(training_id):
         flash("Training Successfully Updated")
         return redirect(url_for("success_training"))
     training = mongo.db.training.find_one({"_id": ObjectId(training_id)})
-    return render_template("training_pages/edit_training.html", training=training)
+    return render_template("training_pages/edit_training.html",
+                           training=training)
 
 
 """
@@ -128,7 +131,8 @@ def add_interventions():
             "intervention_website": request.form.get("intervention_website"),
             "intervention_rating": request.form.get("intervention_rating"),
             "intervention_duration": request.form.get("intervention_duration"),
-            "intervention_resources": request.form.get("intervention_resources"),
+            "intervention_resources": request.form.get
+            ("intervention_resources"),
             "intervention_cost": request.form.get("intervention_cost")
         }
         mongo.db.interventions.insert_one(interventions)
@@ -138,7 +142,8 @@ def add_interventions():
         return render_template("intervention_pages/add_interventions.html")
 
     interventions = mongo.db.interventions.find().sort("name", 1)
-    return render_template("intervention_pages/add_interventions", interventions=interventions)
+    return render_template("intervention_pages/add_interventions",
+                           interventions=interventions)
 
 
 @app.route("/edit_interventions/<interventions_id>", methods=["GET", "POST"])
@@ -149,14 +154,18 @@ def edit_interventions(interventions_id):
             "intervention_website": request.form.get("intervention_website"),
             "intervention_rating": request.form.get("intervention_rating"),
             "intervention_duration": request.form.get("intervention_duration"),
-            "intervention_resources": request.form.get("intervention_resources"),
+            "intervention_resources": request.form.get
+            ("intervention_resources"),
             "intervention_cost": request.form.get("intervention_cost")
         }
-        mongo.db.interventions.update({"_id": ObjectId(interventions_id)}, submit)
+        mongo.db.interventions.update({"_id": ObjectId(interventions_id)},
+                                      submit)
         flash("Task Successfully Updated")
         return redirect(url_for("show_interventions"))
-    interventions = mongo.db.interventions.find_one({"_id": ObjectId(interventions_id)})
-    return render_template("intervention_pages/edit_interventions.html", interventions=interventions)
+    interventions = mongo.db.interventions.find_one
+    ({"_id": ObjectId(interventions_id)})
+    return render_template("intervention_pages/edit_interventions.html",
+                           interventions=interventions)
 
 
 @app.route("/delete_interventions/<interventions_id>")
@@ -179,5 +188,5 @@ def internal_server_error(error):
 
 
 if __name__ == "__main__":
-    app.run(host = os.environ.get("IP"), port=int(os.environ.get("PORT")),
+    app.run(host=os.environ.get("IP"), port=int(os.environ.get("PORT")),
             debug=True)
