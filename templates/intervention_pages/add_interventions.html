@@ -2,86 +2,89 @@
 
 <h2 class="card-panel align-center deep-orange lighten-2">Add Interventions</h2>
 
-<div class="white"></div>
+<section id="add_interventions">
+    <div class="white"></div>
 
-<div class="container">
-    <div class="row card-panel grey-lighten-5">
-        <form class="col s12" method="POST" action="{{ url_for('add_interventions') }}">
-            <!-- Name -->
-            <div class="row">
-                <div class="input-field col s12 m6 l12">
-                    <i class="fas fa-list prefix"></i>
-                    <input id="intervention_name" name="intervention_name" minlength="5" maxlength="100" type="text" class="validate" required />
-                    <label for="intervention_name">Intervention Name</label>
+    <div class="container">
+        <div class="row card-panel grey-lighten-5">
+            <form class="col s12" method="POST" action="{{ url_for('add_interventions') }}">
+                <!-- Name -->
+                <div class="row">
+                    <div class="input-field col s12 m6 l12">
+                        <i class="fas fa-list prefix"></i>
+                        <input id="intervention_name" name="intervention_name" minlength="5" maxlength="100" type="text" class="validate" required />
+                        <label for="intervention_name">Intervention Name</label>
+                    </div>
                 </div>
-            </div>
 
-            <!-- website -->
-            <div class="row">
-                <div class="input-field col s12 m6 l12">
-                    <i class="fas fa-link prefix"></i>
-                    <input id="intervention_website" name="intervention_website" minlength="5" maxlength="50" type="text" class="validate" required />
-                    <label for="intervention_website">Website</label>
+                <!-- website -->
+                <div class="row">
+                    <div class="input-field col s12 m6 l12">
+                        <i class="fas fa-link prefix"></i>
+                        <input id="intervention_website" name="intervention_website" minlength="5" maxlength="50" type="text" class="validate" required />
+                        <label for="intervention_website">Website</label>
+                    </div>
                 </div>
-            </div>
 
-            <!-- SEN Area and Rating -->
-            <div class="row">
-                <div class="input-field col s12 m6 l6">
-                    <i class="fas fa-smile prefix"></i>
-                    <select id="intervention_rating" name="intervention_rating" class="validate" required>
-                        <option value="" disabled selected>Intervention Rating</option>
-                        <option value="1">1 - Poor</option>
-                        <option value="2">2 - Some useful features</option>
-                        <option value="3">3 - Average</option>
-                        <option value="4">4 - Good</option>
-                        <option value="5">5 - Great</option>
-                    </select>
-                    <label></label>
+                <!-- SEN Area and Rating -->
+                <div class="row">
+                    <div class="input-field col s12 m6 l6">
+                        <i class="fas fa-smile prefix"></i>
+                        <select id="intervention_rating" name="intervention_rating" class="validate" required>
+                            <option value="" disabled selected>Intervention Rating</option>
+                            <option value="1">1 - Poor</option>
+                            <option value="2">2 - Some useful features</option>
+                            <option value="3">3 - Average</option>
+                            <option value="4">4 - Good</option>
+                            <option value="5">5 - Great</option>
+                        </select>
+                        <label></label>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Duration of intervention -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-clock prefix"></i>
-                    <input id="intervention_duration" name="intervention_duration" type="text" class="materialize-textarea validate" required />
-                    <label for="intervention_duration">Duration</label>
+                <!-- Duration of intervention -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-clock prefix"></i>
+                        <input id="intervention_duration" name="intervention_duration" type="text" class="materialize-textarea validate" required />
+                        <label for="intervention_duration">Duration</label>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Resources required -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-suitcase prefix"></i>
-                    <input id="intervention_resources" name="intervention_resources" type="text" class="materialize-textarea validate" required />
-                    <label for="intervention_resources">Resources Required</label>
+                <!-- Resources required -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-suitcase prefix"></i>
+                        <input id="intervention_resources" name="intervention_resources" type="text" class="materialize-textarea validate" required />
+                        <label for="intervention_resources">Resources Required</label>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Cost -->
-            <div class="row">
-                <div class="input-field col s12 m6 l6">
-                    <i class="fas fa-pound-sign prefix"></i>
-                    <select id="intervention_cost" name="intervention_cost" class="validate" required>
-                        <option value="" disabled selected>Cost</option>
-                        <option value="Free">Free</option>
-                        <option value="Registration Required £">Registration Required £</option>
-                        <option value="Subscription Required ££">Subscription Required ££</option>
-                        <option value="Training Required £££">Training Required £££</option>
-                    </select>
-                    <label>Cost of intervention</label>
+                <!-- Cost -->
+                <div class="row">
+                    <div class="input-field col s12 m6 l6">
+                        <i class="fas fa-pound-sign prefix"></i>
+                        <select id="intervention_cost" name="intervention_cost" class="validate" required>
+                            <option value="" disabled selected>Cost</option>
+                            <option value="Free">Free</option>
+                            <option value="Registration Required £">Registration Required £</option>
+                            <option value="Subscription Required ££">Subscription Required ££</option>
+                            <option value="Training Required £££">Training Required £££</option>
+                        </select>
+                        <label>Cost of intervention</label>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Submit button -->
-            <div class="row">
-                <div class="col s12 center-align">
-                    <button type="submit" class="btn-large light-blue darken-1 text-shadow">Add Intervention <i class="fas fa-plus-square right"></i></button>
+                <!-- Submit button -->
+                <div class="row">
+                    <div class="col s12 center-align">
+                        <button type="submit" class="btn-large light-blue darken-1 text-shadow">Add Intervention <i class="fas fa-plus-square right"></i></button>
+                    </div>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
-</div>
+</section>
+
 
 {% endblock %}

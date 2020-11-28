@@ -2,84 +2,82 @@
 
 <h1 class="align-center blue lighten-4 help">Help</h1>
 
-<div class="container">
-    <div class="white"></div>
+<section id="help_content">
+    <div class="container">
+        <div class="white"></div>
 
-    <div class="row">
-        <div class="col s12 align-center card-panel orange-gradient">
-            <h3>Stuck? Find your answers here</h3>
-            <i class="far fa-question-circle fa-4x"></i>
-            <p>We aim to make our site as easy as possible, no matter what device you are using.  If you can't find answers here, contact us below.</p>
+        <div class="row">
+            <div class="col s12 align-center card-panel orange-gradient">
+                <h3>Stuck? Find your answers here</h3>
+                <i class="far fa-question-circle fa-4x"></i>
+                <p>We aim to make our site as easy as possible, no matter what device you are using. If you can't find answers here, contact us below.</p>
+            </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col s12 m12 l12 card-panel grey-gradient align-center">
-            <h4 class="bold">How to Add?</h4>
-            <p>Easy!  Just click on the menu above, on the ADD TRAINING or ADD INTERVENTIONS button, fill out all the required form and SUBMIT.</p>
-        
+        <div class="row">
+            <div class="col s12 m12 l12 card-panel grey-gradient align-center">
+                <h4 class="bold">How to Add?</h4>
+                <p>Easy! Just click on the menu above, on the ADD TRAINING or ADD INTERVENTIONS button, fill out all the required form and SUBMIT.</p>
+            </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col s12 m12 l12 card-panel grey-gradient align-center">
-            <h4 class="bold">What if I made a mistake?</h4>
-            <p>No problem!  Just click on the INTERVENTION you made an error on and click the EDIT button.  Make your changes and SUBMIT.</p>
+        <div class="row">
+            <div class="col s12 m12 l12 card-panel grey-gradient align-center">
+                <h4 class="bold">What if I made a mistake?</h4>
+                <p>No problem! Just click on the INTERVENTION you made an error on and click the EDIT button. Make your changes and SUBMIT.</p>
+            </div>
         </div>
-    </div>
         <div class="row">
             <div class="col s12 m12 l12 card-panel grey-gradient align-center">
                 <h4 class="bold">How do I delete old interventions</h4>
-                <p>Simple! Click on the chosen intervention and then click on DELETE. </p>
+                <p>Simple! Click on the chosen intervention and then click on DELETE.</p>
             </div>
         </div>
     </div>
+</section>
 
+<section id="contact_form">
     <div class="row">
         <div class="col s12 align-center card-panel orange-gradient align-center">
             <h4 class="bold">Need further help?</h4>
             <p>Use the form below.</p>
         </div>
     </div>
-  
-<!-- contact form -->
-            
-            <div class="container align-center">
-                <div class="row ">
-                    <div class="col s12 m12 l12">
-                        <h2>Get in contact</h2>
-                        <h3>Couldn't find what you were looking for?</h3>
-                        <p>Fill out the form and one of our team will get back to you</p>
-                  </div>
-                        <div class="col s12 m6 l8">
-                            <form name = "form" onsubmit="return sendMail(this);">
-                                <input type="text" name="from_name" id="from_name"  placeholder="Name" required />
-                                <input type="email" name="from_email" id="from_email" placeholder="Email" required />
-                                <input type="text" name="role" id="role"  placeholder="role" required />
-                                <input type="text" name="help_request" id="help_request"  placeholder="Help request" required />
-                                
-                                <!-- Submit button -->
-            <div class="row">
-                <div class="col s12 align-center">
-                    <button type="submit" class="btn-large green text-shadow">Submit</button>
-                </div>
+
+    <!-- form -->
+
+    <div class="container align-center">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <h2>Get in contact</h2>
+                <h3>Couldn't find what you were looking for?</h3>
+                <p>Fill out the form and one of our team will get back to you</p>
             </div>
-                            </form>
+            <div class="col s12 m6 l8">
+                <form name="form" onsubmit="return sendMail(this);">
+                    <input type="text" name="from_name" id="from_name" placeholder="Name" required />
+                    <input type="email" name="from_email" id="from_email" placeholder="Email" required />
+                    <input type="text" name="role" id="role" placeholder="role" required />
+                    <input type="text" name="help_request" id="help_request" placeholder="Help request" required />
 
+                    <!-- Submit button -->
+                    <div class="row">
+                        <div class="col s12 align-center">
+                            <button type="submit" class="btn-large green text-shadow">Submit</button>
                         </div>
-                    
-
+                    </div>
+                </form>
+            </div>
 
             <div class="col s12 m6 l4">
-          
-            <div class="align-center">
-                <h4>Contact Us</h4>
-                <h5>The SLCN Library</h5>
-                <i class="fas fa-phone fa-10x align-center"></i>
+                <div class="align-center">
+                    <h4>Contact Us</h4>
+                    <h5>The SLCN Library</h5>
+                    <i class="fas fa-phone fa-10x align-center"></i>
+                </div>
             </div>
         </div>
-                </div>
-           </div>
-       
+    </div>
+</section>
 
 {% endblock %}

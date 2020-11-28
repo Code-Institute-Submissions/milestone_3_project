@@ -2,82 +2,87 @@
 
 <h2 class="card-panel align-center deep-orange lighten-2">Edit Interventions</h2>
 
-<div class="container">
-    <div class="row card-panel grey lighten-5">
-        <form class="col s12" method="POST" action="{{ url_for('edit_interventions', interventions_id=interventions._id) }}">
-            <!-- task name -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-list prefix"></i>
-                    <input id="intervention_name" name="intervention_name" minlength="5" maxlength="50" value="{{ interventions.intervention_name }}" type="text" class="materialize-textarea validate" required />
-                    <label for="intervention_name">Intervention Name</label>
+<section id="edit_interventions">
+    <div class="container">
+        <div class="row card-panel grey lighten-5">
+            <form class="col s12" method="POST" action="{{ url_for('edit_interventions', interventions_id=interventions._id) }}">
+                <!-- task name -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-list prefix"></i>
+                        <input id="intervention_name" name="intervention_name" minlength="5" maxlength="50" value="{{ interventions.intervention_name }}" type="text" class="materialize-textarea validate" required />
+                        <label for="intervention_name">Intervention Name</label>
+                    </div>
                 </div>
-            </div>
-            <!-- website -->
-            <div class="row overflow">
-                <div class="input-field col s12">
-                    <i class="fas fa-link prefix"></i>
-                    <input id="intervention_website" name="intervention_website" minlength="5" maxlength="100" value="{{ interventions.intervention_website }}" type="text" class="materialize-textarea validate" required />
-                    <label for="intervention_website">Intervention Website</label>
+                <!-- website -->
+                <div class="row overflow">
+                    <div class="input-field col s12">
+                        <i class="fas fa-link prefix"></i>
+                        <input id="intervention_website" name="intervention_website" minlength="5" maxlength="100" value="{{ interventions.intervention_website }}" type="text" class="materialize-textarea validate" required />
+                        <label for="intervention_website">Intervention Website</label>
+                    </div>
                 </div>
-            </div>
-            <!-- task description -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-smile prefix"></i>
-                    <textarea id="intervention_rating" name="intervention_rating" minlength="5" maxlength="200" class="materialize-textarea validate" required>
+                <!-- task description -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-smile prefix"></i>
+                        <textarea id="intervention_rating" name="intervention_rating" minlength="5" maxlength="200" class="materialize-textarea validate" required>
                         {{- interventions.intervention_rating -}}
-                    </textarea>
-                    <label for="intervention_rating">Rating</label>
-                </div>
-            </div>
-            <!-- due date picker -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-clock prefix"></i>
-                    <input id="intervention_duration" name="intervention_duration" type="text" value="{{ interventions.intervention_duration }}" class="materialize-textarea validate" required />
-                    <label for="intervention_duration">Duration</label>
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-suitcase prefix"></i>
-                    <input id="intervention_resources" name="intervention_resources" type="text" value="{{ interventions.training_resources }}" class="materialize-textarea validate" required />
-                    <label for="intervention_resources">Resources</label>
+                        </textarea>
+                        <label for="intervention_rating">Rating</label>
+                    </div>
                 </div>
-            </div>
+                <!-- due date picker -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-clock prefix"></i>
+                        <input id="intervention_duration" name="intervention_duration" type="text" value="{{ interventions.intervention_duration }}" class="materialize-textarea validate" required />
+                        <label for="intervention_duration">Duration</label>
+                    </div>
+                </div>
 
-            <!-- Cost -->
-            <div class="row">
-                <div class="input-field col s12 m6 l6">
-                    <i class="fas fa-pound-sign prefix"></i>
-                    <select id="intervention_cost" name="intervention_cost" class="validate" required>
-                        <option value="{{ interventions.intervention_cost }}" disabled selected>Choose One</option>
-                        <option value="Free">Free</option>
-                        <option value="Registration Required £">Registration Required £</option>
-                        <option value="Subscription Required ££">Subscription Required ££</option>
-                        <option value="Training Required £££">Training Required £££</option>
-                    </select>
-                    <label>Cost of intervention</label>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-suitcase prefix"></i>
+                        <input id="intervention_resources" name="intervention_resources" type="text" value="{{ interventions.training_resources }}" class="materialize-textarea validate" required />
+                        <label for="intervention_resources">Resources</label>
+                    </div>
                 </div>
-            </div>
 
-            <!-- submit button -->
-            <div class="row">
-                <div class="col s12 center-align">
-                    <!-- cancel button -->
-                    <a href="{{ url_for('show_interventions') }}" class="btn-large red text-shadow"> Cancel <i class="fas fa-times-circle right"></i> </a>
-                    <br />
-                    <button type="submit" class="btn-large green darken-1 text-shadow">Update Intervention <i class="fas fa-edit right"></i></button>
+                <!-- Cost -->
+                <div class="row">
+                    <div class="input-field col s12 m6 l6">
+                        <i class="fas fa-pound-sign prefix"></i>
+                        <select id="intervention_cost" name="intervention_cost" class="validate" required>
+                            <option value="{{ interventions.intervention_cost }}" disabled selected>Choose One</option>
+                            <option value="Free">Free</option>
+                            <option value="Registration Required £">Registration Required £</option>
+                            <option value="Subscription Required ££">Subscription Required ££</option>
+                            <option value="Training Required £££">Training Required £££</option>
+                        </select>
+                        <label>Cost of intervention</label>
+                    </div>
                 </div>
-            </div>
-        </form>
+
+                <!-- submit button -->
+                <div class="row">
+                    <div class="col s12 center-align">
+                        <!-- cancel button -->
+                        <a href="{{ url_for('show_interventions') }}" class="btn-large red text-shadow"> Cancel <i class="fas fa-times-circle right"></i> </a>
+                        <br />
+                        <button type="submit" class="btn-large green darken-1 text-shadow">Update Intervention <i class="fas fa-edit right"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+
     </div>
-</div>
 
-{% endblock %}
-
-
+       
+</section>
 
 
+ {% endblock %}

@@ -13,121 +13,127 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" type="text/css" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,100&display=swap" rel="stylesheet" />
+        <!-- favicon error fix -->
         <link rel="shortcut icon" href="#" />
-        <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
-</script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init("user_LotgXUKrc88pOhpPCYgaH");
-   })();
-</script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+        <!-- Email JS function script-->
+        <script type="text/javascript">
+            (function () {
+                emailjs.init("user_LotgXUKrc88pOhpPCYgaH");
+            })();
+        </script>
         {% block styles %} {% endblock %}
         <title>Communication Library</title>
     </head>
     <body>
-        <header>
-            <div class="navbar-fixed">
-                <nav class="nav-extended grey darken-3 opacity">
-                    <div class="nav-wrapper left-align">
-                        <a href="{{ url_for('home_page') }}" class="brand-logo">
-                        <i class="far fa-comments icon-comment logo-placement"></i></a>
-                        <a href="..." data-target="mobile-demo" class="sidenav-trigger left"><i class="fas fa-bars"></i></a>
-                        <ul class="right hide-on-med-and-down">
-                            <!-- Home page merge with about, delete home file and app.py functions. -->
-
-                            <!-- Dropdown Structure Help -->
-                            <ul id="dropdown5" class="dropdown-content">
+        <!-- navbar -->
+        <section id="navbar">
+            <header>
+                <div class="navbar-fixed">
+                    <nav class="nav-extended grey darken-3 opacity">
+                        <div class="nav-wrapper left-align">
+                            <a href="{{ url_for('home_page') }}" class="brand-logo"> <i class="far fa-comments icon-comment logo-placement"></i></a>
+                            <a href="..." data-target="mobile-demo" class="sidenav-trigger left"><i class="fas fa-bars"></i></a>
+                            <ul class="right hide-on-med-and-down">
+                                <!-- Dropdown Structure -->
+                                <ul id="dropdown5" class="dropdown-content">
+                                    <li>
+                                        <a href="{{ url_for('about_page') }}">About</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url_for('help_page') }}">Help</a>
+                                    </li>
+                                </ul>
                                 <li>
-                                    <a href="{{ url_for('about_page') }}">About</a>
+                                    <a class="dropdown-trigger" href="..." data-target="dropdown5"><i class="fas fa-info-circle"></i></a>
                                 </li>
+
+                                <!-- Dropdown Structure for Intervention-->
+                                <ul id="dropdown1" class="dropdown-content" data-constrainwidth="false">
+                                    <li><a href="{{ url_for('show_interventions') }}">Intervention</a></li>
+                                    <li><a href="{{ url_for('add_interventions') }}">Add Intervention</a></li>
+                                </ul>
                                 <li>
-                                    <a href="{{ url_for('help_page') }}">Help</a>
+                                    <a class="dropdown-trigger" data-target="dropdown1"><i class="fas fa-user-graduate"></i></a>
                                 </li>
+
+                                <!-- Dropdown Structure Training -->
+                                <ul id="dropdown2" class="dropdown-content">
+                                    <li><a href="{{ url_for('show_training') }}">Training</a></li>
+                                    <li><a href="{{ url_for('add_training') }}">Add Training</a></li>
+                                </ul>
+                                <li>
+                                    <a class="dropdown-trigger" href="..." data-target="dropdown2"><i class="fas fa-hands-helping"></i></a>
+                                </li>
+
+                                <!-- End dropdowns -->
                             </ul>
-                            <li>
-                                <a class="dropdown-trigger" href="..." data-target="dropdown5"><i class="fas fa-info-circle"></i></a>
-                            </li>
+                        </div>
+                    </nav>
+                </div>
 
-                            <!-- Dropdown Structure Students -->
-                            <ul id="dropdown1" class="dropdown-content" data-constrainwidth="false">
-                                <li><a href="{{ url_for('show_interventions') }}">Intervention</a></li>
-                                <li><a href="{{ url_for('add_interventions') }}">Add Intervention</a></li>
-                            </ul>
-                            <li>
-                                <a class="dropdown-trigger" data-target="dropdown1"><i class="fas fa-user-graduate"></i></a>
-                            </li>
+                <!-- mobile navbar from Materialize  -->
 
-                            <!-- Dropdown Structure Interventions -->
-                            <ul id="dropdown2" class="dropdown-content">
-                                <li><a href="{{ url_for('show_training') }}">Training</a></li>
-                                <li><a href="{{ url_for('add_training') }}">Add Training</a></li>
-                            </ul>
-                            <li>
-                                <a class="dropdown-trigger" href="..." data-target="dropdown2"><i class="fas fa-hands-helping"></i></a>
-                            </li>
+                <ul class="sidenav bold" id="mobile-demo">
+                    <div class="white"></div>
+                    <li><h5 class="align-center">SLCN</h5></li>
+                    <li><a href="{{ url_for('home_page') }}">Home</a></li>
+                    <li><a href="{{ url_for('about_page') }}">About</a></li>
+                    <li><a href="{{ url_for('help_page') }}">Help</a></li>
+                    <li><a href="{{ url_for('show_training') }}">Training</a></li>
+                    <li class="align-center"><a href="{{ url_for('add_training') }}"> - Add Training</a></li>
+                    <li><a href="{{ url_for('show_interventions') }}">Interventions</a></li>
+                    <li class="align-center"><a href="{{ url_for('add_interventions') }}"> - Add Interventions</a></li>
+                </ul>
+            </header>
+        </section>
+        <!-- end navbar -->
 
-                            <!-- End dropdowns. -->
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-
-            <ul class="sidenav bold" id="mobile-demo">
-                <div class="white"></div>
-                <li><h5 class="align-center">SLCN</h5></li>
-                <li><a href="{{ url_for('home_page') }}">Home</a></li>
-                <li><a href="{{ url_for('about_page') }}">About</a></li>
-                <li><a href="{{ url_for('help_page') }}">Help</a></li>
-                <li><a href="{{ url_for('show_training') }}">Training</a></li>
-                <li class="align-center"><a href="{{ url_for('add_training') }}"> - Add Training</a></li>
-                <li><a href="{{ url_for('show_interventions') }}">Interventions</a></li>
-                <li class="align-center"><a href="{{ url_for('add_interventions') }}"> - Add Interventions</a></li>
-
-                <div class="white"></div>
-                <div class="white"></div>
-                <div class="white"></div>
-                <div class="white"></div>
-                <div class="white"></div>
-                <div class="white"></div>
-            </ul>
-        </header>
-
+        <!-- main content insert -->
         <main>
             {% block content %} {% endblock %}
         </main>
+        
 
-        <footer class="page-footer grey darken-4">
-            <div class="container">
-                <div class="row">
-                    <h5 class="white-text">Visit some of our friends</h5>
-                    <br />
-                    <div class="col s6">The Communication Trust</div>
-                    <div class="col s6">ICAN</div>
-                </div>
+        <!-- Footer Section -->
+       
+            <footer class="page-footer grey darken-4">
+                <div class="container">
+                    <div class="row">
+                        <h5 class="white-text">Visit some of our friends</h5>
+                        <br />
+                        <div class="col s6">The Communication Trust</div>
+                        <div class="col s6">ICAN</div>
+                    </div>
 
-                <div class="row">
-                    <div class="col s6">Complex Needs -SLCN</div>
-                    <div class="col s6">NHS Speech and Language</div>
-                </div>
+                    <div class="row">
+                        <div class="col s6">Complex Needs -SLCN</div>
+                        <div class="col s6">NHS Speech and Language</div>
+                    </div>
 
-                <div class="row">
-                    <div class="col s6">
-                        Communication Matters
+                    <div class="row">
+                        <div class="col s6">
+                            Communication Matters
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="container">
-            <div class="right">
-                © 2020 Copyright
-            </div>
-            </div>
-        </footer>
+                <div class="container">
+                    <div class="right">
+                        © 2020 Copyright
+                    </div>
+                </div>
+            </footer>
+     
+        <!-- End Footer -->
+
 
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="{{ url_for('static', filename='js/script.js') }}"></script>
         {% block scripts %} {% endblock %}
     </body>
+
+
 </html>
+

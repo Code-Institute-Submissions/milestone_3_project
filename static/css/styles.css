@@ -4,13 +4,16 @@
      font-family: 'Roboto', sans-serif;
      font-size: 16pt;
      display: flex;
-     min-height: 100vh;
+     height: 100vh;
      flex-direction: column;
      overflow-wrap: break-word;
+     margin: 0;
+     }
+
+main {
+    flex: 1 auto;
 }
- main {
-     flex: 1 0 auto;
-}
+
 /* fonts ---------------------------------------   */
  .bold {
      font-weight: 900;
@@ -148,5 +151,10 @@
      padding-right: 52px;
 }
  
+/* Footer -------------------------------------- */
 
-
+#footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

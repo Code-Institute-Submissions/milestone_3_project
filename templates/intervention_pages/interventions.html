@@ -2,11 +2,12 @@
 
 <h2 class="card-panel align-center deep-orange lighten-2">Your Interventions</h2>
 
+<section id="intervention_explanations">
 <div class="container">
     <div class="white"></div>
 
     <div class="white"></div>
-
+<!--  Search tips -->
     <div class="row align-center search">
         <div class="col s12 m12 l12 attention grey-gradient home-cards">
             <h4 class="deep-orange-text">Attention</h4>
@@ -24,6 +25,10 @@
     </div>
 
     <div class="white"></div>
+</section>
+
+
+<section id="search_feature">
 
     <div class="row card-panel grey-lighten-5">
         <form action="{{ url_for('search') }}" method="POST" class="col s12">
@@ -40,6 +45,10 @@
             </div>
         </form>
     </div>
+</section>
+
+
+<section id="intervention_list">
 
     {% if interventions|length > 0 %}
 
@@ -82,5 +91,11 @@
     {% endfor %}
 </div>
 {% else %}
-<h5 class="red-text">No results</h5>
+<div class="container">
+<h5 class="red-text align-center">No results, try again (read above for hints!)</h5>
+<div class="white">
+</div>
+</div>
 {% endif %} {% endblock %}
+
+</section>
