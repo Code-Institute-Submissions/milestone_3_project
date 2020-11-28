@@ -2,6 +2,11 @@
 
 ![responsive image](https://github.com/samc85/milestone_3_project/blob/master/images/readme_page.png)
 
+
+
+https://milestone-3-project.herokuapp.com/
+
+
 # SLCN Library
 This website is a resource for a teachers and education staff to use to best support students with Speech, Language and Communication Needs.  By providing
 two libraries one for Training Courses and one for suitable Interventions, this resource will help education staff be better prepared and more informed
@@ -159,7 +164,7 @@ These were designed as follows:
 # Testing
 
 
-### Manual testing
+## Manual testing
 
 Features that were manually tested:
 
@@ -206,8 +211,12 @@ Features that were manually tested:
 
 ## GitHub
 
-Running 'python3 app.py' from the command line, live previews were used to manually test
-different features and functions within Git.   
+From the command line, enter below to view live previews.  This was done to test the different
+tools and features of the webpage in conjunction with Google Developer Tools. 
+```
+python3 app.py 
+```
+
 
 ## Heroku
 
@@ -215,9 +224,13 @@ Running the app through Heroku, website was checked for errors using Google Deve
 No discrepencies existed that weren't consistent between sites and subsequently fixed.
 
 
-## Google Developer Tools**
+## Google Developer Tools
 This was used to view the responsiveness of the webpage through the following:
-Pixel 2, Pixel XL, iphone 5, SE, 6/7/8 and plus versions, X and ipad and ipad pro.  
+Pixel 2, Pixel XL, iphone 5, SE, 6/7/8 and plus versions, X and ipad and ipad pro.
+
+
+Google Developer Tools was also used to identify any console errors that appeared throughout page
+creation.
 
 ## Errors
 
@@ -231,24 +244,38 @@ No warnings present.
 
 User testing were as follows:  
 
+* A range of potential users were asked to test the app.  
+* These included targeted profesionals of different ages.
+* A range of devices were used including, desktops, ipads, phones and laptops.
+
+No broken links or errors were reported by users. 
+
 
 # External Testing
 
-The website was checked through the following Validation service tools:
+The website was checked through the following Validation service tools, any errors are described within:
 
-* W3 validator (for HTML)
+### 1.  W3 validator (for HTML)
 
-* CSS Validator (for CSS)
+### 2. CSS Validator (for CSS)
+    
+CSS Validator flags one Value Error for the Materalize CDN.  Upon checking, the Value Error is consistent with 
+    the Materalize CDN links on the webpage.  Details are below:
 
-* JSLint (for Javascript)
+       *URI : https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css*
+    
+       *Value Error : letter-spacing only 0 can be a unit. You must put a unit after your number : 0.4*
 
-* JSHint (for Javascript)
+    
 
-* Esprima (for Javascript)
+### 3. JSLint (for Javascript)
 
-Validation services 
+### 4. JSHint (for Javascript)
 
-* Responsive design Mobile friendly test Google
+### 5. Esprima (for Javascript)
+
+
+### 6.  Responsive design Mobile friendly test Google
 
 https://search.google.com/test/mobile-friendly?id=zeK6WGGEddR6Yj4lSUtuXw
 
@@ -266,7 +293,26 @@ No user bugs reported.
 ## GitHub Pages
 
 ### Repository
-All code was written on Github using a newly created repository.
+All code was written on Github using a newly created repository.  This is created by signing up to Github and
+creating a New Respository in the user Profile section.
+
+The following tools were added to the repository as detailed below:
+
+Flask
+
+```
+pip3 install Flask
+```
+
+Python files
+
+```
+touch app.py
+touch env.py
+touch .gitignore
+```
+
+The git ignore file should contain the env.py to ensure that secret codes are not shared publicly.  
 
 
 
@@ -279,11 +325,11 @@ Using GitHub, HTML, CSS. JavaScript and additional resources were updated via th
 
 In the Command line enter: 
 ```
-git Status
+git status
 ```
 To give you the names of which files have been modified and require following the below process.
 ```
-git add (insert appropriate file path here e.g index.html)
+git add -A  (or insert appropriate file path here e.g index.html)
 ```
 ```
 git commit -m '(insert description of update e.g Font style updated to ...)'
@@ -316,38 +362,51 @@ If a person wished to make a local clone, the following steps should be followed
 ```
 $ git clone https://github.com/YOUR-USERNAME/YOUR-Repository
 ```
+
 * Press enter and your local clone will be created.  
+
 
 
 ## Heroku
 
-1. Create a requirements.txt file by typing pip3 freeze --local > requirements.txt into the terminal line.
+1. Create a requirements.txt file by typing into the terminal line:
 
-2. Create a Procfile by typing echo web: python app.py > Procfile.
+```
+pip3 freeze --local > requirements.txt
+```
 
-3. Add, commit and push these changes to Github, followng steps above.
+
+
+2. Create a Procfile by typing 
+
+```
+echo web: python app.py > Procfile.
+```
+
+3. *Add*, *commit* and *push* these changes to Github, followng steps above.
 
 4. Navigate to the www.heroku.com
 
 5. Create new app and give it a unique name.
 
-6. Choose the region that is closest to you.
+6. Choose the *region* that is closest to you.
 
-7. Go to the Deploy tab and choose Github.
+7. Go to the *Deploy* tab and choose *Github*.
 
-8. Search for the correct repository and connect.
+8. Search for the desired repository and connect.
 
-9. Go to Heroku Settings and navigate to Config Vars.
+9. Go to Heroku *Settings* and navigate to *Config Vars*.
 
-10. Set the following:
+10. Set the following as below:
 
+```
 IP = 0.0.0.0
 MONGO_DBNAME = [Name of MongoDB]
 MONGO_URI = mongodb+srv://:@<cluster_name>-qtxun.mongodb.net/<database_name>?retryWrites=true&w=majority
 PORT = 5000
 SECRET_KEY = [Secret key]
+```
 Go to the Deploy tab and Deploy Branch, ensuring that the master branch is selected.
-
 
 # API's
 
@@ -375,17 +434,11 @@ https://www.emailjs.com/docs/introduction/how-does-emailjs-work/
 
 * Code for HTML, CSS and Javascript was beautified using HTML, CSS and Javascript Formatters.
 
-
-
 * Support with writing code referenced the following additional websites:
-
-
 
 * APIs were sourced form the following pages
 
-
-
-https://www.emailjs.com/
+    https://www.emailjs.com/
 
 
  
@@ -393,7 +446,7 @@ https://www.emailjs.com/
 
 ### Text 
 
-Text was written by myself and proofread by known Lake District residents.
+Text was written by myself.
 
 ### Media
 
