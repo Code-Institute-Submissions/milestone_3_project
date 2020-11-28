@@ -1,13 +1,18 @@
+
+// Jquery functions for page interactivity //
+
 $(document).ready(function(){
-    $('.sidenav').sidenav();
-    $('.dropdown-trigger').dropdown();
-    $('.collapsible').collapsible();
-    $('.tooltipped').tooltip();
-    $('select').formSelect();
-    $('.datepicker').datepicker()
-    $('input#input_text, textarea#textarea2').characterCounter();
+    $(".sidenav").sidenav();
+    $(".dropdown-trigger").dropdown();
+    $(".collapsible").collapsible();
+    $(".tooltipped").tooltip();
+    $("select").formSelect();
+    $(".datepicker").datepicker();
+    $("input#input_text, textarea#textarea2").characterCounter();
   });
 
+
+// Email JS function for contact form //
 
   function sendMail(contactForm) {
     emailjs
@@ -28,9 +33,7 @@ $(document).ready(function(){
         );
         document.form.reset();
         return false; 
-};
-
-
+}
 
   
 
