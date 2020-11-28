@@ -44,9 +44,9 @@
             </div>
         </section>
 
-        <section id="intervention_list">
+       
             {% if interventions|length > 0 %}
-
+ 
             <div class="white"></div>
 
             {% for interventions in interventions %}
@@ -80,15 +80,16 @@
                     </div>
                 </li>
             </ul>
-
-            <br />
-
-            {% endfor %} {% else %}
+            {% endfor %} 
+            
+            {% else %}
             <div class="container">
                 <h5 class="red-text align-center">No results, try again (read above for hints!)</h5>
                 <div class="white"></div>
             </div>
-            {% endif %} {% endblock %}
-        </section>
+            {% endif %} 
+            
+            {% endblock %}
+     
     </div>
 </section>
