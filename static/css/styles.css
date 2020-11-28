@@ -1,204 +1,152 @@
 
-body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 16pt;
+/* Global styles --------------------------------   */
+ body {
+     font-family: 'Roboto', sans-serif;
+     font-size: 16pt;
+     display: flex;
+     min-height: 100vh;
+     flex-direction: column;
+     overflow-wrap: break-word;
 }
-
-.bold {
-    font-weight: 900;
+ main {
+     flex: 1 0 auto;
 }
-
-
-.left-align {
-    padding-left: 9px;
+/* fonts ---------------------------------------   */
+ .bold {
+     font-weight: 900;
 }
-
-.align-center {
-    text-align: center;
-    margin: 0 auto;
-    width: 100%;
+ .deep-orange-text {
+     color: #ff8a65;
 }
-
-.interventions {
-    margin: 0 auto;
-    padding: 9px;
-    text-align: center;
-    font-size: 18pt;
+ .black-font {
+     color: black;
+     text-decoration: none;
 }
-
-.white {
-    margin: 12px;
-    border: 2pt solid white;
+/* Alignments ---------------------------------------   */
+ .vertical {
+     display:block;
+     padding-left: 9px;
 }
-
-.deep-orange-text {
-    color: #ff8a65;
+ .padding {
+     margin: 50px;
 }
-
-.collapsible {
-    margin: 0 auto;
-    width: 95%;
+ .align-center {
+     text-align: center;
+     margin: 0 auto;
+     width: 100%;
 }
-
-.collapsible-body {
-    font-size: 14pt;
+ .left-align {
+     padding-left: 9px;
 }
-
-
-
-
-
-/*  Font awesome. */
-
-.fa-smile, .fa-pound-sign {
-    color: green;
+ .opacity {
+     opacity: 0.9;
 }
-
-.fa-laptop-house {
-    color: darkslateblue;
+/* line break style ---------------------------------------   */
+ .white {
+     margin: 12px;
+     border: 2pt solid white;
 }
-
-.fa-clock, .fa-hourglass-half {
-    color: brown;
+/* Collapsibles ---------------------------------------   */
+ .collapsible {
+     margin: 0 auto;
+     width: 95%;
 }
-
-.fa-suitcase {
-    color: darkgoldenrod;
+ .collapsible-body {
+     font-size: 14pt;
+     overflow-wrap: break-word;
 }
-
-.fa-award, .fa-wifi {
-    color: blue;
+ .collapsible-header, .collapsible-body, .collapsible {
+     border-radius: 30px 30px 0px 0px;
 }
-
-.fa-chalkboard-teacher {
-    color: slategrey;
+/* Font awesome styles ---------------------------------------   */
+ .fa-smile, .fa-pound-sign {
+     color: green;
 }
-
-.fa-calendar-alt {
-    color: seagreen;
+ .fa-laptop-house {
+     color: darkslateblue;
 }
-
-.fa-list {
-    color: black;
+ .fa-clock, .fa-hourglass-half {
+     color: brown;
 }
-
-.fa-phone {
-    color: green;
+ .fa-suitcase {
+     color: darkgoldenrod;
 }
-
-.icon-comment {
-    padding-left: 9px;
-    padding-top: 5px;
-    font-size: 42px;
-    margin: 0 auto;
+ .fa-award, .fa-wifi {
+     color: blue;
 }
-
-
-.blue-gradient {
+ .fa-chalkboard-teacher {
+     color: slategrey;
+}
+ .fa-calendar-alt {
+     color: seagreen;
+}
+ .fa-list {
+     color: black;
+}
+ .fa-phone {
+     color: green;
+}
+ .icon-comment {
+     padding-left: 9px;
+     padding-top: 5px;
+     font-size: 42px;
+     margin: 0 auto;
+}
+ .logo-placement {
+     padding-left: 18px;
+}
+/* Card stlying ---------------------------------------   */
+ .interventions {
+     margin: 0 auto;
+     padding: 9px;
+     text-align: center;
+     font-size: 18pt;
+}
+ .card-content {
+     font-size: 26px;
+}
+ .card {
+     margin: 3px;
+     padding: 6px;
+}
+ .search {
+     width: 90%;
+}
+ .border-bottom {
+     border-bottom: 4pt solid grey;
+}
+ .home-cards {
+     border-radius: 25px 25px 25px 25px;
+     padding-top: 24px;
+     margin-bottom: 24px;
+     width: 90%;
+}
+ .info-cards {
+     overflow-wrap: break-word;
+}
+ .about, .help {
+     padding: 12px;
+}
+ .contact {
+     margin: 0 auto;
+}
+/* Colours ---------------------------------------   */
+ .blue-gradient {
      background-image: linear-gradient(#6190E8 , #A7BFE8 );
 }
-
-.orange-gradient {
+ .orange-gradient {
      background-image: linear-gradient(#ff8a65, #ffccbc );
 }
-
-.card-content {
-    font-size: 26px;
+ .grey-gradient {
+     background-image: linear-gradient(to right, white, #bdc3c7);
 }
-
-.padding {
-    margin: 50px;
+/* Buttons ---------------------------------------   */
+ .btn, .btn-large {
+     margin-bottom: 12px;
 }
-
-.opacity {
-    opacity: 0.9;
+ .dropdown-trigger {
+     padding-right: 52px;
 }
+ 
 
 
-/* footer */
- body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    overflow-wrap: break-word;
-  }
-
-  main {
-    flex: 1 0 auto;
-  }
-      
-.btn, .btn-large {
-    margin-bottom: 12px;
-}
-
-
-.collapsible-body {
-    overflow-wrap: break-word;
-}
-
-.card {
-    margin: 3px;
-    padding: 6px;
-}
-
-
-.info-cards {
-    overflow-wrap: break-word;
-}
-
-.search {
-    width: 90%;
-}
-
-.grey-gradient {
-    background-image: linear-gradient(to right, white, #bdc3c7);
-}
-
-
-
-.collapsible-header, .collapsible-body, .collapsible {
-    border-radius: 30px 30px 0px 0px;
-}
-
-
-.border-bottom {
-    border-bottom: 4pt solid grey;
-}
-
-.home-cards {
-    border-radius: 25px 25px 25px 25px;
-    padding-top: 24px;
-    margin-bottom: 24px;
-    width: 90%;
-}
-
-.vertical {
-    display:block;
-    padding-left: 9px;
-}
-
-.about, .help {
-    padding: 12px;
-}
-
-
-.logo-placement {
-    padding-left: 18px;
-}
-
-
-.dropdown-trigger {
-    padding-right: 52px;
-}
-
-
-
-.contact {
-    margin: 0 auto;
-}
-
-
-.black-font {
-    color: black;
-    text-decoration: none;
-}
