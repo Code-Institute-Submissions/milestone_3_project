@@ -2,108 +2,110 @@
 
 <h2 class="card-panel align-center indigo lighten-1">Edit Training</h2>
 
-<div class="container">
-    <div class="row card-panel grey lighten-5">
-        <form class="col s12" method="POST" action="{{ url_for('edit_training', training_id=training._id) }}">
-            <!-- category selection -->
+<section id="training_success">
+    <div class="container">
+        <div class="row card-panel grey lighten-5">
+            <form class="col s12" method="POST" action="{{ url_for('edit_training', training_id=training._id) }}">
+                <!-- category selection -->
 
-            <div class="row">
-                <div class="input-field col s12 m6 l6">
-                    <i class="fas fa-university prefix"></i>
-                    <input id="training_name" name="training_name" minlength="5" maxlength="50" value="{{ training.training_name }}" type="text" class="validate" required />
-                    <label for="training_name">Training Name</label>
+                <div class="row">
+                    <div class="input-field col s12 m6 l6">
+                        <i class="fas fa-university prefix"></i>
+                        <input id="training_name" name="training_name" minlength="5" maxlength="50" value="{{ training.training_name }}" type="text" class="validate" required />
+                        <label for="training_name">Training Name</label>
+                    </div>
+
+                    <div class="input-field col s12 m6 l6">
+                        <i class="fas fa-users prefix"></i>
+                        <select id="training_type" name="training_type" class="validate" required>
+                            <option value="{{ training.training_type }}" disabled selected>Choose your option</option>
+                            <option value="Management">Management</option>
+                            <option value="In Class">In Class</option>
+                            <option value="Whole School">Whole School</option>
+                            <option value="Small Group">Small Group</option>
+                        </select>
+                        <label>Type of training</label>
+                    </div>
                 </div>
 
-                <div class="input-field col s12 m6 l6">
-                    <i class="fas fa-users prefix"></i>
-                    <select id="training_type" name="training_type" class="validate" required>
-                        <option value="{{ training.training_type }}" disabled selected>Choose your option</option>
-                        <option value="Management">Management</option>
-                        <option value="In Class">In Class</option>
-                        <option value="Whole School">Whole School</option>
-                        <option value="Small Group">Small Group</option>
-                    </select>
-                    <label>Type of training</label>
+                <div class="row">
+                    <div class="input-field col s12 m6 l6">
+                        <i class="fas fa-chalkboard-teacher prefix"></i>
+                        <select id="training_area" name="training_area" class="validate" required>
+                            <option value="{{ training.training_area }}" disabled selected>Choose your option</option>
+                            <option value="Attention">Attention</option>
+                            <option value="Understanding">Understanding</option>
+                            <option value="Expression">Expression</option>
+                            <option value="Speech">Speech</option>
+                            <option value="General">General</option>
+                        </select>
+                        <label>Area of Need for Communication</label>
+                    </div>
                 </div>
-            </div>
 
-            <div class="row">
-                <div class="input-field col s12 m6 l6">
-                    <i class="fas fa-chalkboard-teacher prefix"></i>
-                    <select id="training_area" name="training_area" class="validate" required>
-                        <option value="{{ training.training_area }}" disabled selected>Choose your option</option>
-                        <option value="Attention">Attention</option>
-                        <option value="Understanding">Understanding</option>
-                        <option value="Expression">Expression</option>
-                        <option value="Speech">Speech</option>
-                        <option value="General">General</option>
-                    </select>
-                    <label>Area of Need for Communication</label>
+                <div class="row">
+                    <div class="input-field col s12 m12 l12">
+                        <i class="fas fa-laptop-house prefix"></i>
+                        <select id="delivery_method" name="delivery_method" class="validate" required>
+                            <option value="{{ training.delivery_method }}" disabled selected>Choose your option</option>
+                            <option value="Online">Online</option>
+                            <option value="On site">On site</option>
+                            <option value="Off site">Off site</option>
+                            <option value="Mix">Mix</option>
+                        </select>
+                        <label for="delivery_method">Delivery</label>
+                    </div>
                 </div>
-            </div>
 
-            <div class="row">
-                <div class="input-field col s12 m12 l12">
-                    <i class="fas fa-laptop-house prefix"></i>
-                    <select id="delivery_method" name="delivery_method" class="validate" required>
-                        <option value="{{ training.delivery_method }}" disabled selected>Choose your option</option>
-                        <option value="Online">Online</option>
-                        <option value="On site">On site</option>
-                        <option value="Off site">Off site</option>
-                        <option value="Mix">Mix</option>
-                    </select>
-                    <label for="delivery_method">Delivery</label>
+                <div class="row">
+                    <div class="input-field col s12 m6 l6">
+                        <i class="fas fa-calendar-alt prefix"></i>
+                        <input id="start_date" name="start_date" value="{{ training.start_date }}" type="text" class="datepicker validate" />
+                        <label for="start_date">Start Date</label>
+                    </div>
                 </div>
-            </div>
 
-            <div class="row">
-                <div class="input-field col s12 m6 l6">
-                    <i class="fas fa-calendar-alt prefix"></i>
-                    <input id="start_date" name="start_date" value="{{ training.start_date }}" type="text" class="datepicker validate" />
-                    <label for="start_date">Start Date</label>
+                <div class="row">
+                    <div class="input-field col s12 m12 l12">
+                        <i class="fas fa-award prefix"></i>
+                        <input id="qualification" name="qualification" value="{{ training.qualification }}" type="text" class="validate" />
+                        <label for="qualification">Qualification</label>
+                    </div>
                 </div>
-            </div>
 
-            <div class="row">
-                <div class="input-field col s12 m12 l12">
-                    <i class="fas fa-award prefix"></i>
-                    <input id="qualification" name="qualification" value="{{ training.qualification }}" type="text" class="validate" />
-                    <label for="qualification">Qualification</label>
+                <div class="row">
+                    <div class="input-field col s12 m12 l12">
+                        <i class="fas fa-pound-sign prefix"></i>
+                        <select id="training_cost" name="training_cost">
+                            <option value="{ training.traingin_cost }}" disabled selected>Choose your option</option>
+                            <option value="£0-200">£0-200</option>
+                            <option value="££ 200-500">££ 200-500</option>
+                            <option value="£££ 500-800">£££ 500-800</option>
+                            <option value="££££ 900 +">££££ 900 +</option>
+                        </select>
+                        <label for="training_cost">Cost</label>
+                    </div>
                 </div>
-            </div>
 
-            <div class="row">
-                <div class="input-field col s12 m12 l12">
-                    <i class="fas fa-pound-sign prefix"></i>
-                    <select id="training_cost" name="training_cost">
-                        <option value="{ training.traingin_cost }}" disabled selected>Choose your option</option>
-                        <option value="£0-200">£0-200</option>
-                        <option value="££ 200-500">££ 200-500</option>
-                        <option value="£££ 500-800">£££ 500-800</option>
-                        <option value="££££ 900 +">££££ 900 +</option>
-                    </select>
-                    <label for="training_cost">Cost</label>
+                <div class="row">
+                    <div class="input-field col s12 m12 l12">
+                        <i class="fas fa-school prefix"></i>
+                        <input id="training_provider" name="training_provider" value="{{ training.training_provider }}" type="text" class="validate" />
+                        <label for="training_provider">Provider</label>
+                    </div>
                 </div>
-            </div>
 
-            <div class="row">
-                <div class="input-field col s12 m12 l12">
-                    <i class="fas fa-school prefix"></i>
-                    <input id="training_provider" name="training_provider" value="{{ training.training_provider }}" type="text" class="validate" />
-                    <label for="training_provider">Provider</label>
+                <!-- submit button -->
+                <div class="row">
+                    <div class="col s12 center-align">
+                        <!-- cancel button -->
+                        <a href="{{ url_for('show_training') }}" class="btn-large red text-shadow"> Cancel <i class="fas fa-times-circle right"></i> </a>
+                        <button type="submit" class="btn-large green darken-1 text-shadow">Update Training <i class="fas fa-edit right"></i></button>
+                    </div>
                 </div>
-            </div>
-
-            <!-- submit button -->
-            <div class="row">
-                <div class="col s12 center-align">
-                    <!-- cancel button -->
-                    <a href="{{ url_for('show_training') }}" class="btn-large red text-shadow"> Cancel <i class="fas fa-times-circle right"></i> </a>
-                    <button type="submit" class="btn-large green darken-1 text-shadow">Update Training <i class="fas fa-edit right"></i></button>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
-</div>
 
-{% endblock %}
+    {% endblock %}
+</section>

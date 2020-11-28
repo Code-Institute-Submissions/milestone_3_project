@@ -1,47 +1,41 @@
 {% extends "base.html" %} {% block content %}
 
-
-<div class="container">
-<br />
-<div class="row">
-    <div class="col padding">
-    </div>
-</div>
-<h2 class="card-panel align-center deep-orange lighten-2">Training Successfully Added!</h2>
-<div class="white">
-</div>
-<div class = "row">
-    <div class="col s12 m2 l2">
-    </div>
-
-    <div class="col s12 m4 l4">
-    <div class="card card-gradient-1 horizontal align-center deep-orange lighten-3">
-     
-      <div class="card-stacked">
-        <div class="card-content ">
-        <a href="{{ url_for('show_interventions') }}" class="black-font">Return to Intervention</a>
+<section id="training_successful">
+    <div class="container">
         <br />
-          <i class="fas fa-hands-helping"></i>
+        <div class="row">
+            <div class="col padding"></div>
         </div>
-        
-      </div>
-    </div>
-  </div>
+        <h2 class="card-panel align-center deep-orange lighten-2">Training Successfully Added!</h2>
+        <div class="white"></div>
+        <div class="row">
+            <div class="col s12 m2 l2"></div>
 
-    <div class="col s12 m4 l4 align-center">
-    <div class="card card-gradient-2 horizontal align-center indigo lighten-2">
-    
-      <div class="card-stacked">
-        <div class="card-content">
-          <a href="{{ url_for('show_training') }}" class="black-font">Return to Training</a>
-          <br />
-          <i class="fas fa-user-graduate"></i>
+            <!-- links back to main content -->
+            <div class="col s12 m4 l4">
+                <div class="card card-gradient-1 horizontal align-center deep-orange lighten-3">
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <a href="{{ url_for('show_interventions') }}" class="black-font">Return to Intervention</a>
+                            <br />
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m4 l4 align-center">
+                <div class="card card-gradient-2 horizontal align-center indigo lighten-2">
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <a href="{{ url_for('show_training') }}" class="black-font">Return to Training</a>
+                            <br />
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-      </div>
+        {% endblock %}
     </div>
-  </div>
-
-</div>
-    {% endblock %}
-
+</section>

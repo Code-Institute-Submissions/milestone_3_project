@@ -2,79 +2,80 @@
 
 <h2 class="card-panel align-center indigo lighten-1">Your Training</h2>
 
-<div class="container">
-    <div class="white"></div>
-
-    <div class="row">
-        <div class="col s12 m12 l12 align-center home-cards red lighten-3">
+<section id="training_content">
+    <div class="container">
+        <div class="white"></div>
+        <!-- content terms -->
+        <div class="row">
+            <div class="col s12 m12 l12 align-center home-cards red lighten-3">
                 <h4 class="bold">Terms</h4>
                 <p>Here are a few terms to help you get started.</p>
             </div>
 
-     <div class="white"></div>
-    </div>
-
-    <div class="row">
-        <div class="row grey-gradient align-center home-cards">
-            <div class="col s12 m12 l12">
-                <h5 class="deep-orange-text">Delivery</h5>
-                <p>How the training is delivered (mix refers to both on and off site or remote and in person).</p>
-            </div>
-            <div class="col s12 m12 l12">
-                <h5 class="deep-orange-text">Area of Need</h5>
-                <p>What area of Speech, Language and Communication Need the training addresses.</p>
-            </div>
-            <div class="col s12 m12 l12">
-                <h5 class="deep-orange-text">Qualification</h5>
-                <p>Indicates if there is a recognised award or qualification upon completion.</p>
-            </div>
-            <div class="col s12 m12 l12">
-                <h5 class="deep-orange-text">Provider</h5>
-                <p>Who delivers the training.  We would encourage you to visit their webpage if you are interested in more training.</p>
-            </div>
+            <div class="white"></div>
         </div>
-    
 
-    <br />
-
-    {% for training in training %}
-
-    <ul class="collapsible left-align">
-        <li>
-            <div class="collapsible-header blue-gradient row">
-                <div class="col s12 m12 l6">
-                    <h6><i class="fas fa-university"></i> Course name: {{ training.training_name }}</h6>
+        <div class="row">
+            <div class="row grey-gradient align-center home-cards">
+                <div class="col s12 m12 l12">
+                    <h5 class="deep-orange-text">Delivery</h5>
+                    <p>How the training is delivered (mix refers to both on and off site or remote and in person).</p>
                 </div>
-                <div class="col s12 m12 l6 right">
-                    <h6><i class="fas fa-users"></i>Type: {{ training.training_type }}</h6>
+                <div class="col s12 m12 l12">
+                    <h5 class="deep-orange-text">Area of Need</h5>
+                    <p>What area of Speech, Language and Communication Need the training addresses.</p>
                 </div>
-            </div>
-
-            <div class="collapsible-body lighten-5">
-                <div class="row">
-                    <div class="col s12 m6 l6 left">
-                        <h7> <i class="fas fa-laptop-house prefix"></i> Delivery </h7> {{ training.delivery_method }}<br />
-                        <h7> <i class="fas fa-hourglass-half prefix"></i> </h7> Duration: {{ training.training_duration }}<br />
-                        <h7> <i class="fas fa-calendar-alt prefix"></i> Start Date </h7> {{ training.start_date }}<br />
-                        <h7> <i class="fas fa-chalkboard-teacher prefix"></i> </h7> Area: {{ training.training_area }}<br />
-                        <h7> <i class="fas fa-award prefix"></i> </h7> Qualification: {{ training.qualification }}<br />
-                        <h7> <i class="fas fa-pound-sign prefix"></i> </h7> Cost: {{ training.training_cost }}<br />
-                        <h7> <i class="fas fa-pound-sign prefix"></i> </h7> Provider: {{ training.training_provider }}<br />
-                    </div>
-
-                    <div class="col s12 m6 l6 align-center">
-                        <br />
-                        <a href="{{ url_for('edit_training', training_id=training._id) }}" class="btn green accent-4">Edit</a>
-                        <a href="{{ url_for('delete_training', training_id=training._id) }}" class="btn red lighten-1">Delete</a>
-                    </div>
+                <div class="col s12 m12 l12">
+                    <h5 class="deep-orange-text">Qualification</h5>
+                    <p>Indicates if there is a recognised award or qualification upon completion.</p>
+                </div>
+                <div class="col s12 m12 l12">
+                    <h5 class="deep-orange-text">Provider</h5>
+                    <p>Who delivers the training. We would encourage you to visit their webpage if you are interested in more training.</p>
                 </div>
             </div>
-        </li>
-    </ul>
 
-    <br />
+            <section id="training_list">
+                <!-- training user input -->
+                {% for training in training %}
 
-    {% endfor %}
-</div>
+                <ul class="collapsible left-align">
+                    <li>
+                        <div class="collapsible-header blue-gradient row">
+                            <div class="col s12 m12 l6">
+                                <h6><i class="fas fa-university"></i> Course name: {{ training.training_name }}</h6>
+                            </div>
+                            <div class="col s12 m12 l6 right">
+                                <h6><i class="fas fa-users"></i>Type: {{ training.training_type }}</h6>
+                            </div>
+                        </div>
 
-{% endblock %}
+                        <div class="collapsible-body lighten-5">
+                            <div class="row">
+                                <div class="col s12 m6 l6 left">
+                                    <h7> <i class="fas fa-laptop-house prefix"></i> Delivery </h7> {{ training.delivery_method }}<br />
+                                    <h7> <i class="fas fa-hourglass-half prefix"></i> </h7> Duration: {{ training.training_duration }}<br />
+                                    <h7> <i class="fas fa-calendar-alt prefix"></i> Start Date </h7> {{ training.start_date }}<br />
+                                    <h7> <i class="fas fa-chalkboard-teacher prefix"></i> </h7> Area: {{ training.training_area }}<br />
+                                    <h7> <i class="fas fa-award prefix"></i> </h7> Qualification: {{ training.qualification }}<br />
+                                    <h7> <i class="fas fa-pound-sign prefix"></i> </h7> Cost: {{ training.training_cost }}<br />
+                                    <h7> <i class="fas fa-pound-sign prefix"></i> </h7> Provider: {{ training.training_provider }}<br />
+                                </div>
+
+                                <div class="col s12 m6 l6 align-center">
+                                    <br />
+                                    <a href="{{ url_for('edit_training', training_id=training._id) }}" class="btn green accent-4">Edit</a>
+                                    <a href="{{ url_for('delete_training', training_id=training._id) }}" class="btn red lighten-1">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <br />
+
+                {% endfor %} {% endblock %}
+            </section>
+        </div>
+    </div>
+</section>
