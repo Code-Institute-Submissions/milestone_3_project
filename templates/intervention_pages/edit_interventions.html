@@ -2,7 +2,7 @@
 
 <h2 class="card-panel align-center deep-orange lighten-2">Edit Interventions</h2>
 
-<section id="edit_interventions">
+
     <div class="container">
         <div class="row card-panel grey lighten-5">
             <form class="col s12" method="POST" action="{{ url_for('edit_interventions', interventions_id=interventions._id) }}">
@@ -10,7 +10,7 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-list prefix"></i>
-                        <input id="intervention_name" name="intervention_name" minlength="5" maxlength="50" value="{{ interventions.intervention_name }}" type="text" class="materialize-textarea validate" required />
+                        <input id="intervention_name" name="intervention_name" minlength="5" maxlength="50" value="{{ interventions.intervention_name }}" type="text" class="validate" required />
                         <label for="intervention_name">Intervention Name</label>
                     </div>
                 </div>
@@ -18,7 +18,7 @@
                 <div class="row overflow">
                     <div class="input-field col s12">
                         <i class="fas fa-link prefix"></i>
-                        <input id="intervention_website" name="intervention_website" minlength="5" maxlength="100" value="{{ interventions.intervention_website }}" type="text" class="materialize-textarea validate" required />
+                        <input id="intervention_website" name="intervention_website" minlength="5" maxlength="100" value="{{ interventions.intervention_website }}" type="text" class="validate" required />
                         <label for="intervention_website">Intervention Website</label>
                     </div>
                 </div>
@@ -26,10 +26,7 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-smile prefix"></i>
-                        <textarea id="intervention_rating" name="intervention_rating" minlength="5" maxlength="200" class="materialize-textarea validate" required>
-                        {{- interventions.intervention_rating -}}
-
-                        </textarea>
+                        <input id="intervention_rating" name="intervention_rating" type="text" value="{{ interventions.intervention_rating }}" class="validate" required />
                         <label for="intervention_rating">Rating</label>
                     </div>
                 </div>
@@ -37,7 +34,7 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-clock prefix"></i>
-                        <input id="intervention_duration" name="intervention_duration" type="text" value="{{ interventions.intervention_duration }}" class="materialize-textarea validate" required />
+                        <input id="intervention_duration" name="intervention_duration" type="text" value="{{ interventions.intervention_duration }}" class="validate" required />
                         <label for="intervention_duration">Duration</label>
                     </div>
                 </div>
@@ -45,7 +42,7 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-suitcase prefix"></i>
-                        <input id="intervention_resources" name="intervention_resources" type="text" value="{{ interventions.training_resources }}" class="materialize-textarea validate" required />
+                        <input id="intervention_resources" name="intervention_resources" type="text" value="{{ interventions.intervention_resources }}" class="validate" required />
                         <label for="intervention_resources">Resources</label>
                     </div>
                 </div>
@@ -61,7 +58,7 @@
                             <option value="Subscription Required ££">Subscription Required ££</option>
                             <option value="Training Required £££">Training Required £££</option>
                         </select>
-                        <label>Cost of intervention</label>
+                        <label for="intervention_cost">Cost of intervention</label>
                     </div>
                 </div>
 
@@ -82,7 +79,7 @@
     </div>
 
        
-</section>
+
 
 
  {% endblock %}
