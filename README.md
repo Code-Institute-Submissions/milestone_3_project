@@ -163,13 +163,13 @@ These were designed as follows:
 
 Features that were manually tested:
 
-* Add Interventions/Training
+#### Add Interventions/Training
 1. Navigate to either the Add Training/Intervention page
 2. Fill out all fields in the form
 3. Click Submit
 4. Navigate to Training/Intervention Page to check addition has been added
 
-* Edit Interventions/Training
+#### Edit Interventions/Training
 1. Navigate to Training/Interventions page
 2. Scroll down to collections 
 3. Click on desired collection for collapsible to show
@@ -178,18 +178,43 @@ Features that were manually tested:
 6. Click on 'submit'
 7. Navigate to Training/Intervention Page to check amendments have been added
 
+#### Delete Interventions/Training
+1. Follow steps 1 to 3 on above section
+2. Click on 'delete' button
+3. Navigate to Training/Intervention Page to check correct files delivery_method
+
+#### Search for Interventions
+1. Navigate to Interventions page using the Navbar
+2. Read the 'search' guide at the top of the page
+3. Enter in appropriate search phrase
+4. Click search
+5. View search results, if no results, try a different phrase
+6. If still no results, intervention can be added following previous 'Add..' section
+
+#### Navigate using the Navbar
+1. Click on desired items on Navbar
+2. Title on each page should reflect the desired page destination
 
 
-### GitHub
+#### Email Contact Form
+1. Navigate to Help page using Navbar
+2. Scroll to bottom of the page to the Contact Form
+3. Fill out all fields and submit
+4. Alert will appear indicating if successful or navigation
+5. If unsuccessful ensure all required fields have been correctly filled out
+
+
+## GitHub
 
 Running 'python3 app.py' from the command line, live previews were used to manually test
 different features and functions within Git.   
 
-### Heroku
+## Heroku
 
 Running the app through Heroku, 
 
-**Google Developer Tools**
+
+## Google Developer Tools**
 This was used to view the responsiveness of the webpage through the following:
 Pixel 2, Pixel XL, iphone 5, SE, 6/7/8 and plus versions, X and ipad and ipad pro.  
 
@@ -199,33 +224,31 @@ No errors are reported when running the page.
 
 ## Warnings
 
-## User testing of User Experiences (UX) 
+No warnings present.  
+
+# User testing of User Experiences (UX) 
+
+User testing were as follows:  
 
 
 
-## External Testing
+# External Testing
 
 The website was checked through the following Validation service tools:
 
-### W3 validator (for HTML)
+* W3 validator (for HTML)
 
-### CSS Validator (for CSS)
+* CSS Validator (for CSS)
 
-### JSLint (for Javascript)
+* JSLint (for Javascript)
 
-### JSHint (for Javascript)
+* JSHint (for Javascript)
 
-### Esprima (for Javascript)
+* Esprima (for Javascript)
 
-
-### Responsive design Mobile friendly test Google
+* Responsive design Mobile friendly test Google
 
 https://search.google.com/test/mobile-friendly?id=zeK6WGGEddR6Yj4lSUtuXw
-
-
-
-## User Testing
-
 
 ## Speed
 
@@ -240,14 +263,9 @@ No user bugs reported.
 
 ## GitHub Pages
 
-## Herokue 
-
-
-
-
-
 ### Repository
 All code was written on Github using a newly created repository.
+
 
 
 ### Updates
@@ -299,7 +317,37 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-Repository
 * Press enter and your local clone will be created.  
 
 
-## API's
+## Heroku
+
+1. Create a requirements.txt file by typing pip3 freeze --local > requirements.txt into the terminal line.
+
+2. Create a Procfile by typing echo web: python app.py > Procfile.
+
+3. Add, commit and push these changes to Github, followng steps above.
+
+4. Navigate to the www.heroku.com
+
+5. Create new app and give it a unique name.
+
+6. Choose the region that is closest to you.
+
+7. Go to the Deploy tab and choose Github.
+
+8. Search for the correct repository and connect.
+
+9. Go to Heroku Settings and navigate to Config Vars.
+
+10. Set the following:
+
+IP = 0.0.0.0
+MONGO_DBNAME = [Name of MongoDB]
+MONGO_URI = mongodb+srv://:@<cluster_name>-qtxun.mongodb.net/<database_name>?retryWrites=true&w=majority
+PORT = 5000
+SECRET_KEY = [Secret key]
+Go to the Deploy tab and Deploy Branch, ensuring that the master branch is selected.
+
+
+# API's
 
 
 ### EmailJS API
