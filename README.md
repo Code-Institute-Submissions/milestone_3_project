@@ -1,6 +1,6 @@
 
 
-![responsive image](https://github.com/samc85/milestone_3_project/blob/623602e223a2e0edb85c4d0d12cb7df70057bfe6/images/readme_page.png)
+![responsive image](https://github.com/samc85/milestone_3_project/blob/master/images/readme_page.png)
 
 # SLCN Library
 This website is a resource for a teachers and education staff to use to best support students with Speech, Language and Communication Needs.  By providing
