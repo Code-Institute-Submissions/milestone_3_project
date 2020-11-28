@@ -35,39 +35,20 @@
                             <a href="{{ url_for('home_page') }}" class="brand-logo"> <i class="far fa-comments icon-comment logo-placement"></i></a>
                             <a href="..." data-target="mobile-demo" class="sidenav-trigger left"><i class="fas fa-bars"></i></a>
                             <ul class="right hide-on-med-and-down">
-                                <!-- Dropdown Structure -->
-                                <ul id="dropdown5" class="dropdown-content">
-                                    <li>
-                                        <a href="{{ url_for('about_page') }}">About</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ url_for('help_page') }}">Help</a>
-                                    </li>
-                                </ul>
-                                <li>
-                                    <a class="dropdown-trigger" href="..." data-target="dropdown5"><i class="fas fa-info-circle"></i></a>
-                                </li>
-
-                                <!-- Dropdown Structure for Intervention-->
-                                <ul id="dropdown1" class="dropdown-content" data-constrainwidth="false">
+                                
+                                    <li><a href="{{ url_for('about_page') }}">About</a></li>
+                                    <li><a href="{{ url_for('help_page') }}">Help</a></li>
+                            
                                     <li><a href="{{ url_for('show_interventions') }}">Intervention</a></li>
                                     <li><a href="{{ url_for('add_interventions') }}">Add Intervention</a></li>
-                                </ul>
-                                <li>
-                                    <a class="dropdown-trigger" data-target="dropdown1"><i class="fas fa-user-graduate"></i></a>
-                                </li>
-
-                                <!-- Dropdown Structure Training -->
-                                <ul id="dropdown2" class="dropdown-content">
+   
                                     <li><a href="{{ url_for('show_training') }}">Training</a></li>
                                     <li><a href="{{ url_for('add_training') }}">Add Training</a></li>
                                 </ul>
-                                <li>
-                                    <a class="dropdown-trigger" href="..." data-target="dropdown2"><i class="fas fa-hands-helping"></i></a>
-                                </li>
+                               
 
                                 <!-- End dropdowns -->
-                            </ul>
+                          
                         </div>
                     </nav>
                 </div>
@@ -75,8 +56,8 @@
                 <!-- mobile navbar from Materialize  -->
 
                 <ul class="sidenav bold" id="mobile-demo">
-                    <div class="white"></div>
-                    <li><h5 class="align-center">SLCN</h5></li>
+                    
+                    <li><h5 class="white align-center">SLCN</h5></li>
                     <li><a href="{{ url_for('home_page') }}">Home</a></li>
                     <li><a href="{{ url_for('about_page') }}">About</a></li>
                     <li><a href="{{ url_for('help_page') }}">Help</a></li>

@@ -211,7 +211,8 @@ different features and functions within Git.
 
 ## Heroku
 
-Running the app through Heroku, 
+Running the app through Heroku, website was checked for errors using Google Developer tools and the above functionality in order to maintain consistency between platforms.
+No discrepencies existed that weren't consistent between sites and subsequently fixed.
 
 
 ## Google Developer Tools**
@@ -231,7 +232,6 @@ No warnings present.
 User testing were as follows:  
 
 
-
 # External Testing
 
 The website was checked through the following Validation service tools:
@@ -245,6 +245,8 @@ The website was checked through the following Validation service tools:
 * JSHint (for Javascript)
 
 * Esprima (for Javascript)
+
+Validation services 
 
 * Responsive design Mobile friendly test Google
 
