@@ -38,7 +38,7 @@ def search():
     query = request.form.get("query")
     interventions = list(mongo.db.interventions.find({"$text": {"$search": query}}))
     return render_template("intervention_pages/interventions.html",
-                           interventions=interventions)    
+                           interventions=interventions)
 
 
 @app.route("/show_training")

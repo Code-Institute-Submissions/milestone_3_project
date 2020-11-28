@@ -2,14 +2,18 @@
 // Jquery functions for page interactivity //
 
 $(document).ready(function(){
-    $(".sidenav").sidenav();
+    $(".sidenav").sidenav({edge: "left"});
     $(".dropdown-trigger").dropdown();
     $(".collapsible").collapsible();
-    $(".tooltipped").tooltip();
     $("select").formSelect();
     $(".datepicker").datepicker();
-    $("input#input_text, textarea#textarea2").characterCounter();
   });
+
+
+
+   
+
+
 
 
 // Email JS function for contact form //
