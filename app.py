@@ -17,15 +17,24 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+# Rendering home page
+
 
 @app.route("/")
 @app.route("/home_page")
 def home_page():
+    """
+    Renders home page
+    """
     return render_template("information_pages/home.html")
 
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
+    """
+    Retrieving mongodb Interventions collection
+    to use search function for users
+    """
     query = request.form.get("query")
     interventions = list(mongo.db.interventions.find
                          ({"$text": {"$search": query}}))
@@ -36,6 +45,9 @@ def search():
 @app.route("/")
 @app.route("/show_training")
 def show_training():
+    """
+    Renders training pages
+    """
     training = list(mongo.db.training.find())
     return render_template("training_pages/training.html", training=training)
 
@@ -43,6 +55,9 @@ def show_training():
 @app.route("/")
 @app.route("/show_interventions")
 def show_interventions():
+    """
+    Retrieves MongoDb intervention collection to display on intervention page
+    """
     interventions = list(mongo.db.interventions.find())
     return render_template("intervention_pages/interventions.html",
                            interventions=interventions)
@@ -50,26 +65,42 @@ def show_interventions():
 
 @app.route("/about_page")
 def about_page():
+    """
+    Renders About page for users
+    """
     return render_template("information_pages/about.html")
 
 
 @app.route("/help_page")
 def help_page():
+    """
+    Renders help page for users
+    """
     return render_template("information_pages/help.html")
 
 
 @app.route("/success_intervention")
 def success_intervention():
+    """
+    Renders page indicating successful intervention added
+    """
     return render_template("intervention_pages/success_intervention.html")
 
 
 @app.route("/success_training")
 def success_training():
+    """
+    Renders page indicating successful training added
+    """
     return render_template("training_pages/success_training.html")
 
 
 @app.route("/add_training", methods=["GET", "POST"])
 def add_training():
+    """
+    if statement allows user to add user Training data to page and MongoDB
+    else statement returns back to add training page
+    """
     if request.method == "POST":
         training = {
             "training_name": request.form.get("training_name"),
@@ -91,6 +122,9 @@ def add_training():
 
 @app.route("/edit_training/<training_id>", methods=["GET", "POST"])
 def edit_training(training_id):
+    """
+    if statement allows user to edit user Training data to page and MongoDB
+    """
     if request.method == "POST":
         update = {
             "training_name": request.form.get("training_name"),
@@ -103,7 +137,7 @@ def edit_training(training_id):
             "training_cost": request.form.get("training_cost"),
             "training_provider": request.form.get("training_provider")
         }
-        mongo.db.training.update({"_id": ObjectId(training_id)}, update)
+        mongo.db.training.update_one({"_id": ObjectId(training_id)}, update)
         flash("Training Successfully Updated")
         return redirect(url_for("success_training"))
     training = mongo.db.training.find_one({"_id": ObjectId(training_id)})
@@ -118,6 +152,9 @@ check for update_one and delete_one for functions
 
 @app.route("/delete_training/<training_id>")
 def delete_training(training_id):
+    """
+    Renders page indicating delete function successful
+    """
     mongo.db.training.remove({"_id": ObjectId(training_id)})
     flash("training successfully deleted")
     return render_template("training_pages/delete_training.html")
@@ -125,6 +162,10 @@ def delete_training(training_id):
 
 @app.route("/add_interventions", methods=["GET", "POST"])
 def add_interventions():
+    """
+    if statement allows user to add user Intervention data to page and MongoDB
+    else statement returns back to add training page
+    """
     if request.method == "POST":
         interventions = {
             "intervention_name": request.form.get("intervention_name"),
@@ -148,6 +189,9 @@ def add_interventions():
 
 @app.route("/edit_interventions/<interventions_id>", methods=["GET", "POST"])
 def edit_interventions(interventions_id):
+    """
+    if statement allows user to edit user Intervention data to page and MongoDB
+    """
     if request.method == "POST":
         submit = {
             "intervention_name": request.form.get("intervention_name"),
@@ -170,6 +214,9 @@ def edit_interventions(interventions_id):
 
 @app.route("/delete_interventions/<interventions_id>")
 def delete_interventions(interventions_id):
+    """
+    function allows user to delete interventions
+    """
     mongo.db.interventions.remove({"_id": ObjectId(interventions_id)})
     flash("Intervention successfully deleted")
     return render_template("intervention_pages/delete_interventions.html")
@@ -177,13 +224,17 @@ def delete_interventions(interventions_id):
 
 @app.errorhandler(404)
 def page_not_found(error):
-    # note that we set the 404 status explicitly
+    """
+    Function to render 404 error page
+    """
     return render_template("error_pages/404.html"), 404
 
 
 @app.errorhandler(500)
 def internal_server_error(error):
-    # note that we set the 404 status explicitly
+    """
+    Function to render 404 error page
+    """
     return render_template("error_pages/500.html"), 500
 
 
