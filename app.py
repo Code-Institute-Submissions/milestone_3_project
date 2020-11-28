@@ -36,8 +36,7 @@ def search():
     to use search function for users
     """
     query = request.form.get("query")
-    interventions = list(mongo.db.interventions.find
-                         ({"$text": {"$search": query}}))
+    interventions = list(mongo.db.interventions.find({"$text": {"$search": query}}))
     return render_template("intervention_pages/interventions.html",
                            interventions=interventions)
 
