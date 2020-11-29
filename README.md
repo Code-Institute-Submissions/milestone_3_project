@@ -111,6 +111,7 @@ These were designed as follows:
 | -------   | -------------------    | ----------- |
 | Id        | _id                    | ObjectId    | 
 | Name      | intervention_name      | string      |
+| Area      | intervention_area      | string      |
 | Website   | intervention_website   | string      |
 | Rating    | interention_rating     | string      |
 | Duration  | intervention_duration  | string      |
