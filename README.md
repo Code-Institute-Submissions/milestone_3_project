@@ -67,7 +67,7 @@ Training and Training Add Pages
 
 Wireframes are generally true to the webpage, however some details have evolved as the project began.
 
-[Wireframes](https://github.com/samc85/milestone_3_project/blob/a14c21054188feaae3e8918f1f93c496617aa251/images/wireframes)
+[Wireframes](https://github.com/samc85/milestone_3_project/tree/master/images/wireframes)
 
 
 
