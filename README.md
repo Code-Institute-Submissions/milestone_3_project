@@ -7,7 +7,7 @@
 https://milestone-3-project.herokuapp.com/
 
 
-# SLCN Library
+# Speech Language and Communication Needs Library
 This website is a resource for a teachers and education staff to use to best support students with Speech, Language and Communication Needs.  By providing
 two libraries one for Training Courses and one for suitable Interventions, this resource will help education staff be better prepared and more informed
 with their training needs and provision choices.  
@@ -218,7 +218,6 @@ tools and features of the webpage in conjunction with Google Developer Tools.
 python3 app.py 
 ```
 
-
 ## Heroku
 
 Running the app through Heroku, website was checked for errors using Google Developer tools and the above functionality in order to maintain consistency between platforms.
@@ -229,9 +228,17 @@ No discrepencies existed that weren't consistent between sites and subsequently 
 This was used to view the responsiveness of the webpage through the following:
 Pixel 2, Pixel XL, iphone 5, SE, 6/7/8 and plus versions, X and ipad and ipad pro.
 
-
 Google Developer Tools was also used to identify any console errors that appeared throughout page
 creation.
+
+## Devices
+The app was tested on a range of phsyical devices as well as through the Google Emulator.  These include,
+Dell 11inch Laptop, Macbook Pro, Ipad Pro (11inch), iphone 7, 11 and 12, ipad mini (2nd Gen) and Dell
+Desktop Computer.
+
+All devices performed as expected, with the app performing consistently with as shown in the
+Google Developer tools.  
+
 
 ## Errors
 
@@ -247,9 +254,46 @@ User testing were as follows:
 
 * A range of potential users were asked to test the app.  
 * These included targeted profesionals of different ages.
-* A range of devices were used including, desktops, ipads, phones and laptops.
+* A range of devices were used including, desktops, ipads, phones and laptops (detailed above).
 
 No broken links or errors were reported by users. 
+
+In meeting User Stories, the app performs as below, with pictures accompanying each User Story:
+
+* As a user, I wish to be able to find information about the app purpose.
+
+![responsive image](https://github.com/samc85/milestone_3_project/blob/master/images/userstory1.png)
+
+* As a user, I wish to be able to use the site without too many instructions or technical expertise.
+
+![responsive image](https://github.com/samc85/milestone_3_project/blob/master/images/userstory2.png)
+
+* As a user, I wish to be able to search for relevant interventions to meet the needs of my students.
+
+![responsive image](https://github.com/samc85/milestone_3_project/blob/master/images/userstory3.png)
+
+* As a user, I wish to be able to view a range of training courses for myself and my staff
+
+![responsive image](https://github.com/samc85/milestone_3_project/blob/master/images/userstory4.png)
+
+* As a user, I wish to be able to edit what both I have, and others have added to ensure consistency and reliability.
+
+![responsive image](https://github.com/samc85/milestone_3_project/blob/master/images/userstory5.png)
+
+* As a user, I wish to be able to delete what I or others have added, to ensure appropriateness.
+
+![responsive image](https://github.com/samc85/milestone_3_project/blob/master/images/userstory6.png)
+
+* As a user, I wish to be able to add or edit interventions and training with ease, through simple to use Formatters
+
+![responsive image](https://github.com/samc85/milestone_3_project/blob/master/images/userstory7.png)
+
+* As a user, I wish to have access to other information sources to inform my choices.
+
+![responsive image](https://github.com/samc85/milestone_3_project/blob/master/images/userstory9.png)
+![responsive image](https://github.com/samc85/milestone_3_project/blob/master/images/userstory9a.png)
+
+
 
 
 # External Testing
