@@ -2,7 +2,7 @@
 
 ![responsive image](https://github.com/samc85/milestone_3_project/blob/master/images/readme_page.png)
 
-
+https://github.com/samc85/milestone_3_project
 
 https://milestone-3-project.herokuapp.com/
 
@@ -44,6 +44,12 @@ About Page
 Help Page
 * How to use the webpage and a contact form in which further support can be added.
 
+Intervention and Intervention Add Pages
+* View, search and add intervention collections.  Further functioning within these pages allow you to edit, delete and view interventions.
+
+Training and Training Add Pages
+* View, edit and add training collections.
+
 
 # User Stories
 
@@ -57,12 +63,13 @@ Help Page
 * As a user, I wish to have access to other information sources to inform my choices.
 
 
- 
 # Wireframes
 
-Wireframes are generally true to the webpage. 
+Wireframes are generally true to the webpage, however some details have evolved as the project began.
 
----------  COMPLETE -------
+[Wireframes](https://github.com/samc85/milestone_3_project/blob/a14c21054188feaae3e8918f1f93c496617aa251/images/wireframes)
+
+
 
 # Features
 
