@@ -4,7 +4,7 @@ from flask import (
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-from werkzeug.security import generate_password_hash, check_password_hash
+
 if os.path.exists("env.py"):
     import env
 
@@ -31,14 +31,9 @@ def home_page():
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
-    """
-    Retrieving mongodb Interventions collection
-    to use search function for users
-    """
     query = request.form.get("query")
     interventions = list(mongo.db.interventions.find({"$text": {"$search": query}}))
-    return render_template("intervention_pages/interventions.html",
-                           interventions=interventions)
+    return render_template("intervention_pages/interventions.html", interventions=interventions)
 
 
 @app.route("/show_training")
@@ -134,7 +129,7 @@ def edit_training(training_id):
             "training_cost": request.form.get("training_cost"),
             "training_provider": request.form.get("training_provider")
         }
-        mongo.db.training.update_one({"_id": ObjectId(training_id)}, update)
+        mongo.db.training.update({"_id": ObjectId(training_id)}, update)
         flash("Training Successfully Updated")
         return redirect(url_for("success_training"))
     training = mongo.db.training.find_one({"_id": ObjectId(training_id)})
@@ -161,6 +156,7 @@ def add_interventions():
     if request.method == "POST":
         interventions = {
             "intervention_name": request.form.get("intervention_name"),
+            "intervention_area": request.form.get("intervention_area"),
             "intervention_website": request.form.get("intervention_website"),
             "intervention_rating": request.form.get("intervention_rating"),
             "intervention_duration": request.form.get("intervention_duration"),
@@ -187,13 +183,14 @@ def edit_interventions(interventions_id):
     if request.method == "POST":
         update = {
             "intervention_name": request.form.get("intervention_name"),
+            "intervention_area": request.form.get("intervention_area"),
             "intervention_website": request.form.get("intervention_website"),
             "intervention_rating": request.form.get("intervention_rating"),
             "intervention_duration": request.form.get("intervention_duration"),
             "intervention_resources": request.form.get("intervention_resources"),
             "intervention_cost": request.form.get("intervention_cost")
         }
-        mongo.db.interventions.update_one({"_id": ObjectId(interventions_id)},update)
+        mongo.db.interventions.update({"_id": ObjectId(interventions_id)}, update)
         flash("Task Successfully Updated")
         return redirect(url_for("show_interventions"))
     interventions = mongo.db.interventions.find_one({"_id": ObjectId(interventions_id)})

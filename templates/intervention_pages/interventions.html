@@ -27,8 +27,8 @@
         <div class="white"></div>
 
         <section id="search_feature">
-            <div class="row card-panel grey-lighten-5 form-search">
-                <form action="{{ url_for('search') }}" method="POST" class="col s12">
+            <div class="row card-panel grey-lighten-5">
+                <form action="{{ url_for('search') }}" method="post" class="col s12">
                     <div class="row align-wrapper center-align">
                         <div class="input-field col s12 m6">
                             <i class="fas fa-search prefix light-blue-text text-darken-4"></i>
@@ -64,6 +64,7 @@
                             <div class="col s12 m9 l9 left">
                                 <h7><i class="fas fa-smile"></i> Rating: </h7> {{ interventions.intervention_rating }}<br />
                                 <h7> <i class="fas fa-clock"></i> Duration: </h7> {{ interventions.intervention_duration }}<br />
+                                <h7> <i class="fas fa-clock"></i> Area: </h7> {{ interventions.intervention_area }}<br />
                                 <h7> <i class="fas fa-suitcase"></i> Resources: </h7> {{ interventions.intervention_resources }}<br />
                                 <h7> <i class="fas fa-pound-sign"></i> Cost: </h7> {{ interventions.intervention_cost }}<br />
                                 <h7><i class="fas fa-wifi"></i> Website: </h7>
