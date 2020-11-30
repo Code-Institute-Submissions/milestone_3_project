@@ -267,38 +267,30 @@ No broken links or errors were reported by users.
 
 In meeting User Stories, the app performs as below, with pictures accompanying each User Story:
 
+User Story 1
 * As a user, I wish to be able to find information about the app purpose.
 
-![responsive image](https://github.com/samc85/milestone_3_project/blob/master/images/userstory1.png)
-
+User Story 2
 * As a user, I wish to be able to use the site without too many instructions or technical expertise.
 
-![responsive image](https://github.com/samc85/milestone_3_project/blob/master/images/userstory2.png)
-
+User Story 3
 * As a user, I wish to be able to search for relevant interventions to meet the needs of my students.
 
-![responsive image](https://github.com/samc85/milestone_3_project/blob/master/images/userstory3.png)
-
+User Story 4
 * As a user, I wish to be able to view a range of training courses for myself and my staff
 
-![responsive image](https://github.com/samc85/milestone_3_project/blob/master/images/userstory4.png)
-
+User Story 5
 * As a user, I wish to be able to edit what both I have, and others have added to ensure consistency and reliability.
 
-![responsive image](https://github.com/samc85/milestone_3_project/blob/master/images/userstory5.png)
-
+User Story 6
 * As a user, I wish to be able to delete what I or others have added, to ensure appropriateness.
 
-![responsive image](https://github.com/samc85/milestone_3_project/blob/master/images/userstory6.png)
-
+User Story 7
 * As a user, I wish to be able to add or edit interventions and training with ease, through simple to use Formatters
 
-![responsive image](https://github.com/samc85/milestone_3_project/blob/master/images/userstory7.png)
-
+User Story 8
 * As a user, I wish to have access to other information sources to inform my choices.
 
-![responsive image](https://github.com/samc85/milestone_3_project/blob/master/images/userstory9.png)
-![responsive image](https://github.com/samc85/milestone_3_project/blob/master/images/userstory9a.png)
 
 
 
@@ -459,6 +451,10 @@ PORT = 5000
 SECRET_KEY = [Secret key]
 ```
 Go to the Deploy tab and Deploy Branch, ensuring that the master branch is selected.
+
+11. On the Heroku project page (make sure you are on the correct project) click on 'open app' on
+the top right.  Ensure you have saved and pushed your recent changes on GitHub as this will only 
+deploy the most recent version.
 
 # API's
 
