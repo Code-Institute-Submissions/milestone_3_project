@@ -494,6 +494,12 @@ https://www.emailjs.com/docs/introduction/how-does-emailjs-work/
 
 * Support with writing code referenced the following additional websites:
 
+    https://www.codeacademy.com
+
+    BrowserStack for Code queries
+
+    Code Institute Slack Channel
+
 * APIs were sourced form the following pages
 
     https://www.emailjs.com/
@@ -510,5 +516,5 @@ Text was written by myself.
 
 http://techsini.com/multi-mockup/
 
-## Acknowledgements 
+
 
