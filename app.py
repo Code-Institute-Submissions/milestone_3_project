@@ -29,6 +29,17 @@ def home_page():
     return render_template("information_pages/home.html")
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    """
+    Allows user to search within interventions
+    Users search within name and area fields
+    """
+    query = request.form.get("query")
+    interventions = list(mongo.db.interventions.find({"$text": {"$search": query}}))
+    return render_template("intervention_pages/interventions.html", interventions=interventions)
+
+
 @app.route("/show_training")
 def show_training():
     """
@@ -46,17 +57,6 @@ def show_interventions():
     interventions = list(mongo.db.interventions.find())
     return render_template("intervention_pages/interventions.html",
                            interventions=interventions)
-
-
-@app.route("/search", methods=["GET", "POST"])
-def search():
-    """
-    Allows user to search within interventions
-    Users search within name and area fields
-    """
-    query = request.form.get("query")
-    interventions = list(mongo.db.interventions.find({"$text": {"$search": query}}))
-    return render_template("intervention_pages/interventions.html", interventions=interventions)
 
 
 @app.route("/about_page")
