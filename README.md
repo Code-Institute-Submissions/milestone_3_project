@@ -267,6 +267,16 @@ No broken links or errors were reported by users.
 
 In meeting User Stories, the app performs as below, with pictures accompanying each User Story:
 
+Pictures are located at:
+
+
+[User Stories](https://github.com/samc85/milestone_3_project/tree/master/images/userstories)
+
+
+
+Each picture is labelled to match the appopriate User Story.
+
+
 User Story 1
 * As a user, I wish to be able to find information about the app purpose.
 
