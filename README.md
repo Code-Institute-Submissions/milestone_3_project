@@ -414,8 +414,17 @@ touch env.py
 touch .gitignore
 ```
 
-The git ignore file should contain the env.py to ensure that secret codes are not shared publicly.  
+The git ignore file should contain the env.py to ensure that secret codes are not shared publicly.  The environment variable would contain (examople below):
 
+```
+os.environ.setdefault("IP", "0.0.0.0")
+os.environ.setdefault("PORT", "5000")
+os.environ.setdefault("SECRET_KEY", "your_secret_key_here")
+os.environ.setdefault("MONGO_URI", "mongodb+srv://<USERNAME>:<PASSWORD>@<CLUSTER>-4g3i1.mongodb.net/<DATABASE>?retryWrites=true&w=majority")
+os.environ.setdefault("MONGO_DBNAME", "collection name")
+```
+
+The env.py file would then be added to the gitignore file for security.
 
 
 ### Updates

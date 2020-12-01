@@ -22,7 +22,7 @@ main {
      color: #ff8a65;
 }
  .black-font {
-     color: black;
+     color: #000000;
      text-decoration: none;
 }
 /* Alignments ---------------------------------------   */
@@ -47,7 +47,7 @@ main {
 /* line break style ---------------------------------------   */
  .white {
      margin: 12px;
-     border: 2pt solid white;
+     border: 2pt solid #ffffff;
 }
 /* Collapsibles ---------------------------------------   */
  .collapsible {
@@ -63,31 +63,31 @@ main {
 }
 /* Font awesome styles ---------------------------------------   */
  .fa-smile, .fa-pound-sign {
-     color: green;
+     color: #008000;
 }
  .fa-laptop-house {
-     color: darkslateblue;
+     color: #483d8b;
 }
  .fa-clock, .fa-hourglass-half {
-     color: brown;
+     color: #a52a2a;
 }
  .fa-suitcase {
-     color: darkgoldenrod;
+     color: #996515;
 }
  .fa-award, .fa-wifi {
-     color: blue;
+     color: #0000ff;
 }
  .fa-chalkboard-teacher {
-     color: slategrey;
+     color: #708090;
 }
  .fa-calendar-alt {
-     color: seagreen;
+     color: #2e8b57;
 }
  .fa-list {
-     color: black;
+     color: #000000;
 }
  .fa-phone {
-     color: green;
+     color: #008000;
 }
  .icon-comment {
      padding-left: 9px;
@@ -116,7 +116,7 @@ main {
      width: 90%;
 }
  .border-bottom {
-     border-bottom: 4pt solid grey;
+     border-bottom: 4pt solid #808080;
 }
  .home-cards {
      border-radius: 25px 25px 25px 25px;
@@ -141,7 +141,7 @@ main {
      background-image: linear-gradient(#ff8a65, #ffccbc );
 }
  .grey-gradient {
-     background-image: linear-gradient(to right, white, #bdc3c7);
+     background-image: linear-gradient(to right, #ffffff, #bdc3c7);
 }
 /* Buttons ---------------------------------------   */
  .btn, .btn-large {
