@@ -1,8 +1,10 @@
 {% extends "base.html" %} {% block content %}
 
-<h2 class="card-panel align-center deep-orange lighten-2">Your Interventions</h2>
 
 <section id="interventions_content">
+
+<h2 class="card-panel align-center deep-orange lighten-2">Your Interventions</h2>
+
     <div class="container">
         <div class="white"></div>
 
@@ -26,7 +28,7 @@
 
         <div class="white"></div>
 
-        <section id="search_feature">
+       
             <div class="row card-panel grey-lighten-5">
                 <form action="{{ url_for('search_interventions') }}" method="post" class="col s12">
                     <div class="row align-wrapper center-align">
@@ -42,7 +44,7 @@
                     </div>
                 </form>
             </div>
-        </section>
+     
 
        
             {% if interventions|length > 0 %}

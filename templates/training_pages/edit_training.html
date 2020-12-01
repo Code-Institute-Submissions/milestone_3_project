@@ -1,8 +1,8 @@
 {% extends "base.html" %} {% block content %}
 
-<h2 class="card-panel align-center indigo lighten-1">Edit Training</h2>
-
 <section id="training_success">
+
+<h2 class="card-panel align-center indigo lighten-1">Edit Training</h2>
     <div class="container">
         <div class="row card-panel grey lighten-5">
             <form class="col s12" method="POST" action="{{ url_for('edit_training', training_id=training._id) }}">
