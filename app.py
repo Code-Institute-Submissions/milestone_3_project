@@ -35,9 +35,9 @@ def search_interventions():
     Allows user to search within interventions
     Users search within name and area fields
     """
+    interventions = list(mongo.db.interventions.find())
     query = request.form.get("query")
-    interventions = list(mongo.db.interventions.find({"$text":
-                                                      {"$search": query}}))
+    interventions = list(mongo.db.interventions.find({"$text": {"$search": str(query)}}))
     return render_template("intervention_pages/interventions.html",
                            interventions=interventions)
 
