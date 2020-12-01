@@ -176,11 +176,41 @@ These were designed as follows:
 
 Features that were manually tested:
 
+#### Error testing
+
+In testing for errors, test were completed that deliberately aimed to 'break' the functions of the page.  This included carrying out tests
+that:
+
+1. Missed out fields when using forms 
+2. Searching for incorrect or known words/phrases that were not in the collections
+3. Attempting to edit collections without filling out specific fields
+
+All error testing came through without any 'breaks' in the webpage structure or function/navigation.
+
+During manual testing, one error came up during the 'Search' function.  This was a 500 error, where a type error was raised.  This appeared to have no 
+impact on the functionality however as the search worked in all tests.  Upon discussion with my Code Institute Mentor, research via Slack and Stack Overflow, it was not
+deemed impactful.  Matching code to previous written or learnt 'Search' functions did not seem to also demonstrate any 'code' errors.  
+Upon reading the error further through the developer tools, which stated expected string received 'null', led to placing a 'str()' operation into the code.  For example,
+the original code reading
+
+```
+interventions = list(mongo.db.interventions.find({"$text": {"$search": query}}))
+```
+
+and the revised code read (without any subsequent errors)
+
+```
+interventions = list(mongo.db.interventions.find({"$text": {"$search": str(query)}}))
+```
+
+Upon subsequent testing, no errors have appeared, both when searching for correct and incorrect collection names.
+
 #### Add Interventions/Training
 1. Navigate to either the Add Training/Intervention page
 2. Fill out all fields in the form
 3. Click Submit
 4. Navigate to Training/Intervention Page to check addition has been added
+
 
 #### Edit Interventions/Training
 1. Navigate to Training/Interventions page
@@ -280,26 +310,44 @@ Each picture is labelled to match the appopriate User Story.
 User Story 1
 * As a user, I wish to be able to find information about the app purpose.
 
+User can find this by navigating to the Home and About pages.
+
 User Story 2
 * As a user, I wish to be able to use the site without too many instructions or technical expertise.
+
+User can find this through the use of simple colour scheme and clear navigation links.  The use of dropdowns and 
+minimal button options aids this experience as well.  
 
 User Story 3
 * As a user, I wish to be able to search for relevant interventions to meet the needs of my students.
 
+User can search for interventions using the search funciton on the page.  
+
 User Story 4
 * As a user, I wish to be able to view a range of training courses for myself and my staff
+
+User can navigate to training page to view courses that have been added.
 
 User Story 5
 * As a user, I wish to be able to edit what both I have, and others have added to ensure consistency and reliability.
 
+User can navigate to either the interventions/training page and edit existing interventions/training.
+
 User Story 6
 * As a user, I wish to be able to delete what I or others have added, to ensure appropriateness.
 
+User can navigate to training/intervention page and delete unwanted collections.
+
 User Story 7
-* As a user, I wish to be able to add or edit interventions and training with ease, through simple to use Formatters
+* As a user, I wish to be able to add or edit interventions and training with ease, through simple to use forms
+
+User can naviagte to the add interventions page and add new ones via the add form and navigate to the interventions
+page and edit collections using the edit button.
 
 User Story 8
 * As a user, I wish to have access to other information sources to inform my choices.
+
+User can navigate to the Home page for further information and also to the footer for external links.
 
 
 
