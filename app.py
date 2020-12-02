@@ -37,7 +37,8 @@ def search_interventions():
     """
     interventions = list(mongo.db.interventions.find())
     query = request.form.get("query")
-    interventions = list(mongo.db.interventions.find({"$text": {"$search": str(query)}}))
+    interventions = list(mongo.db.interventions.find({"$text":
+                                                     {"$search": str(query)}}))
     return render_template("intervention_pages/interventions.html",
                            interventions=interventions)
 
@@ -193,13 +194,16 @@ def edit_interventions(interventions_id):
             "intervention_website": request.form.get("intervention_website"),
             "intervention_rating": request.form.get("intervention_rating"),
             "intervention_duration": request.form.get("intervention_duration"),
-            "intervention_resources": request.form.get("intervention_resources"),
+            "intervention_resources": request.form.get(
+                "intervention_resources"),
             "intervention_cost": request.form.get("intervention_cost")
         }
-        mongo.db.interventions.update({"_id": ObjectId(interventions_id)}, update)
+        mongo.db.interventions.update({"_id": ObjectId
+                                      (interventions_id)}, update)
         flash("Task Successfully Updated")
         return redirect(url_for("show_interventions"))
-    interventions = mongo.db.interventions.find_one({"_id": ObjectId(interventions_id)})
+    interventions = mongo.db.interventions.find_one({"_id": ObjectId
+                                                     (interventions_id)})
     return render_template("intervention_pages/edit_interventions.html",
                            interventions=interventions)
 
