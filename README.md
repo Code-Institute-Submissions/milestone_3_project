@@ -291,7 +291,10 @@ User testing were as follows:
 
 * A range of potential users were asked to test the app.  
 * These included targeted profesionals of different ages.
-* A range of devices were used including, desktops, ipads, phones and laptops (detailed above).
+* A range of devices were used including, desktops, ipads, phones and laptops (types detailed above).
+* User feedback indicated that the app was suitable across all devices, and its clear interface made use straightforward
+and easy to use.  Many of the users (current education workers) indicated they are usually anxious about using ICT in school,
+however found this app straightforward and less anxiety inducing than most other apps.
 
 No broken links or errors were reported by users. 
 
@@ -561,8 +564,10 @@ https://www.emailjs.com/docs/introduction/how-does-emailjs-work/
 
     https://www.emailjs.com/
 
+* Code Institute mentor was consulted for support on console error relating to search function and routine
+mentor calls for advice
 
- 
+
 ## Content
 
 ### Text 
